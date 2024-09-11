@@ -22,22 +22,28 @@ int main() {
     cout << "Введите число y: ";
     cin >> y;
 
-    if (x <= 0) {
-        f = min(0.9 * y, pow(exp(1), (2 * x - 3)));
-        cout << f;
-    }
-    else if (x >= 0 && y > 0) {
-        if (5 - 2 * x == 0) {
-            cout << "Ошибка: деление на 0" << endl;
-            return 1;
-        }
-        f = ((2 * cos(x - M_PI / 6)) + cbrt(y) / (5 - 2 * x));
-        cout << f;
+    if (x == y) {
+        cout << "Ошибка: ввод одинаковых значений";
+        exit(1);
     }
     else {
-        f = max(pow(sin(y), 2), pow(cos(y), 2));
-        cout << f;
+        if (x <= 0) {
+            f = min(0.9 * y, pow(exp(1), (2 * x - 3)));
+            cout << f;
+        }
+        else if (x >= 0 && y > 0) {
+            if (5 - 2 * x == 0) {
+                cout << "Ошибка: деление на 0";
+                exit(2);
+            }
+            f = ((2 * cos(x - M_PI / 6)) + cbrt(y) / (5 - 2 * x));
+            cout << f;
+        }
+        else {
+            f = max(pow(sin(y), 2), pow(cos(y), 2));
+            cout << f;
+        }
     }
-
+    
     return 0;
 }
