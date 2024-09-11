@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 using namespace std;
@@ -26,8 +27,6 @@ int main() {
 	setlocale(LC_ALL, "RU");
 
 	double x, y, f;
-	const double pi = 3.14159265358979323846;
-
 
 	cout << "Введите число x: ";
 	cin >> x;
@@ -41,7 +40,7 @@ int main() {
 		cout << f;
 	}
 	else if (x >= 0 && y > 0 && !DivisionByZeroCheck(x)) {
-		f = ((2 * cos(x - pi / 6)) + cbrt(y) / (5 - 2 * x));
+		f = ((2 * cos(x - M_PI / 6)) + cbrt(y) / (5 - 2 * x));
 		cout << f;
 	}
 	else {
