@@ -22,6 +22,8 @@ int main() {
     cout << "Введите число y: ";
     cin >> y;
 
+    double znach = 5 - 2 * x;
+
     if (x == y) {
         cout << "Ошибка: ввод одинаковых значений";
         exit(1);
@@ -32,11 +34,11 @@ int main() {
             cout << f;
         }
         else if (x >= 0 && y > 0) {
-            if (5 - 2 * x == 0) {
+            if (znach == 0) {
                 cout << "Ошибка: деление на 0";
                 exit(2);
             }
-            f = ((2 * cos(x - M_PI / 6)) + cbrt(y) / (5 - 2 * x));
+            f = ((2 * cos(x - M_PI / 6)) + cbrt(y) / znach);
             cout << f;
         }
         else {

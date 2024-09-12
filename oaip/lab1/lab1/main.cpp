@@ -27,7 +27,7 @@ int main() {
 			exit(2);
 		}
 		else {
-			h = ((pow(x, y + 1) + pow(exp(1), y - 1)) / (1 + x * abs(y - tan(z))) * (1 + abs(y - x)) + (pow(abs(y - x), 2) / 2) - (pow(abs(y - x), 3) / 3));
+			h = (pow(x, y + 1) + exp(y-1)) / ((1 + x * abs(ExpressionValue)) * (1 + abs(y - x)) + (abs(y - x) * abs(y - x)) / 2 - (abs(y - x) * abs(y - x) * abs(y - x)) / 3);
 			h = round(h * 100000) / 100000;
 			cout << h;
 			return 0;
