@@ -211,6 +211,8 @@ int main() {
     delete[] SecondDifferenceResult;
     delete[] SymmetricDifferenceResult;
     delete[] UniverseResult;
+    delete[] A;
+    delete[] B;
 
 	return 0;
 }
