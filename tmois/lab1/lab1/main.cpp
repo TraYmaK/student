@@ -206,7 +206,66 @@ int main() {
     }
 
     wall();
+ 
+    int FirstAdditionToTheUniverseIndex = 0;
+    int* FirstAdditionToTheUniverseResult = new int[UniverseLenght];
 
+    for (int i = 0; i < UniverseLenght; i++) {
+        bool check = false;
+        for (int j = 0; j < sizeA; j++) {
+            if (A[j] == UniverseResult[i]) {
+                check = true;  
+                break;
+            }
+        }
+        if (!check) {
+            FirstAdditionToTheUniverseResult[FirstAdditionToTheUniverseIndex++] = UniverseResult[i];
+        }
+    }
+
+    cout << "Дополнение до универсума A: {";
+    for (int i = 0; i < FirstAdditionToTheUniverseIndex; i++) {
+        if (i == FirstAdditionToTheUniverseIndex - 1) {
+            cout << FirstAdditionToTheUniverseResult[i] << "}" << endl;
+        }
+        else {
+            cout << FirstAdditionToTheUniverseResult[i] << " ";
+        }
+    }
+
+
+    wall();
+
+    int SecondAdditionToTheUniverseIndex = 0;
+    int* SecondAdditionToTheUniverseResult = new int[UniverseLenght];
+
+    for (int i = 0; i < UniverseLenght; i++) {
+        bool check = false;
+        for (int j = 0; j < sizeA; j++) {
+            if (B[j] == UniverseResult[i]) {
+                check = true;
+                break;
+            }
+        }
+        if (!check) {
+            SecondAdditionToTheUniverseResult[SecondAdditionToTheUniverseIndex++] = UniverseResult[i];
+        }
+    }
+
+    cout << "Дополнение до универсума B: {";
+    for (int i = 0; i < SecondAdditionToTheUniverseIndex; i++) {
+        if (i == SecondAdditionToTheUniverseIndex - 1) {
+            cout << SecondAdditionToTheUniverseResult[i] << "}" << endl;
+        }
+        else {
+            cout << SecondAdditionToTheUniverseResult[i] << " ";
+        }
+    }
+
+    wall();
+
+    delete[] FirstAdditionToTheUniverseResult;
+    delete[] SecondAdditionToTheUniverseResult;
     delete[] FirstDifferenceResult;
     delete[] SecondDifferenceResult;
     delete[] SymmetricDifferenceResult;
