@@ -9,15 +9,22 @@ void wall() {
 int main() {
     setlocale(LC_ALL, "RU");
 
-    int sizeA, sizeB;
+    double sizeA, sizeB;
 
     wall();
 
     cout << "Введите мощность множества A: ";
     cin >> sizeA;
-    int* A = new int[sizeA];
 
     wall();
+
+    if (sizeA < 0 || round(sizeA) != sizeA) {
+        cout << "Ошибка: мощность массива должна быть целочисленна и неотрицательна." << endl;
+        exit(1);
+        wall();
+    }
+
+    int* A = new int[sizeA];
 
     for (int i = 0; i < sizeA; i++) {
         cout << "Введите элемент " << i+1 << " множества A: ";
@@ -28,9 +35,16 @@ int main() {
 
     cout << "Введите мощность множества B: ";
     cin >> sizeB;
-    int* B = new int[sizeB];
 
     wall();
+
+    if (sizeB < 0 || round(sizeB) != sizeB) {
+        cout << "Ошибка: мощность массива должна быть целочисленна и неотрицательна." << endl;
+        wall();
+        exit(2);
+    }
+
+    int* B = new int[sizeB];
 
     for (int i = 0; i < sizeB; i++) {
         cout << "Введите элемент " << i+1 << " множества B: ";
@@ -48,6 +62,34 @@ int main() {
 
     cout << "Введите конец universe: ";
     cin >> EndUniverse;
+
+    wall();
+
+    for (int i = 0; i < sizeA; i++) {
+        if (i == 0) {
+            cout << "Массив A: {" << A[i] << " ";
+        }
+        else if(i == sizeA - 1){
+            cout << A[i] << "}" << endl;
+
+        }
+        else {
+            cout << A[i] << " ";
+        }
+    }
+
+    for (int i = 0; i < sizeB; i++) {
+        if (i == 0) {
+            cout << "Массив B: {" << B[i] << " ";
+        }
+        else if (i == sizeB - 1) {
+            cout << B[i] << "}" << endl;
+
+        }
+        else {
+            cout << B[i] << " ";
+        }
+    }
 
     wall();
 
@@ -72,13 +114,18 @@ int main() {
         }
     }
     
-    cout << "Объединение: {";
-    for (int i = 0; i < UnionIndex; i++) {
-        if (i == UnionIndex - 1) {
-            cout << ResultOfTheMerger[i] << "}" << endl;
-        }
-        else {
-            cout << ResultOfTheMerger[i] << " ";
+    if (UnionIndex == 0) {
+        cout << "Обьединение отсутствует" << endl;
+    }
+    else {
+        cout << "Объединение: {";
+        for (int i = 0; i < UnionIndex; i++) {
+            if (i == UnionIndex - 1) {
+                cout << ResultOfTheMerger[i] << "}" << endl;
+            }
+            else {
+                cout << ResultOfTheMerger[i] << " ";
+            }
         }
     }
 
@@ -96,13 +143,18 @@ int main() {
         }
     }
 
-    cout << "Пересечение: {";
-    for (int i = 0; i < IntersectionIndex; i++) {
-        if (i == IntersectionIndex - 1) {
-            cout << IntersectionResult[i] << "}" << endl;
-        }
-        else {
-            cout << IntersectionResult[i] << " ";
+    if (IntersectionIndex == 0) {
+        cout << "Пересечение отсутствует" << endl;
+    }
+    else {
+        cout << "Пересечение: {";
+        for (int i = 0; i < IntersectionIndex; i++) {
+            if (i == IntersectionIndex - 1) {
+                cout << IntersectionResult[i] << "}" << endl;
+            }
+            else {
+                cout << IntersectionResult[i] << " ";
+            }
         }
     }
 
@@ -124,17 +176,20 @@ int main() {
         }
     }
 
-    cout << "Разность A-B: {";
-    for (int i = 0; i < FirstDifferenceIndex; i++) {
-        if (i == FirstDifferenceIndex - 1) {
-            cout << FirstDifferenceResult[i] << "}" << endl;
-        }
-        else {
-            cout << FirstDifferenceResult[i] << " ";
+    if (FirstDifferenceIndex == 0) {
+        cout << "Разность A-B отсутствует" << endl;
+    }
+    else {
+        cout << "Разность A-B: {";
+        for (int i = 0; i < FirstDifferenceIndex; i++) {
+            if (i == FirstDifferenceIndex - 1) {
+                cout << FirstDifferenceResult[i] << "}" << endl;
+            }
+            else {
+                cout << FirstDifferenceResult[i] << " ";
+            }
         }
     }
-
-    wall();
     
     int* SecondDifferenceResult = new int[sizeB];
     int SecondDifferenceIndex = 0;
@@ -152,17 +207,20 @@ int main() {
         }
     }
 
-    cout << "Разность B-A: {";
-    for (int i = 0; i < SecondDifferenceIndex; i++) {
-        if (i == SecondDifferenceIndex - 1) {
-            cout << SecondDifferenceResult[i] << "}" << endl;
-        }
-        else {
-            cout << SecondDifferenceResult[i] << " ";
+    if (SecondDifferenceIndex == 0) {
+        cout << "Разность B-A отсутствует" << endl;
+    }
+    else {
+        cout << "Разность B-A: {";
+        for (int i = 0; i < SecondDifferenceIndex; i++) {
+            if (i == SecondDifferenceIndex - 1) {
+                cout << SecondDifferenceResult[i] << "}" << endl;
+            }
+            else {
+                cout << SecondDifferenceResult[i] << " ";
+            }
         }
     }
-
-    wall();
     
     int* SymmetricDifferenceResult = new int[ResultSize];
     int SymmetricDifferenceIndex = 0;
@@ -175,19 +233,24 @@ int main() {
         SymmetricDifferenceResult[SymmetricDifferenceIndex++] = SecondDifferenceResult[i];
     }
 
-    cout << "Симметрическая разность: {";
-    for (int i = 0; i < SymmetricDifferenceIndex; i++) {
-        if (i == SymmetricDifferenceIndex - 1) {
-            cout << SymmetricDifferenceResult[i] << "}" << endl;
-        }
-        else {
-            cout << SymmetricDifferenceResult[i] << " ";
+    if (SymmetricDifferenceIndex == 0) {
+        cout << "Симметрическая разность отсутствует" << endl;
+    }
+    else {
+        cout << "Симметрическая разность: {";
+        for (int i = 0; i < SymmetricDifferenceIndex; i++) {
+            if (i == SymmetricDifferenceIndex - 1) {
+                cout << SymmetricDifferenceResult[i] << "}" << endl;
+            }
+            else {
+                cout << SymmetricDifferenceResult[i] << " ";
+            }
         }
     }
 
     wall();
 
-    int UniverseLenght = fabs(StartUniverse) + fabs(EndUniverse + 1);
+    int UniverseLenght = EndUniverse - StartUniverse + 1;
     int* UniverseResult = new int[UniverseLenght];
     int UniverseIndex = 0;
 
@@ -195,18 +258,21 @@ int main() {
             UniverseResult[i] = StartUniverse++;
     }
 
-    cout << "Universe: {";
-    for (int i = 0; i < UniverseLenght; i++) {
-        if (i == UniverseLenght - 1) {
-            cout << UniverseResult[i] << "}" << endl;
-        }
-        else {
-            cout << UniverseResult[i] << " ";
+    if (UniverseLenght == 0) {
+        cout << "Universe отсутствует" << endl;
+    }
+    else {
+        cout << "Universe: {";
+        for (int i = 0; i < UniverseLenght; i++) {
+            if (i == UniverseLenght - 1) {
+                cout << UniverseResult[i] << "}" << endl;
+            }
+            else {
+                cout << UniverseResult[i] << " ";
+            }
         }
     }
 
-    wall();
- 
     int FirstAdditionToTheUniverseIndex = 0;
     int* FirstAdditionToTheUniverseResult = new int[UniverseLenght];
 
@@ -223,18 +289,20 @@ int main() {
         }
     }
 
-    cout << "Дополнение до универсума A: {";
-    for (int i = 0; i < FirstAdditionToTheUniverseIndex; i++) {
-        if (i == FirstAdditionToTheUniverseIndex - 1) {
-            cout << FirstAdditionToTheUniverseResult[i] << "}" << endl;
-        }
-        else {
-            cout << FirstAdditionToTheUniverseResult[i] << " ";
+    if (FirstAdditionToTheUniverseIndex == 0) {
+        cout << "Дополнение универсума A отсутствует" << endl;
+    }
+    else {
+        cout << "Дополнение до универсума A: {";
+        for (int i = 0; i < FirstAdditionToTheUniverseIndex; i++) {
+            if (i == FirstAdditionToTheUniverseIndex - 1) {
+                cout << FirstAdditionToTheUniverseResult[i] << "}" << endl;
+            }
+            else {
+                cout << FirstAdditionToTheUniverseResult[i] << " ";
+            }
         }
     }
-
-
-    wall();
 
     int SecondAdditionToTheUniverseIndex = 0;
     int* SecondAdditionToTheUniverseResult = new int[UniverseLenght];
@@ -252,13 +320,18 @@ int main() {
         }
     }
 
-    cout << "Дополнение до универсума B: {";
-    for (int i = 0; i < SecondAdditionToTheUniverseIndex; i++) {
-        if (i == SecondAdditionToTheUniverseIndex - 1) {
-            cout << SecondAdditionToTheUniverseResult[i] << "}" << endl;
-        }
-        else {
-            cout << SecondAdditionToTheUniverseResult[i] << " ";
+    if (SecondAdditionToTheUniverseIndex == 0) {
+        cout << "Дополнение универсума B отсутствует" << endl;
+    }
+    else {
+        cout << "Дополнение до универсума B: {";
+        for (int i = 0; i < SecondAdditionToTheUniverseIndex; i++) {
+            if (i == SecondAdditionToTheUniverseIndex - 1) {
+                cout << SecondAdditionToTheUniverseResult[i] << "}" << endl;
+            }
+            else {
+                cout << SecondAdditionToTheUniverseResult[i] << " ";
+            }
         }
     }
 
