@@ -1,36 +1,70 @@
 ﻿#include <iostream>
-#include <math.h>
+#include <cmath>
+#include <iomanip>
 
 using namespace std;
 
+double Y(double x) {
+    return -log(sqrt(1 + x * x)) + x * atan(x);
+}
+
+void wall() {
+    cout << "--------------------------------------------------------------------\n";
+}
+
 int main() {
-    setlocale(LC_ALL, "ru");
-    
-    double a, b, h;
-    int n;
+    setlocale(LC_ALL, "RU");
 
-    cout << "Введите значения a, b, h и n (через пробел): ";
-    cin >> a >> b >> h >> n;
+    double a, b, h, eps, s, y, x, mod;
+    int counter;
 
-    
-    cout << "x\tY(x)\tS(x)\t|Y(x) - S(x)|" << endl;
-    cout.precision(6);
+    cout << "Введите начало: ";
+    cin >> a;
+    cout << "Введите конец: ";
+    cin >> b;
+    cout << "Введите шаг: ";
+    cin >> h;
+    cout << "Введите погрешность: ";
+    cin >> eps;
+    cout << endl;
 
-    
-    for (double x = a; x <= b; x += h) {
-        
-        double Y = -log(sqrt(1 + x * x)) + x * atan(x);
+    cout << fixed;
+    cout.precision(5);
+    wall();
+    cout << "|   x   |    S(x)   |   Y(x)   |   |Y(x)-S(x)|   |   Кол-во сумм   |\n";
+    wall();
 
-        
-        double S = 0;
-        for (int k = 1; k <= n; ++k) {
-            double term = pow(-1, k + 1) * pow(x, 2 * k) / (2 * k * (2 * k - 1));
-            S += term;
+    for (double i = a; i <= b; i += h) {
+
+        int k = 1;
+        counter = 0;
+        s = 0.0;
+        x = i;
+
+        y = Y(x);
+
+        while (abs(s - y) >= eps) {
+            s += pow(-1, k + 1) * pow(x, 2 * k) / (2 * k * (2 * k - 1));
+            k++;
+            counter++;
         }
 
-        
-        cout << x << "\t" << Y << "\t" << S << "\t" << fabs(Y - S) << endl;
+        mod = abs(y - s);
+
+        cout << "|" << x << "|  "
+            << s << "  |  "
+            << y << " |     "
+            << mod << "     |        ";
+        if (counter < 10) {
+            cout << counter << "        |" << endl;
+        }
+        else {
+            cout << counter << "       |" << endl;
+        }
+
     }
+
+    wall();
 
     return 0;
 }
