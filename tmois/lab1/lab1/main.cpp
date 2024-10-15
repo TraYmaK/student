@@ -6,10 +6,31 @@ void wall() {
     cout << "------------------------------------------------------------------------------------------------------------------------" << endl;
 }
 
+bool check(int* per1, int size, int per2) {
+    for (int i = 0; i < size; i++) {
+        if (per1[i] == per2) {
+            return true;
+        }
+    }
+    return false;
+}
+
 int main() {
     setlocale(LC_ALL, "RU");
 
     double sizeA, sizeB;
+
+    int StartUniverse, EndUniverse;
+
+    wall();
+
+    cout << "Введите начало universe: ";
+    cin >> StartUniverse;
+
+    wall();
+
+    cout << "Введите конец universe: ";
+    cin >> EndUniverse;
 
     wall();
 
@@ -18,17 +39,32 @@ int main() {
 
     wall();
 
-    if (sizeA < 0 || round(sizeA) != sizeA) {
-        cout << "Ошибка: мощность массива должна быть целочисленна и неотрицательна." << endl;
+    int UniverseLenght = EndUniverse - StartUniverse + 1;
+
+    if (sizeA <= 0 || sizeA > UniverseLenght || round(sizeA) != sizeA) {
+        cout << "Ошибка: мощность массива должна быть целочисленна, положительна и меньше или равна длине универсума." << endl;
         exit(1);
-        wall();
     }
 
     int* A = new int[sizeA];
 
     for (int i = 0; i < sizeA; i++) {
-        cout << "Введите элемент " << i+1 << " множества A: ";
-        cin >> A[i];
+        int element;
+        while (true) {
+            cout << "Введите элемент " << i + 1 << " множества A: ";
+            cin >> element;
+
+            if (element < StartUniverse || element > EndUniverse) {
+                cout << "Ошибка: элемент выходит за пределы универсума. Повторите ввод." << endl;
+            }
+            else if (check(A, i, element)) {
+                cout << "Ошибка: элемент уже существует в множестве A. Повторите ввод." << endl;
+            }
+            else {
+                A[i] = element;
+                break;
+            }
+        }
     }
 
     wall();
@@ -38,30 +74,56 @@ int main() {
 
     wall();
 
-    if (sizeB < 0 || round(sizeB) != sizeB) {
-        cout << "Ошибка: мощность массива должна быть целочисленна и неотрицательна." << endl;
-        wall();
+    if (sizeB <= 0 || sizeB > UniverseLenght || round(sizeB) != sizeB) {
+        cout << "Ошибка: мощность массива должна быть целочисленна, положительна и меньше или равна длине универсума." << endl;
         exit(2);
     }
 
     int* B = new int[sizeB];
 
     for (int i = 0; i < sizeB; i++) {
-        cout << "Введите элемент " << i+1 << " множества B: ";
-        cin >> B[i];
+        int element;
+        while (true) {
+            cout << "Введите элемент " << i + 1 << " множества B: ";
+            cin >> element;
+
+            if (element < StartUniverse || element > EndUniverse) {
+                cout << "Ошибка: элемент выходит за пределы универсума. Повторите ввод." << endl;
+            }
+            else if (check(B, i, element)) {
+                cout << "Ошибка: элемент уже существует в множестве B. Повторите ввод." << endl;
+            }
+            else {
+                B[i] = element;
+                break;
+            }
+        }
     }
 
-    wall();
-
-    int StartUniverse, EndUniverse;
-
-    cout << "Введите начало universe: ";
-    cin >> StartUniverse;
 
     wall();
 
-    cout << "Введите конец universe: ";
-    cin >> EndUniverse;
+    int* UniverseResult = new int[UniverseLenght];
+    int UniverseIndex = 0;
+
+    for (int i = 0; i < UniverseLenght; i++) {
+        UniverseResult[i] = StartUniverse++;
+    }
+
+    if (UniverseLenght == 0) {
+        cout << "Universe отсутствует" << endl;
+    }
+    else {
+        cout << "Universe: {";
+        for (int i = 0; i < UniverseLenght; i++) {
+            if (i == UniverseLenght - 1) {
+                cout << UniverseResult[i] << "}" << endl;
+            }
+            else {
+                cout << UniverseResult[i] << " ";
+            }
+        }
+    }
 
     wall();
 
@@ -194,10 +256,10 @@ int main() {
     int* SecondDifferenceResult = new int[sizeB];
     int SecondDifferenceIndex = 0;
 
-    for (int i = 0; i < sizeA; i++) {
+    for (int i = 0; i < sizeB; i++) {
         bool check = false;
-        for (int j = 0; j < sizeB; j++) {
-            if (A[j] == B[i]) {
+        for (int j = 0; j < sizeA; j++) {
+            if (B[i] == A[j]) {
                 check = true;
                 break;
             }
@@ -250,29 +312,6 @@ int main() {
 
     wall();
 
-    int UniverseLenght = EndUniverse - StartUniverse + 1;
-    int* UniverseResult = new int[UniverseLenght];
-    int UniverseIndex = 0;
-
-    for (int i = 0; i < UniverseLenght; i++) {
-            UniverseResult[i] = StartUniverse++;
-    }
-
-    if (UniverseLenght == 0) {
-        cout << "Universe отсутствует" << endl;
-    }
-    else {
-        cout << "Universe: {";
-        for (int i = 0; i < UniverseLenght; i++) {
-            if (i == UniverseLenght - 1) {
-                cout << UniverseResult[i] << "}" << endl;
-            }
-            else {
-                cout << UniverseResult[i] << " ";
-            }
-        }
-    }
-
     int FirstAdditionToTheUniverseIndex = 0;
     int* FirstAdditionToTheUniverseResult = new int[UniverseLenght];
 
@@ -280,7 +319,7 @@ int main() {
         bool check = false;
         for (int j = 0; j < sizeA; j++) {
             if (A[j] == UniverseResult[i]) {
-                check = true;  
+                check = true;
                 break;
             }
         }
@@ -304,12 +343,14 @@ int main() {
         }
     }
 
+    wall();
+
     int SecondAdditionToTheUniverseIndex = 0;
     int* SecondAdditionToTheUniverseResult = new int[UniverseLenght];
 
     for (int i = 0; i < UniverseLenght; i++) {
         bool check = false;
-        for (int j = 0; j < sizeA; j++) {
+        for (int j = 0; j < sizeB; j++) {
             if (B[j] == UniverseResult[i]) {
                 check = true;
                 break;
