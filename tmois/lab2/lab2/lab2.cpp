@@ -3,7 +3,7 @@
 using namespace std;
 
 void wall() {
-    cout << "--------------------------------------------------------------------\n";
+    cout << "------------------------------------------------------------------------------------------------------------------------\n";
 }
 
 void Method(int& method) {
@@ -55,13 +55,32 @@ int main() {
         wall();
 
         for (int i = 0; i < FirstGraphDimension; ++i) {
-            for (int j = 0; j < TupleDimension; ++j) {
-                cout << "Введите элемент " << j + 1 << " кортежа " << i + 1 << ": ";
-                cin >> FirstGraph[i][j];
-            }
+            bool isUnique, isValid;
+            do {
+                isUnique = true;
+                isValid = true;
+                cout << "Введите элементы кортежа " << i + 1 << " : ";
+                cin >> FirstGraph[i][0] >> FirstGraph[i][1];
+
+                if (FirstGraph[i][0] > 100 || FirstGraph[i][1] > 100) {
+                    cout << "Элементы кортежей не должны превышать значение 100. Попробуйте снова.\n";
+                    isValid = false;
+                    continue;
+                }
+
+                for (int j = 0; j < i; ++j) {
+                    if (FirstGraph[i][0] == FirstGraph[j][0] && FirstGraph[i][1] == FirstGraph[j][1]) {
+                        cout << "Такой кортеж уже существует. Введите другой.\n";
+                        isUnique = false;
+                        break;
+                    }
+                }
+            } while (!isUnique || !isValid);
             wall();
         }
-    } else if (FirstMethod == 2) {
+    }
+
+    else if (FirstMethod == 2) {
         FirstGraph = new int* [FirstGraphDimension];
         for (int i = 0; i < FirstGraphDimension; ++i) {
             FirstGraph[i] = new int[TupleDimension];
@@ -99,13 +118,32 @@ int main() {
         wall();
 
         for (int i = 0; i < SecondGraphDimension; ++i) {
-            for (int j = 0; j < TupleDimension; ++j) {
-                cout << "Введите элемент " << j + 1 << " кортежа " << i + 1 << ": ";
-                cin >> SecondGraph[i][j];
-            }
+            bool isUnique, isValid;
+            do {
+                isUnique = true;
+                isValid = true;
+                cout << "Введите элементы кортежа " << i + 1 << " : ";
+                cin >> SecondGraph[i][0] >> SecondGraph[i][1];
+
+                if (SecondGraph[i][0] > 100 || SecondGraph[i][1] > 100) {
+                    cout << "Элементы кортежей не должны превышать значение 100. Попробуйте снова.\n";
+                    isValid = false;
+                    continue;
+                }
+
+                for (int j = 0; j < i; ++j) {
+                    if (SecondGraph[i][0] == SecondGraph[j][0] && SecondGraph[i][1] == SecondGraph[j][1]) {
+                        cout << "Такой кортеж уже существует. Введите другой.\n";
+                        isUnique = false;
+                        break;
+                    }
+                }
+            } while (!isUnique || !isValid);
             wall();
         }
-    } else if (SecondMethod == 2) {
+    }
+
+    else if (SecondMethod == 2) {
         SecondGraph = new int* [SecondGraphDimension];
         for (int i = 0; i < SecondGraphDimension; ++i) {
             SecondGraph[i] = new int[TupleDimension];
@@ -378,11 +416,40 @@ int main() {
 
         wall();
 
-        cout << "Декартово произведение: \n";
+        cout << "Декартово произведение графиков 1 и 2: ";
+
+        cout << endl;
 
         wall();
 
-        cout << "soon... \n";
+        int CartesianSize = FirstGraphDimension * SecondGraphDimension;
+        int** CartesianProduct = new int* [CartesianSize];
+
+        for (int i = 0; i < CartesianSize; ++i) {
+            CartesianProduct[i] = new int[4];
+        }
+
+        int index = 0;
+        for (int i = 0; i < FirstGraphDimension; ++i) {
+            for (int j = 0; j < SecondGraphDimension; ++j) {
+                CartesianProduct[index][0] = FirstGraph[i][0];
+                CartesianProduct[index][1] = FirstGraph[i][1];
+                CartesianProduct[index][2] = SecondGraph[j][0];
+                CartesianProduct[index][3] = SecondGraph[j][1];
+                index++;
+            }
+        }
+
+        cout << "{";
+        for (int i = 0; i < CartesianSize; ++i) {
+            cout << "<" << CartesianProduct[i][0] << ", " << CartesianProduct[i][1]
+                << ", " << CartesianProduct[i][2] << ", " << CartesianProduct[i][3] << ">";
+            if (i < CartesianSize - 1) {
+                cout << ", ";
+            }
+        }
+        cout << "}\n";
+
         wall();
     }
     else {

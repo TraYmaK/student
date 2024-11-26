@@ -32,6 +32,15 @@ int main() {
     cout << "Введите конец universe: ";
     cin >> EndUniverse;
 
+    while (StartUniverse > EndUniverse || StartUniverse == EndUniverse) {
+        wall();
+        cout << "Конец универсума должен быть строго больше его начала. Повторите ввод: \n";
+        cout << "Введите начало universe: ";
+        cin >> StartUniverse;
+        cout << "Введите конец universe: ";
+        cin >> EndUniverse;
+    }
+
     wall();
 
     cout << "Введите мощность множества A: ";
@@ -41,9 +50,9 @@ int main() {
 
     int UniverseLenght = EndUniverse - StartUniverse + 1;
 
-    if (sizeA <= 0 || sizeA > UniverseLenght || round(sizeA) != sizeA) {
-        cout << "Ошибка: мощность массива должна быть целочисленна, положительна и меньше или равна длине универсума." << endl;
-        exit(1);
+    while (sizeA <= 0 || sizeA > UniverseLenght || round(sizeA) != sizeA) {
+        cout << "Ошибка: мощность массива должна быть целочисленна, положительна и меньше или равна длине универсума." << endl << "Повторите ввод: ";
+        cin >> sizeA;
     }
 
     int* A = new int[sizeA];
@@ -74,9 +83,9 @@ int main() {
 
     wall();
 
-    if (sizeB <= 0 || sizeB > UniverseLenght || round(sizeB) != sizeB) {
-        cout << "Ошибка: мощность массива должна быть целочисленна, положительна и меньше или равна длине универсума." << endl;
-        exit(2);
+    while (sizeB <= 0 || sizeB > UniverseLenght || round(sizeB) != sizeB) {
+        cout << "Ошибка: мощность массива должна быть целочисленна, положительна и меньше или равна длине универсума." << endl << "Повторите ввод: ";
+        cin >> sizeB;
     }
 
     int* B = new int[sizeB];
