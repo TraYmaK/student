@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
@@ -37,13 +38,11 @@ void CreateFile(string FileName) {
 
     if (file.is_open()) {
         file.close();
-        cout << "Файл успешно создан!\n";
+        cout << "File created successfully!\n";
     }
     else {
-        cout << "Ошибка.Не удалось создать файл.\n";
+        cout << "Error. Failed to create file.\n";
     }
-    system("pause");
-    system("cls");
 }
 
 void ReadFile(string FileName) {
@@ -59,7 +58,7 @@ void ReadFile(string FileName) {
         file.close();
     }
     else {
-        cout << "Ошибка.Не удалось открыть файл.\n";
+        cout << "Error. Failed to open file.\n";
     }
 }
 
@@ -71,20 +70,20 @@ void AddToFile(string FileName) {
 
         student.input();
 
-        file << "Фамилия: " << student.surname
-            << " Группа: " << student.group
-            << " Физика: " << student.physics
-            << " Математика: " << student.math
-            << " Информатика: " << student.informatics
-            << " Средний балл: " << fixed << setprecision(2) << student.average
+        file << "Surname: " << student.surname
+            << " Group: " << student.group
+            << " Physics: " << student.physics
+            << " Math: " << student.math
+            << " Informatics: " << student.informatics
+            << " Average Grade: " << fixed << setprecision(2) << student.average
             << endl;
 
         file.close();
 
-        cout << "Данные успешно занесены в файл!\n";
+        cout << "Data successfully added to the file!\n";
     }
     else {
-        cout << "Ошибка. Не удалось открыть файл.\n";
+        cout << "Error. Failed to open file.\n";
     }
 }
 
@@ -92,40 +91,40 @@ void FindAverage(string FileName) {
     ifstream file(FileName);
 
     if (!file.is_open()) {
-        cout << "Ошибка. Не удалось открыть файл.\n";
+        cout << "Error. Failed to open file.\n";
         return;
     }
 
     string groupToFind;
     double minAverage;
 
-    cout << "Введите номер группы для поиска: ";
+    cout << "Enter the group number to search: ";
     cin >> groupToFind;
 
-    cout << "Введите минимальный средний балл: ";
+    cout << "Enter the minimum average grade: ";
     cin >> minAverage;
 
     if (cin.fail() || minAverage < 0) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Некорректный ввод минимального среднего балла.\n";
+        cout << "Invalid input for minimum average grade.\n";
         return;
     }
 
-    cout << "\nСписок студентов группы \"" << groupToFind
-        << "\", у которых средний балл выше " << minAverage << ":\n";
+    cout << "\nList of students in group \"" << groupToFind
+        << "\" with an average grade above " << minAverage << ":\n";
 
     string line;
     bool found = false;
 
     while (getline(file, line)) {
-        size_t pos = line.find("Группа: ");
-        if (pos != string::npos) {
-            string group = line.substr(pos + 8, line.find(" ", pos + 8) - (pos + 8));
+        size_t groupPos = line.find("Group: ");
+        if (groupPos != string::npos) {
+            string group = line.substr(groupPos + 7, line.find(" ", groupPos + 7) - (groupPos + 7));
 
-            pos = line.find("Средний балл: ");
-            if (pos != string::npos) {
-                double average = stod(line.substr(pos + 14));
+            size_t avgPos = line.find("Average Grade: ");
+            if (avgPos != string::npos) {
+                double average = stod(line.substr(avgPos + 14));
 
                 if (group == groupToFind && average > minAverage) {
                     cout << line << endl;
@@ -136,11 +135,8 @@ void FindAverage(string FileName) {
     }
 
     if (!found) {
-        cout << "В данной группе нет студентов со средним баллом, который выше введённого.\n";
+        cout << "No students in this group have an average grade above the entered value.\n";
     }
-
-    system("pause");
-    system("cls");
 
     file.close();
 }
@@ -149,13 +145,13 @@ void EditFile(string FileName) {
     ifstream file(FileName);
 
     if (!file.is_open()) {
-        cout << "Ошибка. Не удалось открыть файл.\n";
+        cout << "Error. Failed to open file.\n";
         return;
     }
 
     ofstream tempFile("temp.txt");
     if (!tempFile.is_open()) {
-        cout << "Ошибка. Не удалось создать временный файл.\n";
+        cout << "Error. Failed to create temporary file.\n";
         file.close();
         return;
     }
@@ -163,70 +159,103 @@ void EditFile(string FileName) {
     string line;
     bool found = false;
 
-    cout << "Введите фамилию студента, которого хотите отредактировать: ";
+    cout << "Enter the surname of the student you want to edit: ";
     string targetSurname;
     cin >> targetSurname;
 
     while (getline(file, line)) {
-        size_t pos = line.find("Фамилия: ");
+        size_t pos = line.find("Surname: ");
         if (pos != string::npos) {
-            string surname = line.substr(pos + 9, line.find(" ", pos + 9) - (pos + 9));
+            size_t endPos = line.find(" ", pos + 9);
+            if (endPos == string::npos) endPos = line.length();
+            string surname = line.substr(pos + 9, endPos - (pos + 9));
 
             if (surname == targetSurname) {
                 found = true;
-                cout << "Редактируем данные студента: " << line << endl;
+                cout << "Editing student data: " << line << endl;
 
                 Student student;
                 student.surname = surname;
 
-                pos = line.find("Группа: ");
-                student.group = line.substr(pos + 8, line.find(" ", pos + 8) - (pos + 8));
+                try {
+                    size_t posGroup = line.find("Group: ");
+                    size_t endGroup = line.find(" ", posGroup + 7);
+                    if (endGroup == string::npos) endGroup = line.length();
+                    student.group = line.substr(posGroup + 7, endGroup - (posGroup + 7));
 
-                pos = line.find("Физика: ");
-                student.physics = stod(line.substr(pos + 8, line.find(" ", pos + 8) - (pos + 8)));
+                    size_t posPhysics = line.find("Physics: ");
+                    size_t endPhysics = line.find(" ", posPhysics + 9);
+                    if (endPhysics == string::npos) endPhysics = line.length();
+                    string physicsStr = line.substr(posPhysics + 9, endPhysics - (posPhysics + 9));
+                    student.physics = stod(physicsStr);
 
-                pos = line.find("Математика: ");
-                student.math = stod(line.substr(pos + 12, line.find(" ", pos + 12) - (pos + 12)));
+                    size_t posMath = line.find("Math: ");
+                    size_t endMath = line.find(" ", posMath + 6);
+                    if (endMath == string::npos) endMath = line.length();
+                    string mathStr = line.substr(posMath + 6, endMath - (posMath + 6));
+                    student.math = stod(mathStr);
 
-                pos = line.find("Информатика: ");
-                student.informatics = stod(line.substr(pos + 13, line.find(" ", pos + 13) - (pos + 13)));
+                    size_t posInformatics = line.find("Informatics: ");
+                    size_t endInformatics = line.find(" ", posInformatics + 13);
+                    if (endInformatics == string::npos) endInformatics = line.length();
+                    string informaticsStr = line.substr(posInformatics + 13, endInformatics - (posInformatics + 13));
+                    student.informatics = stod(informaticsStr);
 
-                cout << "Введите новую фамилию (оставьте пустым, чтобы не менять): ";
-                string tempStr;
+                    size_t posAverage = line.find("Average Grade: ");
+                    if (posAverage != string::npos) {
+                        string averageStr = line.substr(posAverage + 14);
+                        student.average = stod(averageStr);
+                    }
+                    else {
+                        student.Average();
+                    }
+                }
+                catch (exception& e) {
+                    cout << "Error parsing student data: " << e.what() << endl;
+                    tempFile << line << endl;
+                    continue;
+                }
+
+                
                 cin.ignore();
+                cout << "Enter new surname (leave empty to keep unchanged): ";
+                string tempStr;
                 getline(cin, tempStr);
                 if (!tempStr.empty()) student.surname = tempStr;
 
-                cout << "Введите новую группу (оставьте пустым, чтобы не менять): ";
+                cout << "Enter new group (leave empty to keep unchanged): ";
                 getline(cin, tempStr);
                 if (!tempStr.empty()) student.group = tempStr;
 
+                cout << "Enter new physics grade (or -1 to keep unchanged): ";
                 double tempDouble;
-                cout << "Введите новую оценку по физике (или -1, чтобы не менять): ";
                 cin >> tempDouble;
                 if (tempDouble >= 0) student.physics = tempDouble;
 
-                cout << "Введите новую оценку по математике (или -1, чтобы не менять): ";
+                cout << "Enter new math grade (or -1 to keep unchanged): ";
                 cin >> tempDouble;
                 if (tempDouble >= 0) student.math = tempDouble;
 
-                cout << "Введите новую оценку по информатике (или -1, чтобы не менять): ";
+                cout << "Enter new informatics grade (or -1 to keep unchanged): ";
                 cin >> tempDouble;
                 if (tempDouble >= 0) student.informatics = tempDouble;
 
                 student.Average();
 
-                tempFile << "Фамилия: " << student.surname
-                    << " Группа: " << student.group
-                    << " Физика: " << student.physics
-                    << " Математика: " << student.math
-                    << " Информатика: " << student.informatics
-                    << " Средний балл: " << fixed << setprecision(2) << student.average
+                tempFile << "Surname: " << student.surname
+                    << " Group: " << student.group
+                    << " Physics: " << student.physics
+                    << " Math: " << student.math
+                    << " Informatics: " << student.informatics
+                    << " Average Grade: " << fixed << setprecision(2) << student.average
                     << endl;
             }
             else {
                 tempFile << line << endl;
             }
+        }
+        else {
+            tempFile << line << endl;
         }
     }
 
@@ -234,20 +263,16 @@ void EditFile(string FileName) {
     tempFile.close();
 
     if (!found) {
-        cout << "Студент с фамилией \"" << targetSurname << "\" не найден.\n";
-        system("pause");
-        system("cls");
+        cout << "Student with surname \"" << targetSurname << "\" not found.\n";
         remove("temp.txt");
         return;
     }
 
     if (remove(FileName.c_str()) != 0 || rename("temp.txt", FileName.c_str()) != 0) {
-        cout << "Ошибка при обновлении файла.\n";
+        cout << "Error updating the file.\n";
     }
     else {
-        cout << "Данные успешно обновлены.\n";
-        system("pause");
-        system("cls");
+        cout << "Data updated successfully.\n";
     }
 }
 
@@ -255,19 +280,19 @@ void DeleteStudent(string FileName) {
     ifstream file(FileName);
 
     if (!file.is_open()) {
-        cout << "Ошибка. Не удалось открыть файл.\n";
+        cout << "Error. Failed to open file.\n";
         return;
     }
 
     ofstream tempFile("temp.txt");
     if (!tempFile.is_open()) {
-        cout << "Ошибка. Не удалось создать временный файл.\n";
+        cout << "Error. Failed to create temporary file.\n";
         file.close();
         return;
     }
 
+    cout << "Enter the surname of the student you want to delete: ";
     string targetSurname;
-    cout << "Введите фамилию студента, которого хотите удалить: ";
     cin.ignore();
     getline(cin, targetSurname);
 
@@ -275,13 +300,15 @@ void DeleteStudent(string FileName) {
     bool found = false;
 
     while (getline(file, line)) {
-        size_t pos = line.find("Фамилия: ");
-        if (pos != string::npos) {
-            string surname = line.substr(pos + 9, line.find(" ", pos + 9) - (pos + 9));
+        size_t posSurname = line.find("Surname: ");
+        if (posSurname != string::npos) {
+            size_t posGroup = line.find(" Group: ", posSurname);
+            if (posGroup == string::npos) posGroup = line.length();
+            string surname = line.substr(posSurname + 9, posGroup - (posSurname + 9));
 
             if (surname == targetSurname) {
                 found = true;
-                cout << "Студент \"" << surname << "\" успешно удалён.\n";
+                cout << "Student \"" << surname << "\" successfully deleted.\n";
                 continue;
             }
         }
@@ -292,123 +319,135 @@ void DeleteStudent(string FileName) {
     tempFile.close();
 
     if (!found) {
-        cout << "Студент с фамилией \"" << targetSurname << "\" не найден.\n";
-        system("pause");
-        system("cls");
+        cout << "Student with surname \"" << targetSurname << "\" not found.\n";
         remove("temp.txt");
         return;
     }
 
     if (remove(FileName.c_str()) != 0 || rename("temp.txt", FileName.c_str()) != 0) {
-        cout << "Ошибка при обновлении файла.\n";
+        cout << "Error updating the file.\n";
     }
     else {
-        cout << "Данные успешно обновлены.\n";
+        cout << "Data updated successfully.\n";
     }
-    system("pause");
-    system("cls");
 }
 
 void Sort(string FileName) {
     ifstream file(FileName);
 
     if (!file.is_open()) {
-        cout << "Ошибка. Не удалось открыть файл.\n";
-        system("pause");
-        system("cls");
+        cout << "Error. Failed to open file.\n";
         return;
     }
 
     Student students[100];
     int count = 0;
 
-    while (file >> students[count].surname >> students[count].group
-        >> students[count].physics >> students[count].math
-        >> students[count].informatics >> students[count].average) {
-        count++;
+    string line;
+    while (getline(file, line)) {
+        size_t surnamePos = line.find("Surname: ");
+        if (surnamePos != string::npos) {
+            size_t posGroup = line.find(" Group: ", surnamePos);
+            if (posGroup == string::npos) continue;
+            Student student;
+            student.surname = line.substr(surnamePos + 9, posGroup - (surnamePos + 9));
+
+            size_t physicsPos = line.find(" Physics: ", posGroup);
+            if (physicsPos == string::npos) continue;
+            student.group = line.substr(posGroup + 8, physicsPos - (posGroup + 8));
+
+            size_t mathPos = line.find(" Math: ", physicsPos);
+            if (mathPos == string::npos) continue;
+            student.physics = stod(line.substr(physicsPos + 9, mathPos - (physicsPos + 9)));
+
+            size_t informaticsPos = line.find(" Informatics: ", mathPos);
+            if (informaticsPos == string::npos) continue;
+            student.math = stod(line.substr(mathPos + 7, informaticsPos - (mathPos + 7)));
+
+            size_t averagePos = line.find(" Average Grade: ", informaticsPos);
+            if (averagePos == string::npos) continue;
+            student.informatics = stod(line.substr(informaticsPos + 14, averagePos - (informaticsPos + 14)));
+
+            student.average = stod(line.substr(averagePos + 15));
+
+            students[count++] = student;
+        }
     }
 
     file.close();
 
     if (count == 0) {
-        cout << "Файл пуст. Сортировка не требуется.\n";
-        system("pause");
-        system("cls");
+        cout << "The file is empty. Sorting is not required.\n";
         return;
     }
 
-    cout << "Выберите тип сортировки:\n";
-    cout << "1. По фамилии (алфавитный порядок).\n";
-    cout << "2. По среднему баллу (по возрастанию).\n";
-    cout << "Ваш выбор: ";
+    cout << "Choose sorting type:\n";
+    cout << "1. By surname (alphabetical order).\n";
+    cout << "2. By average grade (ascending).\n";
+    cout << "3. By average grade (descending).\n";
+    cout << "Your choice: ";
     int choice;
     cin >> choice;
 
-    if (cin.fail() || (choice != 1 && choice != 2)) {
+    if (cin.fail() || (choice < 1 || choice > 3)) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Некорректный ввод! Сортировка отменена.\n";
-        system("pause");
-        system("cls");
+        cout << "Invalid input! Sorting canceled.\n";
         return;
     }
 
     if (choice == 1) {
-        for (int i = 0; i < count - 1; i++) {
-            for (int j = 0; j < count - i - 1; j++) {
-                if (students[j].surname > students[j + 1].surname) {
-                    swap(students[j], students[j + 1]);
-                }
-            }
-        }
+        sort(students, students + count, [](const Student& a, const Student& b) {
+            return a.surname < b.surname;
+            });
     }
     else if (choice == 2) {
-        for (int i = 0; i < count - 1; i++) {
-            for (int j = 0; j < count - i - 1; j++) {
-                if (students[j].average > students[j + 1].average) {
-                    swap(students[j], students[j + 1]);
-                }
-            }
-        }
+        sort(students, students + count, [](const Student& a, const Student& b) {
+            return a.average < b.average;
+            });
+    }
+    else if (choice == 3) {
+        sort(students, students + count, [](const Student& a, const Student& b) {
+            return a.average > b.average;
+            });
     }
 
     ofstream outFile(FileName);
     if (!outFile.is_open()) {
-        cout << "Ошибка. Не удалось открыть файл для записи.\n";
-        system("pause");
-        system("cls");
+        cout << "Error. Failed to open file for writing.\n";
         return;
     }
 
     for (int i = 0; i < count; i++) {
-        outFile << students[i].surname << " " << students[i].group << " "
-            << students[i].physics << " " << students[i].math << " "
-            << students[i].informatics << " "
-            << fixed << setprecision(2) << students[i].average << endl;
+        outFile << "Surname: " << students[i].surname
+            << " Group: " << students[i].group
+            << " Physics: " << students[i].physics
+            << " Math: " << students[i].math
+            << " Informatics: " << students[i].informatics
+            << " Average Grade: " << fixed << setprecision(2) << students[i].average
+            << endl;
     }
 
     outFile.close();
 
-    cout << "Сортировка выполнена успешно.\n";
-    system("pause");
-    system("cls");
-} 
+    cout << "Sorting completed successfully.\n";
+}
 
 void Exit() {
     exit(1);
 }
 
 void HighBar() {
-    cout << "Список операций: \n";
-    cout << "1. Создать файл.\n";
-    cout << "2. Прочесть содержимое файла.\n";
-    cout << "3. Добавить данные в файл.\n";
-    cout << "4. Поиск среднего балла, выше введённого с клавиатуры, в определённой группе.\n";
-    cout << "5. Редактирование.\n";
-    cout << "6. Удаление данных о студенте.\n";
-    cout << "7. Сортировка. (пока не работает :D)\n";
-    cout << "8. Выход\n\n";
-    cout << "Выберите операцию: ";
+    cout << "List of operations: \n";
+    cout << "1. Create file.\n";
+    cout << "2. Read file contents.\n";
+    cout << "3. Add data to file.\n";
+    cout << "4. Search for average grade higher than the input value in a specific group.\n";
+    cout << "5. Edit data.\n";
+    cout << "6. Delete student data.\n";
+    cout << "7. Sort data.\n";
+    cout << "8. Exit\n\n";
+    cout << "Choose an operation: ";
 }
 
 void menu(string FileName) {
@@ -423,7 +462,7 @@ void menu(string FileName) {
             if (cin.fail()) {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Некорректный ввод! Попробуйте снова.\n";
+                cout << "Invalid input! Please try again.\n";
                 continue;
             }
 
@@ -453,17 +492,18 @@ void menu(string FileName) {
                 Exit();
                 break;
             default:
-                cout << "Неверный выбор! Попробуйте снова.\n";
+                cout << "Invalid choice! Please try again.\n";
                 system("pause");
                 system("cls");
             }
-        } while (choice < 1 || choice > 3);
+        } while (choice < 1 || choice > 8);
         system("pause");
     }
 }
 
 int main() {
     setlocale(LC_ALL, "Russian");
+    system("chcp 1251");
     string FileName = "W:\\test\\student.txt";
     menu(FileName);
     return 0;
