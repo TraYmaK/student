@@ -4,7 +4,7 @@
 
 using namespace std;
 
-double SI(int n, double eps) {
+double SI(int n) {
     double prev = 0.0;
     double result = 1.0 / (1.0 + prev);
 
@@ -12,9 +12,9 @@ double SI(int n, double eps) {
         prev = result;
         result = 1.0 / (1.0 + prev);
 
-        if (fabs(result - prev) < eps) {
+        /*if (fabs(result - prev) < eps) {
             break;
-        }
+        }*/
     }
     return result;
 }
@@ -30,16 +30,14 @@ void wall() {
     cout << "------------------------------------------------------------\n";
 }
 
-int main() {
-    setlocale(LC_ALL, "RU");
-
+void menu() {
     int n;
     double eps;
 
     cout << "Введите максимальное число ступеней n: ";
     cin >> n;
-    cout << "Введите точность (eps): ";
-    cin >> eps;
+    /*cout << "Введите точность (eps): ";
+    cin >> eps;*/
 
     cout << fixed << setprecision(10);
     wall();
@@ -47,7 +45,7 @@ int main() {
     wall();
 
     for (int i = 1; i <= n; ++i) {
-        double IterativeS = SI(i, eps);
+        double IterativeS = SI(i);
         double RecursiveY = YR(i);
         double diff = fabs(IterativeS - RecursiveY);
 
@@ -58,6 +56,12 @@ int main() {
     }
 
     wall();
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    menu();
 
     return 0;
 }
