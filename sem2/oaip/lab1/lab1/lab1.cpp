@@ -1,51 +1,69 @@
 ﻿#include <iostream>
 #include <cmath>
+#include <iomanip>
+
 using namespace std;
 
-double sqrtIterative(double a, int iterations) {
+void wall() {
+    cout << "-----------------------------------------------------------------------\n";
+}
+
+double sqrtIterative(double a, int n) {
     double x = 0.5 * (1.0 + a);
-    for (int i = 0; i < iterations; ++i) {
+    for (int i = 0; i < n; ++i) {
         x = 0.5 * (x + a / x);
     }
     return x;
 }
 
-double sqrtRecursiveHelper(double a, double x, int currentStep, int maxSteps) {
-    if (currentStep >= maxSteps) {
+double sqrtRecursive(double a, int n, double x = -1) {
+    if (x == -1) {
+        x = 0.5 * (1.0 + a);
+    }
+    if (n == 0) {
         return x;
     }
-    double xNext = 0.5 * (x + a / x);
-    return sqrtRecursiveHelper(a, xNext, currentStep + 1, maxSteps);
+    return sqrtRecursive(a, n - 1, 0.5 * (x + a / x));
 }
 
-double sqrtRecursive(double a, int iterations) {
-    double x0 = 0.5 * (1.0 + a);
-    return sqrtRecursiveHelper(a, x0, 0, iterations);
-}
-
-void wall() {
-    cout << "------------------------------------------------------------\n";
-}
 
 int main() {
-    setlocale(LC_ALL, "Russian");
-    wall();
-    cout << "Введите число: ";
+    setlocale(LC_ALL, "RU");
+
     double a;
-    cin >> a;
-    wall();
-    cout << "Введите количество итераций: ";
     int n;
+
+    wall();
+
+    cout << "Введите число a: ";
+    cin >> a;
+
+    wall();
+
+    cout << "Введите количество итераций n: ";
     cin >> n;
-    wall()
-    double xIter = sqrtIterative(a, n);
-    double xRec = sqrtRecursive(a, n);
 
-    cout << "\nИтеративный метод:  " << xIter << endl;
-    cout << "Рекурсивный метод:  " << xRec << endl;
+    cout << fixed << setprecision(10);
 
-    cout << "\nПогрешность (итеративный - sqrt): " << fabs(xIter - xLib) << endl;
-    cout << "Погрешность (рекурсивный - sqrt):  " << fabs(xRec - xLib) << endl;
+    wall();
+    cout << "|     n      |   Iterative sqrt   |   Recursive sqrt   |    |IY-RY|   |\n";
+    wall();
+
+    double xIter = 0.5 * (1.0 + a);
+    double xRec = 0.5 * (1.0 + a);
+
+    for (int i = 0; i < n; ++i) {
+        xIter = 0.5 * (xIter + a / xIter);
+        xRec = sqrtRecursive(a, 1, xRec);
+
+        double diff = fabs(xIter - xRec);
+        cout << "| " << setw(10) << (i + 1)
+            << " | " << setw(18) << xIter
+            << " | " << setw(18) << xRec
+            << " | " << setw(10) << diff << " |\n";
+    }
+
+    wall();
 
     return 0;
 }
