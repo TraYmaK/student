@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FE4AA18-E31D-4A2B-B7D4-2503CFA58022}|lab1\\lab1.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab1\\lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9FE4AA18-E31D-4A2B-B7D4-2503CFA58022}|lab1\\lab1.vcxproj|solutionrelative:lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9F5BE9BF-0B0D-4508-BF38-FC6D48CEA8AF}|lab1\\lab1.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab1\\lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9F5BE9BF-0B0D-4508-BF38-FC6D48CEA8AF}|lab1\\lab1.vcxproj|solutionrelative:lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,9 +28,9 @@
               "RelativeDocumentMoniker": "lab1\\lab1.cpp",
               "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab1\\lab1\\lab1.cpp*",
               "RelativeToolTip": "lab1\\lab1.cpp*",
-              "ViewState": "AgIAACYAAAAAAAAAAAAAwDgAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-14T09:56:00.027Z",
+              "WhenOpened": "2025-02-23T20:29:39.926Z",
               "EditorCaption": ""
             }
           ]

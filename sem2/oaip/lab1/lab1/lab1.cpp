@@ -1,69 +1,60 @@
 ﻿#include <iostream>
-#include <cmath>
 #include <iomanip>
+#include <cmath>
 
 using namespace std;
 
+double SI(int n) {
+    double prev = 0.0;
+    double result = 1.0 / (1.0 + prev);
+
+    for (int i = 2; i <= n; ++i) {
+        prev = result;
+        result = 1.0 / (1.0 + prev);
+    }
+    return result;
+}
+
+double YR(int n) {
+    if (n == 1) {
+        return 1.0;
+    }
+    return 1.0 / (1.0 + YR(n - 1));
+}
+
 void wall() {
-    cout << "-----------------------------------------------------------------------\n";
+    cout << "------------------------------------------------------------\n";
 }
 
-double sqrtIterative(double a, int n) {
-    double x = 0.5 * (1.0 + a);
-    for (int i = 0; i < n; ++i) {
-        x = 0.5 * (x + a / x);
-    }
-    return x;
-}
-
-double sqrtRecursive(double a, int n, double x = -1) {
-    if (x == -1) {
-        x = 0.5 * (1.0 + a);
-    }
-    if (n == 0) {
-        return x;
-    }
-    return sqrtRecursive(a, n - 1, 0.5 * (x + a / x));
-}
-
-
-int main() {
-    setlocale(LC_ALL, "RU");
-
-    double a;
+void menu() {
     int n;
 
-    wall();
-
-    cout << "Введите число a: ";
-    cin >> a;
-
-    wall();
-
-    cout << "Введите количество итераций n: ";
+    cout << "Введите максимальное число ступеней n: ";
     cin >> n;
 
     cout << fixed << setprecision(10);
-
     wall();
-    cout << "|     n      |   Iterative sqrt   |   Recursive sqrt   |    |IY-RY|   |\n";
+    cout << "|    n    | Iterative Y(n) | Recursive Y(n) |    |IY-RY|   |\n";
     wall();
 
-    double xIter = 0.5 * (1.0 + a);
-    double xRec = 0.5 * (1.0 + a);
+    for (int i = 1; i <= n; ++i) {
+        double IterativeS = SI(i);
+        double RecursiveY = YR(i);
+        double diff = fabs(IterativeS - RecursiveY);
 
-    for (int i = 0; i < n; ++i) {
-        xIter = 0.5 * (xIter + a / xIter);
-        xRec = sqrtRecursive(a, 1, xRec);
-
-        double diff = fabs(xIter - xRec);
-        cout << "| " << setw(10) << (i + 1)
-            << " | " << setw(18) << xIter
-            << " | " << setw(18) << xRec
+        cout << "| " << setw(7) << i
+            << " | " << setw(14) << IterativeS
+            << " | " << setw(14) << RecursiveY
             << " | " << setw(10) << diff << " |\n";
     }
 
     wall();
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    menu();
 
     return 0;
 }
