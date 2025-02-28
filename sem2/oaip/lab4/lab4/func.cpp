@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "func.hpp"
 
 using namespace std;
@@ -50,21 +50,21 @@ void pushBack(Node*& head, Node*& end, int value) {
 
 void userPushFace(Node*& head, Node*& end, int value) {
 	wall();
-	cout << "Ââåäèòå ýëåìåíò: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: ";
 	cin >> value;
 	pushFace(head, end, value);
 }
 
 void userPushBack(Node*& head, Node*& end, int value) {
 	wall();
-	cout << "Ââåäèòå ýëåìåíò: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: ";
 	cin >> value;
 	pushBack(head, end, value);
 }
 
 int popFace(Node*& head, Node*& end, int value) {
 	if (head == nullptr) {
-		cout << "Ñòåê ïóñò.\n";
+		cout << "Ð¡Ñ‚ÐµÐº Ð¿ÑƒÑÑ‚.\n";
 		return -1;
 	}
 	int poppedFaceValue = head->data;
@@ -78,13 +78,13 @@ int popFace(Node*& head, Node*& end, int value) {
 	}
 	delete temp;
 	wall();
-	cout << "Èçâëå÷åííûé ýëåìåíò: " << poppedFaceValue << endl;
+	cout << "Ð˜Ð·Ð²Ð»ÐµÑ‡ÐµÐ½Ð½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: " << poppedFaceValue << endl;
 	return poppedFaceValue;
 }
 
 int popBack(Node*& head, Node*& end, int value) {
 	if (end == nullptr) {
-		cout << "Ñòåê ïóñò.\n";
+		cout << "Ð¡Ñ‚ÐµÐº Ð¿ÑƒÑÑ‚.\n";
 		return -1;
 	}
 	int poppedBackValue = end->data;
@@ -98,14 +98,14 @@ int popBack(Node*& head, Node*& end, int value) {
 	}
 	delete temp;
 	wall();
-	cout << "Èçâëå÷åííûé ýëåìåíò: " << poppedBackValue << endl;
+	cout << "Ð˜Ð·Ð²Ð»ÐµÑ‡ÐµÐ½Ð½Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: " << poppedBackValue << endl;
 	return poppedBackValue;
 }
 
 void displayStackFace(Node*& head, Node*& end, int value) {
 	Node* temp = head;
 	wall();
-	cout << "Ñòåê ->: ";
+	cout << "Ð¡Ñ‚ÐµÐº ->: ";
 	while (temp) {
 		cout << temp->data << " ";
 		temp = temp->next;
@@ -116,7 +116,7 @@ void displayStackFace(Node*& head, Node*& end, int value) {
 void displayStackBack(Node*& head, Node*& end, int value) {
 	Node* temp = end;
 	wall();
-	cout << "Ñòåê <-: ";
+	cout << "Ð¡Ñ‚ÐµÐº <-: ";
 	while (temp) {
 		cout << temp->data << " ";
 		temp = temp->prev;
@@ -172,13 +172,13 @@ void averageBackReplace(Node*& end, double& average) {
 
 void menu(Node*& head, Node*& end, int stackSize, int value) {
 	wall();
-	cout << "Ââåäèòå èçíà÷àëüíîå êîë-âî ýëåìåíòîâ ñòåêà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð·Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»-Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² ÑÑ‚ÐµÐºÐ°: ";
 	cin >> stackSize;
 	wall();
 
 	for (int i = 0; i < stackSize; i++) {
 		int value;
-		cout << "Ââåäèòå ýëåìåíò " << i + 1 << ": ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ " << i + 1 << ": ";
 		cin >> value;
 		pushFace(head, end, value);
 		wall();
@@ -189,19 +189,19 @@ void method(Node*& head, Node*& end, double& average, int& choice, int& value, i
 	while (true) {
 		displayStackFace(head, end, value);
 		wall();
-		cout << "Îïåðàöèè: \n";
+		cout << "ÐžÐ¿ÐµÑ€Ð°Ñ†Ð¸Ð¸: \n";
 		wall();
-		cout << "1. Äîáàâèòü ýëåìåíò ñïåðåäè \n";
-		cout << "2. Äîáàâèòü ýëåìåíò ñçàäè \n";
-		cout << "3. Èçâëå÷ü è âûâåñòè ýëåìåíò ñïåðåäè \n";
-		cout << "4. Èçâëå÷ü è âûâåñòè ýëåìåíò ñçàäè \n";
-		cout << "5. Âûâåñòè ñòåê ñïåðåäè \n";
-		cout << "6. Âûâåñòè ñòåê ñçàäè \n";
-		cout << "7. Âû÷èñëèòü ñðåäíåå àðèôìåòè÷åñêîå è çàìåíèòü èì âñå ÷åòíûå ýëåìåíòû ñïåðåäè \n";
-		cout << "8. Âû÷èñëèòü ñðåäíåå àðèôìåòè÷åñêîå è çàìåíèòü èì âñå ÷åòíûå ýëåìåíòû ñçàäè \n";
-		cout << "9. Âûõîä \n";
+		cout << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÐ¿ÐµÑ€ÐµÐ´Ð¸ \n";
+		cout << "2. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÐ·Ð°Ð´Ð¸ \n";
+		cout << "3. Ð˜Ð·Ð²Ð»ÐµÑ‡ÑŒ Ð¸ Ð²Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÐ¿ÐµÑ€ÐµÐ´Ð¸ \n";
+		cout << "4. Ð˜Ð·Ð²Ð»ÐµÑ‡ÑŒ Ð¸ Ð²Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÐ·Ð°Ð´Ð¸ \n";
+		cout << "5. Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÑ‚ÐµÐº ÑÐ¿ÐµÑ€ÐµÐ´Ð¸ \n";
+		cout << "6. Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ ÑÑ‚ÐµÐº ÑÐ·Ð°Ð´Ð¸ \n";
+		cout << "7. Ð’Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÑŒ ÑÑ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð¸ Ð·Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð¸Ð¼ Ð²ÑÐµ Ñ‡ÐµÑ‚Ð½Ñ‹Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÑÐ¿ÐµÑ€ÐµÐ´Ð¸ \n";
+		cout << "8. Ð’Ñ‹Ñ‡Ð¸ÑÐ»Ð¸Ñ‚ÑŒ ÑÑ€ÐµÐ´Ð½ÐµÐµ Ð°Ñ€Ð¸Ñ„Ð¼ÐµÑ‚Ð¸Ñ‡ÐµÑÐºÐ¾Ðµ Ð¸ Ð·Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð¸Ð¼ Ð²ÑÐµ Ñ‡ÐµÑ‚Ð½Ñ‹Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÑÐ·Ð°Ð´Ð¸ \n";
+		cout << "9. Ð’Ñ‹Ñ…Ð¾Ð´ \n";
 		wall();
-		cout << "Âûáåðèòå îïåðàöèþ: ";
+		cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¾Ð¿ÐµÑ€Ð°Ñ†Ð¸ÑŽ: ";
 		cin >> choice;
 		wall();
 		if (choice == 1) {
