@@ -1,10 +1,10 @@
 ## Лабораторная работа №1
-### Автор: Захаренков Иван, гр.421702
+### Автор: Сечейко Николай, гр.421702
 ## Вариант 25. Приоритетная очередь
 
 ## Содержание
 
-- [*Глоссарий*](#глоссарий)
+- [*Термины*](#термины)
 - [*Введение*](#введение)
   - [*Цели*](#цели)
   - [*Задачи*](#постановка-задачи)
@@ -34,31 +34,18 @@
 
 - **Структура (struct)** - пользовательский тип данных, объединяющий несколько связанных элементов данных в одну логическую единицу.
 
-- **Класс (class)** - пользовательский тип данных, объединяющий данные и методы их обработки, обеспечивающий инкапсуляцию и другие принципы ООП.
-
 - **Методы (methods)** - функции, являющиеся членами класса или структуры, имеющие доступ к их внутренним данным.
-
-- **Временная сложность (time complexity)** - оценка количества элементарных операций, необходимых для выполнения алгоритма в зависимости от размера входных данных.
 
 - **Шаблоны (templates)** - механизм в C++, позволяющий создавать обобщённый код, работающий с различными типами данных.
 
 
 ## Введение
 
-### Цели
+### Цели и задачи
 
 - Исследовать свойства структур данных.
 - Разработать удобный инструмент для обработки структур данных.
-
-### Постановка задачи
-
-В ходе лабораторной работы создать header файл, в котором реализовать методы для решения поставленной задачи (варианта).
-
-#### Требования к коду:
-
-- Грамотно именовать элементы кода
-- Не использовать глобальные переменные
-- Присутствие структур(классов) данных, где декларацию делать в .hpp, а реализацию в .cpp
+- Создать файл, в котором реализовать методы для решения поставленной задачи.
 
 ### Вариант
 
@@ -66,178 +53,133 @@
 _Условие_: реализовать структуру данных приоритетной очереди. Реализовать функцию добавления, удаления, просмотра элемента.
 
 ## Алгоритм
-### Возможные реализации алгоритма
-
-#### Реализация 1
-
-<u>Неоптимальная</u> реализация _"в лоб"_. **Суть** заключается в том, чтобы отсортировать массив, после выдавать наибольший (по приоритету) элемент.
-
-**Временная сложность:**
-* Взятия элемента O(1)
-* Добавления элемента O(n)
-* Удаления элемента O(1)
-
-
-#### Реализация 2
 
 Оптимальная и быстрая реализация заключается в использовании кучи. **Суть** заключается в том, чтобы хранить элементы в _"узлах"_ по возрастанию приоритета. Т.е. в вершине лежит элемент с максимальным приоритетом. Пример кучи:
 
-![Пример кучи](Images/Heap%20example.png)
-
-**Временная сложность:**
-* Взятия элемента O(1)
-* Добавления элемента O(log(n))
-* Удаления элемента O(log(n))
+![Пример кучи](images/picture1.png)
 
 ### Реализация алгоритма
-
-В лабораторной работе использовался [оптимальный](#реализация-2) варант. 
 
 ### Построение кучи
 Для построения кучи используется 2 функции:
 ```c++
-void heapify(int i) {
-        int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-
-        if (left < size && heapArray[left] > heapArray[largest])
-            largest = left;
-
-        if (right < size && heapArray[right] > heapArray[largest])
-            largest = right;
-
-        if (largest != i) {
-            std::swap(heapArray[i], heapArray[largest]);
-            heapify(largest);
+int* creatingAnUnorderedHeap(int& n, int& lastSheetParentIndex) {
+    wall();
+    cout << "Введите количество элементов кучи: ";
+    while (true) {
+        cin >> n;
+        if (n > 0) {
+            break;
         }
+        wall();
+        cout << "Количество элементов должно быть положительным. Повторите ввод: ";
+    }
+    wall();
+
+    lastSheetParentIndex = n / 2 - 1;
+
+    int* heap = new int[n];
+
+    for (int i = 0; i < n; i++) {
+        cout << "Введите " << i + 1 << "-ый элемент: ";
+        cin >> heap[i];
+        wall();
+    }
+
+    system("pause");
+    system("cls");
+    return heap;
 }
-void buildHeap() {
-        for (int i = (size - 1) / 2; i >= 0; i--) {
-            heapify(i);
+int* heapBuildBySiftDown(int n, int* heap, int lastSheetParentIndex) {
+    for (int i = lastSheetParentIndex; i >= 0; i--) {
+        int currentIndex = i;
+        while (true) {
+            int leftChildIndex = 2 * currentIndex + 1;
+            int rightChildIndex = 2 * currentIndex + 2;
+            int largestIndex = currentIndex;
+
+            if (leftChildIndex < n && heap[leftChildIndex] > heap[largestIndex]) {
+                largestIndex = leftChildIndex;
+            }
+
+            if (rightChildIndex < n && heap[rightChildIndex] > heap[largestIndex]) {
+                largestIndex = rightChildIndex;
+            }
+
+            if (largestIndex != currentIndex) {
+                swap(heap[currentIndex], heap[largestIndex]);
+                currentIndex = largestIndex;
+            }
+            else {
+                break;
+            }
         }
+    }
+    return heap;
 }
 ```
-Функция `buildHeap` начинает построение кучи с нижних уровней дерева, а функция `heapify` обеспечивает правильный порядок элементов, перемещая элементы с меньшим приоритетом вниз по дереву для соблюдения свойства максимальной кучи.
+Функция `creatingAnUnorderedHeap` запрашивает у пользователя элементы для построения кучи, а функция `heapBuildBySiftDown` создаёт упорядоченность элементов, присущих свойствам кучи, используя метод SiftDown (просеивание вниз).
 
 ### Вставка элементов
 
 В данной библиотеке реализовано несколько вариантов вставки элементов: массив из этих элементов или одиночный элемент. Код:
 ```c++
-void resizeHeap() {
-        if (capacity == 0) capacity = 1;
-        while (capacity <= size) {
-            capacity <<= 1;
-        }
-        heapArray.resize(capacity);
-}
-void insert(const std::vector<T>& arr) {
-        int oldSize = size;
-        size += arr.size();
-        resizeHeap();
-        for (int i = 0; i < arr.size(); ++i)
-            heapArray[oldSize + i] = arr[i];
-        buildHeap();
-}
-void insert(T value) {
-        if (capacity == 0) capacity = size;
-        if (size >= capacity) {
-            resizeHeap();
-        }
-
-        size++;
-        int i = size - 1;
-        heapArray[i] = value;
-
-        while (i != 0 && heapArray[(i - 1) / 2] < heapArray[i]) {
-            std::swap(heapArray[i], heapArray[(i - 1) / 2]);
-            i = (i - 1) / 2;
-        }
+void addToHeap(int*& heap, int& n, int curr) {
+    system("cls");
+    wall();
+    cout << "Введите новый элемент: ";
+    cin >> curr;
+    wall();
+    ofstream tempFile("temp_heap.txt");
+    for (int i = 0; i < n; i++) {
+        tempFile << heap[i] << " ";
     }
+    tempFile << curr;
+    tempFile.close();
+
+    delete[] heap;
+
+    ifstream inputFile("temp_heap.txt");
+    n++;
+    heap = new int[n];
+
+    for (int i = 0; i < n; i++) {
+        inputFile >> heap[i];
+    }
+    inputFile.close();
+
+    int lastSheetParentIndex = n / 2 - 1;
+    heapBuildBySiftDown(n, heap, lastSheetParentIndex);
+
+    remove("temp_heap.txt");
+    system("pause");
+    system("cls");
+
+}
 ```
 
-Функция `resizeHeap` обеспечивает динамическое увеличение размера кучи. Когда количество элементов достигает текущей ёмкости, функция удваивает размер внутреннего массива. Это позволяет эффективно добавлять новые элементы без частого перевыделения памяти.
+Функция `addToHeap` добавляет новый элемент в кучу, запрашивая его значение у пользователя, временно записывая все элементы (старые и новый) во внешний файл, удаляя исходный динамический массив и создавая новый, увеличенный на единицу, затем считывает данные из файла в новый массив и восстанавливает свойства кучи с помощью функции heapBuildBySiftDown, после чего удаляет временный файл и завершает работу.
 
 ### Получение и удаление значения
 
 Используются 2 функции:
 ```c++
-T top() {
-        if (size <= 0)
-            throw std::out_of_range("Empty priority queue");
-
-        return heapArray[0];
-}
-T pop() {
-        if (size <= 0)
-            throw std::out_of_range("PriorityQueue is empty");
-        T root = heapArray[0];
-        heapArray[0] = heapArray[size - 1];
-        size--;
-        heapify(0);
-        return root;
+int searchMax(int*& heap, int& n) {
+    wall();
+    int maximum = heap[0];
+    heap[0] = heap[n - 1];
+    n--;
+    int lastSheetParentIndex = n / 2 - 1;
+    heapBuildBySiftDown(n, heap, lastSheetParentIndex);
+    return maximum;
 }
 ```
 
-Функция `top` просто возвращает значение корневого элемента кучи. Функция `pop` не только возвращает корневой элемент, но и удаляет его, после чего восстанавливает структуру кучи: последний элемент перемещается в корень и "просеивается" вниз, меняясь местами с большим из дочерних элементов, пока не окажется на правильной позиции.
+Функция `searchMax` извлекает максимальный элемент из кучи, используя следующий алгоритм: сначала сохраняет значение максимального элемента (корня кучи), затем заменяет корень последним элементом массива (сокращая размер массива на единицу), восстанавливает свойства кучи путем перестановок через функцию heapBuildBySiftDown и возвращает сохраненный максимальный элемент.
 
-## Пример работы алгоритма
+## Тесты работы алгоритма
 
-Напишем небольшой код для проверки работы кучи:
-```c++
-#include <iostream>
-#include <vector>
-#include "PriorityQueue.hpp"
 
-using namespace std;
-
-int main() {
-
-    PriorityQueue<int> pq;
-    int n; cin >> n;
-    vector<int> arr(n, 0);
-    for (int i = 0; i < n; i++) {
-     cin >> arr[i];
-    }
-
-    pq.insert(arr);
-
-    pq.insert(9);
-    cout << "After inserting 9: " << endl;
-    cout << "Top value: " << pq.top() << endl;
-    cout << "Popped value: " << pq.pop() << endl;
-
-    cout << "Other value: ";
-    while (!pq.empty()) {
-        cout << pq.top() << ' ';
-        pq.pop();
-    }
-
-    return 0;
-}
-```
-Ввод: 
-```
-5
-5 2 1 3 4
-```
-
-Вывод программы:
-```
-After inserting 9:
-Top value: 9
-Popped value: 9
-Other value: 5 4 3 2 1
-```
-
-## Вывод
-
-В результате выполнения работы удалось:
-1. Реализовать приоритетную очередь с методами добавления и изъятия элементов на ЯП С++
-2. Изучить способы работы со структурами, типа деревьев
-3. Попрактиковаться в работе с классами
-
-Все поставленные цели были достигнуты, а задачи выполнены
 
 ## Список литературы
 
