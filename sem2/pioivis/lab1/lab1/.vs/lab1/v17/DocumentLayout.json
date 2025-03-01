@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{67EAF61D-2E93-4930-91B1-44FC9467AF27}|lab1\\lab1.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\heap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{67EAF61D-2E93-4930-91B1-44FC9467AF27}|lab1\\lab1.vcxproj|solutionrelative:lab1\\heap.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67EAF61D-2E93-4930-91B1-44FC9467AF27}|lab1\\lab1.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\heap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{67EAF61D-2E93-4930-91B1-44FC9467AF27}|lab1\\lab1.vcxproj|solutionrelative:lab1\\heap.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67EAF61D-2E93-4930-91B1-44FC9467AF27}|lab1\\lab1.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{67EAF61D-2E93-4930-91B1-44FC9467AF27}|lab1\\lab1.vcxproj|solutionrelative:lab1\\lab1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "lab1.cpp",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\lab1.cpp",
+              "RelativeDocumentMoniker": "lab1\\lab1.cpp",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\lab1.cpp",
+              "RelativeToolTip": "lab1\\lab1.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-20T17:55:52.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "heap.cpp",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\heap.cpp",
+              "RelativeDocumentMoniker": "lab1\\heap.cpp",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\heap.cpp",
+              "RelativeToolTip": "lab1\\heap.cpp",
+              "ViewState": "AgIAAGoAAAAAAQAAAAAhwHAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-21T09:09:25.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "heap.hpp",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\heap.hpp",
+              "RelativeDocumentMoniker": "lab1\\heap.hpp",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab1\\lab1\\lab1\\heap.hpp",
+              "RelativeToolTip": "lab1\\heap.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-21T09:09:39.26Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

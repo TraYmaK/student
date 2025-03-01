@@ -1,0 +1,3 @@
+﻿  lab5_v2.cpp
+C:\Users\Николай\source\repos\student\oaip\lab5_v2\lab5_v2\lab5_v2.cpp(65,19): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  lab5_v2.vcxproj -> C:\Users\Николай\source\repos\student\oaip\lab5_v2\x64\Debug\lab5_v2.exe

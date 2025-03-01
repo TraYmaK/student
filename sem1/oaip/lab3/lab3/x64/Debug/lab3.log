@@ -1,0 +1,5 @@
+﻿  lab3.cpp
+C:\Users\Николай\source\repos\student\oaip\lab3\lab3\lab3.cpp(18,9): warning C4101: counter: неиспользованная локальная переменная
+C:\Users\Николай\source\repos\student\oaip\lab3\lab3\lab3.cpp(17,32): warning C4101: x: неиспользованная локальная переменная
+  LINK : не найден или не выполнена сборка C:\Users\Николай\source\repos\student\oaip\lab3\x64\Debug\lab3.exe при последней инкрементной компоновке; выполняется полная компоновка
+  lab3.vcxproj -> C:\Users\Николай\source\repos\student\oaip\lab3\x64\Debug\lab3.exe
