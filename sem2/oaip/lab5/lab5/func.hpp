@@ -17,4 +17,4 @@ void method(char* expression, char* RVNexpression);
 void takeExpression(char* expression);
 void printExpression(char* expression);
 void printRPNExpression(char* RVNexpression);
-
+void calcRPN(const char* RPNexpression);

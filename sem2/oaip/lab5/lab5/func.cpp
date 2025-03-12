@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cctype>
 #include "func.hpp"
 #define MAX_LEN 100
 
@@ -106,6 +107,47 @@ void printRPNExpression(char* RVNexpression) {
     cout << "Обратная польская запись: " << RVNexpression << endl;
 }
 
+void calcRPN(const char* RPNexpression) {
+    int stack[MAX_LEN];
+    int head = -1;
+
+    for (int i = 0; RPNexpression[i] != '\0'; i++) {
+        char c = RPNexpression[i];
+
+        if (c == ' ' || c == '\t') {
+            continue;
+        }
+
+        if (isdigit(c)) {
+            stack[++head] = c - '0';
+        }
+        else {
+            int b = stack[head--];
+            int a = stack[head--];
+            int result = 0;
+
+            switch (c) {
+            case '+': result = a + b; break;
+            case '-': result = a - b; break;
+            case '*': result = a * b; break;
+            case '/':
+                if (b == 0) {
+                    cout << "Ошибка: деление на ноль." << endl;
+                    break;
+                }
+                result = a / b;
+                break;
+            default:
+                cout << "Неизвестная операция: " << c << endl;
+                break;
+            }
+            stack[++head] = result;
+        }
+    }
+    cout << "Результат вычисления ОПЗ: " << stack[head] << endl;
+}
+
+
 void method(char* expression, char* RPNexpression) {
     while (true) {
         wall();
@@ -115,6 +157,8 @@ void method(char* expression, char* RPNexpression) {
         wall();
         convertation(expression, RPNexpression);
         printRPNExpression(RPNexpression);
+        wall();
+        calcRPN(RPNexpression);
         wall();
         int operation = menu();
         if (operation == 1) {
