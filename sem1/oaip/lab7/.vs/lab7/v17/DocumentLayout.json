@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\oaip\\lab7\\",
+  "WorkspaceRootPath": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem1\\oaip\\lab7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EE07992-1093-45F7-A478-31C4869DFD0B}|lab7\\lab7.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\oaip\\lab7\\lab7\\lab7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6EE07992-1093-45F7-A478-31C4869DFD0B}|lab7\\lab7.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem1\\oaip\\lab7\\lab7\\lab7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6EE07992-1093-45F7-A478-31C4869DFD0B}|lab7\\lab7.vcxproj|solutionrelative:lab7\\lab7.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "lab7.cpp",
-              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\oaip\\lab7\\lab7\\lab7.cpp",
+              "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem1\\oaip\\lab7\\lab7\\lab7.cpp",
               "RelativeDocumentMoniker": "lab7\\lab7.cpp",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\oaip\\lab7\\lab7\\lab7.cpp",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem1\\oaip\\lab7\\lab7\\lab7.cpp",
               "RelativeToolTip": "lab7\\lab7.cpp",
-              "ViewState": "AgIAAAcAAABgMDMzMzMLwC4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-01T16:59:39.443Z",
               "EditorCaption": ""

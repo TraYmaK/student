@@ -1,9 +1,12 @@
 #include <iostream>
-#include <cctype>
+#include <unordered_map>
+#include <sstream>
 #include "func.hpp"
 #define MAX_LEN 100
 
 using namespace std;
+
+char substitutedRPN[MAX_LEN] = {};
 
 int menu() {
     int operation;
@@ -67,7 +70,7 @@ void convertation(const char* expression, char* RVNexpression) {
         if (c == ' ' || c == '\t')
             continue;
 
-        if (isdigit(c)) {
+        if (isalpha(c)) {
             RVNexpression[outIndex++] = c;
         }
         else if (c == '(') {
@@ -77,9 +80,7 @@ void convertation(const char* expression, char* RVNexpression) {
             while (head != nullptr && head->data != '(') {
                 RVNexpression[outIndex++] = pop(head);
             }
-            if (head != nullptr && head->data == '(') {
-                pop(head);
-            }
+            if (head != nullptr) pop(head);
         }
         else if (c == '+' || c == '-' || c == '*' || c == '/') {
             while (head != nullptr && (prioritization(head->data) >= prioritization(c))) {
@@ -91,7 +92,7 @@ void convertation(const char* expression, char* RVNexpression) {
     while (head != nullptr) {
         RVNexpression[outIndex++] = pop(head);
     }
-    RVNexpression[outIndex] = '\0';
+    substitutedRPN[MAX_LEN - 1] = '\0';
 }
 
 void takeExpression(char* expression) {
@@ -108,47 +109,90 @@ void printRPNExpression(char* RVNexpression) {
 }
 
 void calcRPN(const char* RPNexpression) {
-    int stack[MAX_LEN];
+    double stack[MAX_LEN] = { 0 };
     int head = -1;
+
+    stringstream ss(RPNexpression);
+    string token;
+
+    while (ss >> token) {
+        if (isdigit(token[0]) || (token[0] == '-' && token.length() > 1) || token.find('.') != string::npos) {
+            stack[++head] = stod(token);
+        }
+        else {
+            if (head < 1) {
+                cout << "Ошибка: Недостаточно операндов в стеке.\n";
+                return;
+            }
+
+            double b = stack[head--];
+            double a = stack[head--];
+            double result = 0;
+
+            if (token == "+") result = a + b;
+            else if (token == "-") result = a - b;
+            else if (token == "*") result = a * b;
+            else if (token == "/") {
+                if (b == 0) {
+                    cout << "Ошибка: Деление на ноль " << endl;
+                    return;
+                }
+                result = a / b;
+            }
+            else {
+                cout << "Ошибка: Неизвестная операция " << token << endl;
+                return;
+            }
+
+            stack[++head] = result;
+        }
+    }
+
+    if (head != 0) {
+        cout << "Ошибка: Некорректное выражение в ОПЗ.\n";
+        return;
+    }
+
+    cout << "Результат вычисления ОПЗ: " << stack[head] << endl;
+}
+
+void substituteValues(char* RPNexpression, char* substitutedRPN) {
+    unordered_map<char, double> values;
+    char tempExpression[MAX_LEN] = {};
+    int index = 0;
 
     for (int i = 0; RPNexpression[i] != '\0'; i++) {
         char c = RPNexpression[i];
 
-        if (c == ' ' || c == '\t') {
-            continue;
+        if (isalpha(c) && values.find(c) == values.end()) {
+            cout << "Введите значение переменной " << c << ": ";
+            while (!(cin >> values[c])) {
+                cout << "Ошибка: Введите число для " << c << ": ";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
         }
 
-        if (isdigit(c)) {
-            stack[++head] = c - '0';
+        if (isalpha(c)) {
+            double val = values[c];
+            char num[20];   
+            sprintf_s(num, "%.1f", val);
+
+            for (int j = 0; num[j] != '\0'; j++) {
+                tempExpression[index++] = num[j];
+            }
+            tempExpression[index++] = ' ';
         }
         else {
-            int b = stack[head--];
-            int a = stack[head--];
-            int result = 0;
-
-            switch (c) {
-            case '+': result = a + b; break;
-            case '-': result = a - b; break;
-            case '*': result = a * b; break;
-            case '/':
-                if (b == 0) {
-                    cout << "Ошибка: деление на ноль." << endl;
-                    break;
-                }
-                result = a / b;
-                break;
-            default:
-                cout << "Неизвестная операция: " << c << endl;
-                break;
-            }
-            stack[++head] = result;
+            tempExpression[index++] = c;
+            tempExpression[index++] = ' ';
         }
     }
-    cout << "Результат вычисления ОПЗ: " << stack[head] << endl;
+    tempExpression[index] = '\0';
+    strcpy_s(substitutedRPN, MAX_LEN, tempExpression);
 }
 
-
-void method(char* expression, char* RPNexpression) {
+void method(char* expression, char* RPNexpression, char* substitutedRPN) {
     while (true) {
         wall();
         takeExpression(expression);
@@ -158,7 +202,9 @@ void method(char* expression, char* RPNexpression) {
         convertation(expression, RPNexpression);
         printRPNExpression(RPNexpression);
         wall();
-        calcRPN(RPNexpression);
+        substituteValues(RPNexpression, substitutedRPN);
+        wall();
+        calcRPN(substitutedRPN);
         wall();
         int operation = menu();
         if (operation == 1) {

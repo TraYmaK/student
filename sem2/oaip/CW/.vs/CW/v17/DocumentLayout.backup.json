@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{A6561BF6-9535-4CBE-86B7-88C834E99432}|CW\\CW.vcxproj|solutionrelative:CW\\func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A6561BF6-9535-4CBE-86B7-88C834E99432}|CW\\CW.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\CW.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A6561BF6-9535-4CBE-86B7-88C834E99432}|CW\\CW.vcxproj|solutionrelative:CW\\CW.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A6561BF6-9535-4CBE-86B7-88C834E99432}|CW\\CW.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A6561BF6-9535-4CBE-86B7-88C834E99432}|CW\\CW.vcxproj|solutionrelative:CW\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6561BF6-9535-4CBE-86B7-88C834E99432}|CW\\CW.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\CW.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A6561BF6-9535-4CBE-86B7-88C834E99432}|CW\\CW.vcxproj|solutionrelative:CW\\CW.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,16 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CW.cpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\CW.cpp",
               "RelativeDocumentMoniker": "CW\\CW.cpp",
               "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\CW.cpp",
               "RelativeToolTip": "CW\\CW.cpp",
-              "ViewState": "AgIAAAYAAADATDMzMzMUwB8AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAOTMzMzMbwB8AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-13T22:16:51.658Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -44,9 +43,9 @@
               "Title": "func.cpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\func.cpp",
               "RelativeDocumentMoniker": "CW\\func.cpp",
-              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\func.cpp",
-              "RelativeToolTip": "CW\\func.cpp",
-              "ViewState": "AgIAAAYBAAAAZ2ZmZmYkwP8BAAApAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\func.cpp*",
+              "RelativeToolTip": "CW\\func.cpp*",
+              "ViewState": "AgIAAGIBAACAODMzMzMhwH0BAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-13T22:30:34.965Z",
               "IsPinned": true,
@@ -54,17 +53,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "func.hpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\func.hpp",
               "RelativeDocumentMoniker": "CW\\func.hpp",
               "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\CW\\CW\\func.hpp",
               "RelativeToolTip": "CW\\func.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-13T22:30:43.677Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
