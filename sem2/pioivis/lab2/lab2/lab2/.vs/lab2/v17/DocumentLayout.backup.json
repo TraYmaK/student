@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\lab2\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|solutionrelative:lab2\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\lab2\\lab2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|solutionrelative:lab2\\lab2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\lab2\\func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|solutionrelative:lab2\\func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\lab2\\lab2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|solutionrelative:lab2\\lab2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\lab2\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D64B1ABF-00C5-42B2-99D9-C2B387CA1BF9}|lab2\\lab2.vcxproj|solutionrelative:lab2\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "lab2.cpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\lab2\\lab2.cpp",
               "RelativeDocumentMoniker": "lab2\\lab2.cpp",
@@ -49,12 +49,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-14T13:42:53.795Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "func.hpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\pioivis\\lab2\\lab2\\lab2\\lab2\\func.hpp",
               "RelativeDocumentMoniker": "lab2\\func.hpp",
@@ -63,8 +62,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-14T13:43:05.037Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",

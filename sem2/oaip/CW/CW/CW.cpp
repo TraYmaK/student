@@ -25,16 +25,28 @@ int main() {
         cout << "9. Сортировка выбором по дате публикации\n";
         cout << "10. Сортировка вставками по названию компании\n";
         cout << "11. Поиск по признаку\n";
-        cout << "12. Список компаний, опубликованных после введенной даты и имеющие статус 'активна'\n";
-        cout << "13. Посмотреть файл, отсортированный по зарплате\n";
-        cout << "14. Посмотреть файл, отсортированный по дате\n";
-        cout << "15. Посмотреть файл, отсортированный по компании\n";
-        cout << "16. Выход\n";
+        cout << "12. Список вакансий, опубликованных после введенной даты и имеющие статус 'активна'\n";
+        cout << "13. Показать отчет по зарплате\n";
+        cout << "14. Показать отчет по дате публикации\n";
+        cout << "15. Показать отчет по компании\n";
+        cout << "16. Показать логи\n";
+        cout << "17. Выход\n";
         wall();
         cout << "Выберите действие: ";
 
         int choice;
         cin >> choice;
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            wall();
+            clear();
+            wall();
+            cout << "Неверный ввод. Введите число.\n";
+            wall();
+            clear();
+            break;
+        }
 
         wall();
         clear();
@@ -58,34 +70,42 @@ int main() {
             wall();
             clear();
             break;
-        case 4: {
+        case 4:
             wall();
             cout << "Введите ID вакансии для изменения: ";
             int id;
             cin >> id;
-            wall();
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Ошибка: ID должен быть числом.\n";
+                break;
+            }
             updateVacancy(FILE_NAME, id);
-            wall();
             clear();
             break;
-        }
-        case 5: {
+
+        case 5:
             wall();
             cout << "Введите ID вакансии для удаления: ";
-            int id;
             cin >> id;
-            wall();
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                wall();
+                cout << "Ошибка: ID должен быть числом.\n";
+                wall();
+                clear();
+                break;
+            }
             deleteVacancy(FILE_NAME, id);
-            wall();
             clear();
             break;
-        }
         case 6:
             wall();
             linearSearchBySalary(FILE_NAME);
             clear();
             break;
-
         case 7:
             wall();
             binarySearchByTitle(FILE_NAME);
@@ -94,21 +114,20 @@ int main() {
 
         case 8:
             wall();
-            quickSortBySalary(FILE_NAME, "vacancies_sorted_salary.bin");
-            wall();
+            quickSortBySalary(FILE_NAME, "");
             clear();
             break;
 
         case 9:
             wall();
-            selectionSortByDate(FILE_NAME, "vacancies_sorted_date.bin");
+            selectionSortByDate(FILE_NAME, "");
             wall();
             clear();
             break;
 
         case 10:
             wall();
-            insertionSortByCompany(FILE_NAME, "vacancies_sorted_company.bin");
+            insertionSortByCompany(FILE_NAME, "");
             wall();
             clear();
             break;
@@ -121,29 +140,32 @@ int main() {
 
         case 12:
             wall();
-            listActiveCompaniesAfterDate(FILE_NAME);
+            listActiveVacanciesAfterDate(FILE_NAME);
             clear();
             break;
 
         case 13:
             wall();
-            readSortedSalaryFile();
+            printSalaryReport();
             clear();
             break;
 
         case 14:
             wall();
-            readSortedDateFile();
+            printDateReport();
             clear();
             break;
 
         case 15:
             wall();
-            readSortedCompanyFile();
+            printCompanyReport();
             clear();
             break;
-
         case 16:
+            viewLogs();
+            break;
+
+        case 17:
             return 0;
         default:
             wall();
@@ -153,6 +175,5 @@ int main() {
             break;
         }
     }
-
     return 0;
 }

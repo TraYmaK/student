@@ -1,4 +1,5 @@
 ﻿  func.cpp
+C:\Users\Николай\source\repos\student\sem2\oaip\lab5\lab5\func.cpp(64,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
   lab5.cpp
   Создание кода...
   lab5.vcxproj -> C:\Users\Николай\source\repos\student\sem2\oaip\lab5\x64\Debug\lab5.exe

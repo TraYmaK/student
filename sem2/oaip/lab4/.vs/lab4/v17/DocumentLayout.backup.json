@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|solutionrelative:lab4\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|solutionrelative:lab4\\func.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\lab4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|solutionrelative:lab4\\lab4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E91E1BA0-2469-4501-B39C-BF18DDD8DAD6}|lab4\\lab4.vcxproj|solutionrelative:lab4\\func.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "lab4.cpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\lab4.cpp",
               "RelativeDocumentMoniker": "lab4\\lab4.cpp",
@@ -35,7 +35,8 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-27T20:55:01.78Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -43,28 +44,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "func.cpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.cpp",
               "RelativeDocumentMoniker": "lab4\\func.cpp",
               "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.cpp",
               "RelativeToolTip": "lab4\\func.cpp",
-              "ViewState": "AgIAALsAAAAAAAAAAAAAAA4BAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAKwAAAAAKTMzMzMbwLEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-27T20:55:16.928Z"
+              "WhenOpened": "2025-02-27T20:55:16.928Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "func.hpp",
               "DocumentMoniker": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.hpp",
               "RelativeDocumentMoniker": "lab4\\func.hpp",
               "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.hpp",
               "RelativeToolTip": "lab4\\func.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAB7AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-27T20:55:24.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T20:55:24.966Z"
             }
           ]
         }

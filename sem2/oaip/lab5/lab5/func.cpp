@@ -60,6 +60,42 @@ int prioritization(char operation) {
 	return 0;
 }
 
+bool validateExpression(const char* expression) {
+    int len = strlen(expression);
+    bool lastWasOp = true;
+    bool usedVars[256] = { false };
+    int balance = 0;
+
+    for (int i = 0; i < len; ++i) {
+        char c = expression[i];
+
+        if (c == ' ' || c == '\t') continue;
+
+        if (c == '(') {
+            balance++;
+            lastWasOp = true;
+        }
+        else if (c == ')') {
+            balance--;
+            if (balance < 0) return false;
+            lastWasOp = false;
+        }
+        else if (isalpha(c)) {
+            if (!lastWasOp) return false;
+            lastWasOp = false;
+        }
+        else if (c == '+' || c == '-' || c == '*' || c == '/') {
+            if (lastWasOp) return false;
+            lastWasOp = true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    return !lastWasOp && balance == 0;
+}
+
 void convertation(const char* expression, char* RVNexpression) {
     Node* head = nullptr;
     int outIndex = 0;
@@ -199,6 +235,10 @@ void method(char* expression, char* RPNexpression, char* substitutedRPN) {
         wall();
         printExpression(expression);
         wall();
+        if (!validateExpression(expression)) {
+            cout << "Ошибка: Некорректное выражение." << endl;
+            continue;
+        }
         convertation(expression, RPNexpression);
         printRPNExpression(RPNexpression);
         wall();

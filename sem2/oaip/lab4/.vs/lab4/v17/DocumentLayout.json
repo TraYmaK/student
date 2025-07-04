@@ -35,7 +35,8 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-27T20:55:01.78Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -49,7 +50,7 @@
               "RelativeDocumentMoniker": "lab4\\func.cpp",
               "ToolTip": "C:\\Users\\\u041D\u0438\u043A\u043E\u043B\u0430\u0439\\source\\repos\\student\\sem2\\oaip\\lab4\\lab4\\func.cpp",
               "RelativeToolTip": "lab4\\func.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4BAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-27T20:55:16.928Z",
               "EditorCaption": ""
