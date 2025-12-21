@@ -1,0 +1,24 @@
+concept_mobile_development_system
+  => nrel_main_idtf: [мобильная разработка] (* <- lang_ru;; *);
+  => nrel_main_idtf: [mobile development] (* <- lang_en;; *);
+  <- rrel_explored_concept: subject_domain_mobile_development;
+  <= nrel_inclusion: concept_native_development;
+  => nrel_inclusion: concept_crossplatform_development;
+  => nrel_inclusion: concept_hybrid_development;
+  => nrel_definition: [Мобильная разработка — это процесс создания программных приложений для мобильных устройств, таких как смартфоны и планшеты, с использованием специализированных языков и инструментов.]
+    (* <- lang_ru;; *);
+  <- sc_node_class;;
+
+rrel_depends_on
+  => nrel_main_idtf: [метод компонента мобильного приложения'] (* <- lang_ru;; *);
+  => nrel_main_idtf: [mobile application component method'] (* <- lang_en;; *);
+  <- rrel_explored_relation: subject_domain_mobile_development;
+  <= nrel_inclusion: rrel_interaction;
+  => nrel_first_domain: mobile_application_component;
+  => nrel_second_domain: function;
+  => nrel_inclusion: UI_handler;
+  => nrel_inclusion: lifecycle_method;
+  => nrel_inclusion: navigation_method;
+  => nrel_definition: [Метод компонента мобильного приложения — это функция, определённая внутри компонента мобильного приложения, которая принадлежит этому компоненту и реализует его поведение, взаимодействуя с состоянием, интерфейсом или данными.]
+    (* <- lang_ru;; *);
+  <- sc_node_role_relation;;
