@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "Gallery Management System", "index.html", [
-    [ "Лабораторная работа №2: Gallery Management System", "index.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

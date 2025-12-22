@@ -32,6 +32,5 @@ var searchData=
   ['stopdisplay_29',['stopDisplay',['../classDisplayStand.html#aa94c01592c29a2fe4ebd5b5019755065',1,'DisplayStand']]],
   ['stoprecording_30',['stopRecording',['../classSecurityCamera.html#a8e77bb59b17e3a970b04556069b0b601',1,'SecurityCamera']]],
   ['storageexception_31',['StorageException',['../classStorageException.html',1,'StorageException'],['../classStorageException.html#a3e1e0e7b7bf619ec968cd6a607ccaa77',1,'StorageException::StorageException()']]],
-  ['system_32',['Лабораторная работа №2: Gallery Management System',['../index.html',1,'']]],
-  ['systemname_33',['systemName',['../classTicketSystem.html#aaec3555ebaf334371613fb5295c3ef9d',1,'TicketSystem']]]
+  ['systemname_32',['systemName',['../classTicketSystem.html#aaec3555ebaf334371613fb5295c3ef9d',1,'TicketSystem']]]
 ];
