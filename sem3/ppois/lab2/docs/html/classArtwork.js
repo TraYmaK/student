@@ -1,0 +1,19 @@
+var classArtwork =
+[
+    [ "Artwork", "classArtwork.html#a50bc220dcea9871dbb767b2ccf50a601", null ],
+    [ "addSize", "classArtwork.html#a829f5d62e0dd76c0977d46fc06483a00", null ],
+    [ "authenticate", "classArtwork.html#a697d3c4d7b87008e81c4fef432f88081", null ],
+    [ "getArtist", "classArtwork.html#a0b7c017b961cfa8aa94fbec7fb906fdd", null ],
+    [ "getYear", "classArtwork.html#ab69706fee9986e09168eb52e43f34622", null ],
+    [ "isFragile", "classArtwork.html#a65fff7df9949752e848c0000690f38f9", null ],
+    [ "setInsuranceValue", "classArtwork.html#aee058cc63984aa80ec80dbb5bb41ecf8", null ],
+    [ "useSize", "classArtwork.html#a8c4afbee5502dc0753be3f0e0d81fa9d", null ],
+    [ "artist", "classArtwork.html#a137ab59aa0fe8b1355e6f9cfbe7f1bd9", null ],
+    [ "authenticated", "classArtwork.html#a0ff3efd157c5f5f6ffe7723d73321fd4", null ],
+    [ "fragile", "classArtwork.html#a5b180c1877eb02515cbb8cd07eba3a5a", null ],
+    [ "insuranceValue", "classArtwork.html#a5ae0173f3e47909b2c2f8adcdc291424", null ],
+    [ "name", "classArtwork.html#aafe7365e67ad14f584c39a3db81da7fa", null ],
+    [ "size", "classArtwork.html#a9a21ab483ed55fb733693ea1e46b8c9e", null ],
+    [ "value", "classArtwork.html#a857fd088faea2ade071d1d5a7ddded25", null ],
+    [ "year", "classArtwork.html#a9ebb5ad7a39dd0c88b82040d2f33a6da", null ]
+];

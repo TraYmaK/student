@@ -1,4 +1,23 @@
+/**
+ * @file main.cpp
+ * @author James Maxwell
+ * @brief Main entry point for the Gallery management system
+ * @version 0.1
+ * @date 2025-01-15
+ * 
+ * This file contains the main function that demonstrates the gallery system
+ * with various artworks, tools, and exhibitions.
+ */
+
 #include "gallery.hpp"
+
+/**
+ * @brief Main function
+ * 
+ * Creates artworks, tools, exhibitions, and runs the gallery menu system.
+ * 
+ * @return int exit code (0 on success, 1 on error)
+ */
 int main() {
     try {
         Dimension cmUnit("cm", 1.0, true, 1);

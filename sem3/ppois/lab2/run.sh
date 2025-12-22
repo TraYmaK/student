@@ -3,6 +3,9 @@
 cd "$(dirname "$0")"
 
 echo "=== Building project ==="
+if [ ! -d "cmake-build-debug" ]; then
+    mkdir -p cmake-build-debug
+fi
 cd cmake-build-debug
 cmake .. > /dev/null 2>&1 || cmake ..
 BUILD_OUTPUT=$(cmake --build . --target tests lab2 2>&1)
@@ -71,4 +74,3 @@ fi
 echo ""
 echo "=== Running main program ==="
 ./lab2
-

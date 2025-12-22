@@ -1,0 +1,25 @@
+var classClimateControl =
+[
+    [ "ClimateControl", "classClimateControl.html#aa6c71f621ad5ae9fe50062f9a0303199", null ],
+    [ "activateAlarm", "classClimateControl.html#a055116c26a8be9746fb3cbe5213c6609", null ],
+    [ "closeDoor", "classClimateControl.html#ad44ea5ade33085cbf8574351112201b6", null ],
+    [ "getTemperature", "classClimateControl.html#a389da32666263d7b655e8f941c055a40", null ],
+    [ "isAlarmActive", "classClimateControl.html#a7c616550a0dff3ac8d6b083d6dc861cc", null ],
+    [ "isDoorClosed", "classClimateControl.html#a291903c329c33bff106b402d65820a83", null ],
+    [ "isOn", "classClimateControl.html#ac05563b614d785f0d2e8a73dba165f6a", null ],
+    [ "openDoor", "classClimateControl.html#a72a32bd17bf17775e2c5ebda19fc1041", null ],
+    [ "setConditions", "classClimateControl.html#a7c07eb0b1951b20e28e24efcb1b46733", null ],
+    [ "setHumidity", "classClimateControl.html#a1915ce36ff16876b27df2474a438a534", null ],
+    [ "setTimerMinutes", "classClimateControl.html#a3549d82c6fbe3c95293154751c490032", null ],
+    [ "tick", "classClimateControl.html#a1eb63bc523f65df0918bf8b3dc17a1cc", null ],
+    [ "turnOff", "classClimateControl.html#ae9008673e045dfbb61a096a4bdcbbc82", null ],
+    [ "alarmActive", "classClimateControl.html#a597059656af96fd0ee07603c29c7de88", null ],
+    [ "controlTimer", "classClimateControl.html#af5c0bb95e553e855f520af049b6fbd40", null ],
+    [ "doorClosed", "classClimateControl.html#a75efca02329e54aa3682a1005bb1fb17", null ],
+    [ "elapsedSeconds", "classClimateControl.html#a29173c3ee63c5e04edaab4a29253b33e", null ],
+    [ "humidity", "classClimateControl.html#adc0912532199db02cdbd3b0e20da6753", null ],
+    [ "on", "classClimateControl.html#a2841443814ef3668d5c28403f9399bd7", null ],
+    [ "profile", "classClimateControl.html#a65b53479cd48568e2275b94ff5cf9f4a", null ],
+    [ "targetHumidity", "classClimateControl.html#a668fae486bb34fbd87462bfae2ab8f1c", null ],
+    [ "temperature", "classClimateControl.html#a5494fe1d0528d63457f7cb27ed877059", null ]
+];
