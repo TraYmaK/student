@@ -16,22 +16,21 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(tests tests/galleryTests.cpp gallery.cpp)
+add_executable(tests tests/galleryTests.cpp gallery.cpp main.cpp)
 
 target_include_directories(tests PUBLIC ${PROJECT_SOURCE_DIR})
 
-target_link_libraries(tests gtest_main)
+target_compile_definitions(tests PRIVATE TESTING)
 
-# Coverage support
-option(ENABLE_COVERAGE "Enable code coverage reporting" ON)
-if(ENABLE_COVERAGE)
-    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-        message(STATUS "Coverage enabled")
-        target_compile_options(tests PRIVATE --coverage -fprofile-arcs -ftest-coverage)
-        target_link_options(tests PRIVATE --coverage)
-    endif()
-endif()
+target_compile_options(tests PRIVATE -g)
+
+target_link_libraries(tests gtest_main)
 
 include(GoogleTest)
 
-gtest_discover_tests(tests)
+gtest_add_tests(TARGET tests
+    TEST_PREFIX ""
+    TEST_SUFFIX ""
+    EXTRA_ARGS ""
+    WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+)

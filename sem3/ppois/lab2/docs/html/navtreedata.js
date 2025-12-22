@@ -25,14 +25,15 @@
 var NAVTREE =
 [
   [ "Gallery Management System", "index.html", [
+    [ "Лабораторная работа №2: Gallery Management System", "index.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -49,7 +50,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classPermanentExhibition.html"
+"classLighting.html#a1290531d598840370545649a9d5902a9",
+"classVisitor.html#a128f6affa7418537882861226bc28164"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

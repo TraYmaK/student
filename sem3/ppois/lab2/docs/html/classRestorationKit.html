@@ -117,6 +117,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a64413699e6d2184cf2e74be77e113de4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unequip the restoration kit.  <br /></td></tr>
 <tr class="memitem:a042cd0aea01da099f6973786c37b997a" id="r_a042cd0aea01da099f6973786c37b997a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a042cd0aea01da099f6973786c37b997a">restore</a> ()</td></tr>
 <tr class="memdesc:a042cd0aea01da099f6973786c37b997a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start restoration process.  <br /></td></tr>
+<tr class="memitem:afdccef6f26870523778ec8e1898f99db" id="r_afdccef6f26870523778ec8e1898f99db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdccef6f26870523778ec8e1898f99db">isEquipped</a> () const</td></tr>
+<tr class="memdesc:afdccef6f26870523778ec8e1898f99db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if restoration kit is equipped.  <br /></td></tr>
+<tr class="memitem:a266400fc95d9b158e891c22498e27d72" id="r_a266400fc95d9b158e891c22498e27d72"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a266400fc95d9b158e891c22498e27d72">calculateRestorationEfficiency</a> () const</td></tr>
+<tr class="memdesc:a266400fc95d9b158e891c22498e27d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate restoration efficiency.  <br /></td></tr>
+<tr class="memitem:a564e144460de0dd1642ba249d9bd3c6c" id="r_a564e144460de0dd1642ba249d9bd3c6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a564e144460de0dd1642ba249d9bd3c6c">hasRequiredTools</a> (int toolCount) const</td></tr>
+<tr class="memdesc:a564e144460de0dd1642ba249d9bd3c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if kit has required tools.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classGalleryTool"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classGalleryTool')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classGalleryTool.html">GalleryTool</a></td></tr>
 <tr class="memitem:a4be3b56bbe0b1364d4cefe16400e96c5 inherit pub_methods_classGalleryTool" id="r_a4be3b56bbe0b1364d4cefe16400e96c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGalleryTool.html#a4be3b56bbe0b1364d4cefe16400e96c5">GalleryTool</a> (const char *n=&quot;tool&quot;, bool c=true, bool a=true, int d=100)</td></tr>
 <tr class="memdesc:a4be3b56bbe0b1364d4cefe16400e96c5 inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classGalleryTool.html" title="Base class for all gallery tools.">GalleryTool</a> object.  <br /></td></tr>
@@ -128,6 +134,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a74c025dab0b8bd3907f6785be508b4f0 inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Break the tool (set unavailable and zero durability).  <br /></td></tr>
 <tr class="memitem:a0ec154ff5959a70207cd6eac631afd79 inherit pub_methods_classGalleryTool" id="r_a0ec154ff5959a70207cd6eac631afd79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGalleryTool.html#a0ec154ff5959a70207cd6eac631afd79">isAvailable</a> () const</td></tr>
 <tr class="memdesc:a0ec154ff5959a70207cd6eac631afd79 inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if tool is available.  <br /></td></tr>
+<tr class="memitem:ab484369ad7825fbaf7470709c9ce076b inherit pub_methods_classGalleryTool" id="r_ab484369ad7825fbaf7470709c9ce076b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGalleryTool.html#ab484369ad7825fbaf7470709c9ce076b">getName</a> () const</td></tr>
+<tr class="memdesc:ab484369ad7825fbaf7470709c9ce076b inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the tool name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -152,7 +160,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Class for artwork restoration kits. </p>
 <p>Represents restoration equipment with equip/unequip functionality. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00676">676</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00954">954</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a38ce94fb93582ccaffb24f39112ba499" name="a38ce94fb93582ccaffb24f39112ba499"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a38ce94fb93582ccaffb24f39112ba499">&#9670;&#160;</a></span>RestorationKit()</h2>
@@ -182,11 +190,33 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00172">172</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00358">358</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a266400fc95d9b158e891c22498e27d72" name="a266400fc95d9b158e891c22498e27d72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a266400fc95d9b158e891c22498e27d72">&#9670;&#160;</a></span>calculateRestorationEfficiency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RestorationKit::calculateRestorationEfficiency </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate restoration efficiency. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing efficiency percentage </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00387">387</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
 <a id="af18a196bf99e4285024bb44583f775c6" name="af18a196bf99e4285024bb44583f775c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af18a196bf99e4285024bb44583f775c6">&#9670;&#160;</a></span>equip()</h2>
 
@@ -205,7 +235,59 @@ Additional Inherited Members</h2></td></tr>
 <p>Equip the restoration kit. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool indicating if successfully equipped </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00175">175</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00361">361</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a564e144460de0dd1642ba249d9bd3c6c" name="a564e144460de0dd1642ba249d9bd3c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a564e144460de0dd1642ba249d9bd3c6c">&#9670;&#160;</a></span>hasRequiredTools()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RestorationKit::hasRequiredTools </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>toolCount</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if kit has required tools. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toolCount</td><td>integer value containing required tool count </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if has required tools </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00393">393</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afdccef6f26870523778ec8e1898f99db" name="afdccef6f26870523778ec8e1898f99db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdccef6f26870523778ec8e1898f99db">&#9670;&#160;</a></span>isEquipped()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RestorationKit::isEquipped </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if restoration kit is equipped. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if equipped </dd>
+<dd>
+false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00384">384</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +314,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00185">185</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00371">371</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -254,7 +336,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Unequip the restoration kit. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool indicating if successfully unequipped </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00180">180</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00366">366</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +363,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Whether the restoration kit is equipped. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00678">678</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00956">956</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

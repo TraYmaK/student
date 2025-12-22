@@ -4,5 +4,6 @@ var searchData=
   ['insurancevalue_1',['insuranceValue',['../classArtwork.html#a5ae0173f3e47909b2c2f8adcdc291424',1,'Artwork']]],
   ['interactive1_2',['interactive1',['../classInteractiveExhibition.html#ad01c83c1667c0f0c16a0311027d314e8',1,'InteractiveExhibition']]],
   ['interactive2_3',['interactive2',['../classInteractiveExhibition.html#a37e73a02b6722fd22de627a24f685048',1,'InteractiveExhibition']]],
-  ['inuse_4',['inUse',['../classDisplayStand.html#abef1bbb1700cf7bb5c39bbdd7506675a',1,'DisplayStand']]]
+  ['inuse_4',['inUse',['../classDisplayStand.html#abef1bbb1700cf7bb5c39bbdd7506675a',1,'DisplayStand']]],
+  ['isactive_5',['isActive',['../classTicketSystem.html#ad4a511de49960a1ee7fd8202da48bc6e',1,'TicketSystem']]]
 ];

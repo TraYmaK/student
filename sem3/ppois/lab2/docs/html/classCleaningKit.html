@@ -113,6 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae5abb13fc2d6a9817360826bd723c550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCleaningKit.html" title="Class for cleaning kits.">CleaningKit</a> object.  <br /></td></tr>
 <tr class="memitem:aaecddd16a8f75ac9f96c323b60f549bc" id="r_aaecddd16a8f75ac9f96c323b60f549bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaecddd16a8f75ac9f96c323b60f549bc">clean</a> ()</td></tr>
 <tr class="memdesc:aaecddd16a8f75ac9f96c323b60f549bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the cleaning kit.  <br /></td></tr>
+<tr class="memitem:ab653812831274c3e69ed040d7ea54579" id="r_ab653812831274c3e69ed040d7ea54579"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab653812831274c3e69ed040d7ea54579">getId</a> () const</td></tr>
+<tr class="memdesc:ab653812831274c3e69ed040d7ea54579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cleaning kit identifier.  <br /></td></tr>
 <tr class="inherit_header pub_methods_classGalleryTool"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classGalleryTool')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classGalleryTool.html">GalleryTool</a></td></tr>
 <tr class="memitem:a4be3b56bbe0b1364d4cefe16400e96c5 inherit pub_methods_classGalleryTool" id="r_a4be3b56bbe0b1364d4cefe16400e96c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGalleryTool.html#a4be3b56bbe0b1364d4cefe16400e96c5">GalleryTool</a> (const char *n=&quot;tool&quot;, bool c=true, bool a=true, int d=100)</td></tr>
 <tr class="memdesc:a4be3b56bbe0b1364d4cefe16400e96c5 inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classGalleryTool.html" title="Base class for all gallery tools.">GalleryTool</a> object.  <br /></td></tr>
@@ -124,6 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a74c025dab0b8bd3907f6785be508b4f0 inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Break the tool (set unavailable and zero durability).  <br /></td></tr>
 <tr class="memitem:a0ec154ff5959a70207cd6eac631afd79 inherit pub_methods_classGalleryTool" id="r_a0ec154ff5959a70207cd6eac631afd79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGalleryTool.html#a0ec154ff5959a70207cd6eac631afd79">isAvailable</a> () const</td></tr>
 <tr class="memdesc:a0ec154ff5959a70207cd6eac631afd79 inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if tool is available.  <br /></td></tr>
+<tr class="memitem:ab484369ad7825fbaf7470709c9ce076b inherit pub_methods_classGalleryTool" id="r_ab484369ad7825fbaf7470709c9ce076b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGalleryTool.html#ab484369ad7825fbaf7470709c9ce076b">getName</a> () const</td></tr>
+<tr class="memdesc:ab484369ad7825fbaf7470709c9ce076b inherit pub_methods_classGalleryTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the tool name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -148,7 +152,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Class for cleaning kits. </p>
 <p>Represents cleaning equipment for artwork maintenance. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00718">718</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01019">1019</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae5abb13fc2d6a9817360826bd723c550" name="ae5abb13fc2d6a9817360826bd723c550"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5abb13fc2d6a9817360826bd723c550">&#9670;&#160;</a></span>CleaningKit()</h2>
@@ -178,7 +182,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00198">198</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00396">396</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +210,29 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00201">201</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00399">399</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab653812831274c3e69ed040d7ea54579" name="ab653812831274c3e69ed040d7ea54579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab653812831274c3e69ed040d7ea54579">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CleaningKit::getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the cleaning kit identifier. </p>
+<dl class="section return"><dt>Returns</dt><dd>int containing kit identifier </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00406">406</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -233,7 +259,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Unique identifier for the cleaning kit. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00720">720</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01021">1021</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

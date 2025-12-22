@@ -247,6 +247,31 @@ public:
      * @return false if dimension is not standard
      */
     bool isStandard() const;
+
+    /**
+     * @brief Convert centimeters to dimension units
+     * 
+     * @param cm double value containing centimeters to convert
+     * @return double containing converted value in dimension units
+     */
+    double fromCentimeters(double cm) const;
+
+    /**
+     * @brief Convert to another dimension unit
+     * 
+     * @param amount double value containing amount to convert
+     * @param targetDimension pointer to target Dimension object
+     * @return double containing converted value
+     */
+    double convertTo(double amount, Dimension* targetDimension) const;
+
+    /**
+     * @brief Validate dimension conversion
+     * 
+     * @param amount double value containing amount to validate
+     * @return bool indicating if conversion is valid
+     */
+    bool validateConversion(double amount) const;
 };
 
 /**
@@ -296,6 +321,37 @@ public:
      * @return false if size is greater than zero
      */
     bool isZero() const;
+
+    /**
+     * @brief Get the size value
+     * 
+     * @return double containing size value
+     */
+    double getValue() const;
+
+    /**
+     * @brief Check if size is approximate
+     * 
+     * @return true if size is approximate
+     * @return false otherwise
+     */
+    bool isApproximate() const;
+
+    /**
+     * @brief Convert size to different dimension
+     * 
+     * @param targetDimension pointer to target Dimension object
+     * @return double containing converted size value
+     */
+    double convertToDimension(Dimension* targetDimension) const;
+
+    /**
+     * @brief Calculate size difference
+     * 
+     * @param otherSize constant reference to other Size object
+     * @return double containing size difference in centimeters
+     */
+    double calculateDifference(const Size& otherSize) const;
 };
 
 /**
@@ -376,6 +432,65 @@ public:
      * @return const char* containing artist name
      */
     const char* getArtist() const;
+
+    /**
+     * @brief Get the artwork name
+     * 
+     * @return const char* containing artwork name
+     */
+    const char* getName() const;
+
+    /**
+     * @brief Get the artwork value
+     * 
+     * @return double containing artwork value
+     */
+    double getValue() const;
+
+    /**
+     * @brief Check if artwork is authenticated
+     * 
+     * @return true if artwork is authenticated
+     * @return false otherwise
+     */
+    bool isAuthenticated() const;
+
+    /**
+     * @brief Calculate maintenance cost for artwork
+     * 
+     * @return double containing maintenance cost
+     */
+    double calculateMaintenanceCost() const;
+
+    /**
+     * @brief Check if artwork is available for display
+     * 
+     * @return bool indicating if artwork is available
+     */
+    bool isAvailableForDisplay() const;
+
+    /**
+     * @brief Calculate depreciation value
+     * 
+     * @param currentYear integer value containing current year
+     * @return double containing depreciation value
+     */
+    double calculateDepreciation(int currentYear) const;
+
+    /**
+     * @brief Check if artwork needs inspection
+     * 
+     * @return bool indicating if inspection is needed
+     */
+    bool needsInspection() const;
+
+    /**
+     * @brief Calculate restoration cost estimate
+     * 
+     * @param damageLevel double value containing damage level
+     * @return double containing restoration cost in currency units
+     */
+    double calculateRestorationCost(double damageLevel) const;
 };
 
 /**
@@ -431,6 +546,13 @@ public:
      * @return false otherwise
      */
     bool isAvailable() const;
+
+    /**
+     * @brief Get the tool name
+     * 
+     * @return const char* containing tool name
+     */
+    const char* getName() const;
 };
 
 /**
@@ -476,6 +598,35 @@ public:
      * @return false otherwise
      */
     bool canProtect() const;
+
+    /**
+     * @brief Get the frame width
+     * 
+     * @return int containing frame width
+     */
+    int getWidth() const;
+
+    /**
+     * @brief Calculate frame comfort score
+     * 
+     * @return double containing comfort score (0-10)
+     */
+    double calculateComfortScore() const;
+
+    /**
+     * @brief Check if frame is suitable for artwork
+     * 
+     * @param artworkWeight double value containing artwork weight
+     * @return bool indicating if frame is suitable
+     */
+    bool isSuitableForArtwork(double artworkWeight) const;
+
+    /**
+     * @brief Adjust frame position
+     * 
+     * @param position integer value containing position angle
+     */
+    void adjustPosition(int position);
 };
 
 /**
@@ -522,6 +673,35 @@ public:
      * @return false otherwise
      */
     bool isSafeForArtwork() const;
+
+    /**
+     * @brief Check if lighting uses LED technology
+     * 
+     * @return true if LED
+     * @return false otherwise
+     */
+    bool isLED() const;
+
+    /**
+     * @brief Calculate power consumption
+     * 
+     * @return double containing power consumption in watts
+     */
+    double calculatePowerConsumption() const;
+
+    /**
+     * @brief Set brightness level
+     * 
+     * @param level integer value containing brightness level (0-100)
+     */
+    void setBrightness(int level);
+
+    /**
+     * @brief Check if lighting meets safety standards
+     * 
+     * @return bool indicating if meets standards
+     */
+    bool meetsSafetyStandards() const;
 };
 
 /**
@@ -569,6 +749,36 @@ public:
      * @return false otherwise
      */
     bool isRecording() const;
+
+    /**
+     * @brief Get the camera viewing angle
+     * 
+     * @return double containing viewing angle in degrees
+     */
+    double getAngle() const;
+
+    /**
+     * @brief Adjust camera angle
+     * 
+     * @param newAngle double value containing new angle in degrees
+     */
+    void adjustAngle(double newAngle);
+
+    /**
+     * @brief Calculate coverage area
+     * 
+     * @param distance double value containing distance in meters
+     * @return double containing coverage area in square meters
+     */
+    double calculateCoverageArea(double distance) const;
+
+    /**
+     * @brief Check if camera can monitor area
+     * 
+     * @param areaSize double value containing area size in square meters
+     * @return bool indicating if area can be monitored
+     */
+    bool canMonitorArea(double areaSize) const;
 };
 
 /**
@@ -617,6 +827,37 @@ public:
      * @return false otherwise
      */
     bool canDisplay(double sqMeters) const;
+
+    /**
+     * @brief Check if stand has cover
+     * 
+     * @return true if stand has cover
+     * @return false otherwise
+     */
+    bool checkHasCover() const;
+
+    /**
+     * @brief Calculate display time estimate
+     * 
+     * @param visitorCount integer value containing number of visitors
+     * @return double containing estimated time in minutes
+     */
+    double calculateDisplayTime(int visitorCount) const;
+
+    /**
+     * @brief Check if stand can handle visitor load
+     * 
+     * @param visitorCount integer value containing number of visitors
+     * @return bool indicating if stand can handle load
+     */
+    bool canHandleVisitorLoad(int visitorCount) const;
+
+    /**
+     * @brief Calculate stand utilization percentage
+     * 
+     * @return double containing utilization percentage
+     */
+    double calculateUtilization() const;
 };
 
 /**
@@ -665,6 +906,43 @@ public:
      * @return false otherwise
      */
     bool isFinished() const;
+
+    /**
+     * @brief Get elapsed seconds
+     * 
+     * @return int containing elapsed seconds
+     */
+    int getElapsed() const;
+
+    /**
+     * @brief Check if timer is running
+     * 
+     * @return true if timer is running
+     * @return false otherwise
+     */
+    bool isRunning() const;
+
+    /**
+     * @brief Calculate remaining time
+     * 
+     * @return int containing remaining seconds
+     */
+    int calculateRemainingTime() const;
+
+    /**
+     * @brief Reset timer to zero
+     */
+    void reset();
+
+    /**
+     * @brief Pause the timer
+     */
+    void pause();
+
+    /**
+     * @brief Resume paused timer
+     */
+    void resume();
 };
 
 /**
@@ -707,6 +985,29 @@ public:
      * @throws ToolNotAvailableException if kit is not available or not equipped
      */
     void restore();
+
+    /**
+     * @brief Check if restoration kit is equipped
+     * 
+     * @return true if equipped
+     * @return false otherwise
+     */
+    bool isEquipped() const;
+
+    /**
+     * @brief Calculate restoration efficiency
+     * 
+     * @return double containing efficiency percentage
+     */
+    double calculateRestorationEfficiency() const;
+
+    /**
+     * @brief Check if kit has required tools
+     * 
+     * @param toolCount integer value containing required tool count
+     * @return bool indicating if has required tools
+     */
+    bool hasRequiredTools(int toolCount) const;
 };
 
 /**
@@ -735,6 +1036,13 @@ public:
      * @throws ToolNotAvailableException if kit is not available
      */
     void clean();
+
+    /**
+     * @brief Get the cleaning kit identifier
+     * 
+     * @return int containing kit identifier
+     */
+    int getId() const;
 };
 
 /**
@@ -787,6 +1095,35 @@ public:
      * @param d integer value containing duration in seconds
      */
     void reset(double s, double t, int d);
+
+    /**
+     * @brief Get the duration of the profile
+     * 
+     * @return int containing duration in seconds
+     */
+    int getDuration() const;
+
+    /**
+     * @brief Calculate temperature change rate
+     * 
+     * @return double containing change rate per second
+     */
+    double calculateTemperatureChangeRate() const;
+
+    /**
+     * @brief Check if profile is valid
+     * 
+     * @return bool indicating if profile is valid
+     */
+    bool isValidProfile() const;
+
+    /**
+     * @brief Get estimated completion time
+     * 
+     * @param currentElapsed integer value containing current elapsed seconds
+     * @return int containing remaining seconds
+     */
+    int getEstimatedCompletionTime(int currentElapsed) const;
 };
 
 /**
@@ -898,6 +1235,49 @@ public:
      * @return false otherwise
      */
     bool isAlarmActive() const;
+
+    /**
+     * @brief Get the current humidity level
+     * 
+     * @return double containing humidity level
+     */
+    double getHumidity() const;
+
+    /**
+     * @brief Get the target humidity level
+     * 
+     * @return double containing target humidity level
+     */
+    double getTargetHumidity() const;
+
+    /**
+     * @brief Calculate energy consumption
+     * 
+     * @return double containing energy consumption in kWh
+     */
+    double calculateEnergyConsumption() const;
+
+    /**
+     * @brief Check if climate is optimal for artworks
+     * 
+     * @return bool indicating if climate is optimal
+     */
+    bool isOptimalClimate() const;
+
+    /**
+     * @brief Adjust temperature gradually
+     * 
+     * @param targetTemp double value containing target temperature
+     * @param duration int value containing duration in minutes
+     */
+    void adjustTemperatureGradually(double targetTemp, int duration);
+
+    /**
+     * @brief Calculate maintenance schedule
+     * 
+     * @return int containing days until next maintenance
+     */
+    int calculateMaintenanceSchedule() const;
 };
 
 /**
@@ -940,6 +1320,38 @@ public:
      * @return int containing number of free zones
      */
     int freeZones() const;
+
+    /**
+     * @brief Check if security system is on
+     * 
+     * @return true if system is on
+     * @return false otherwise
+     */
+    bool isOn() const;
+
+    /**
+     * @brief Activate all security zones
+     */
+    void activateAllZones();
+
+    /**
+     * @brief Deactivate all security zones
+     */
+    void deactivateAllZones();
+
+    /**
+     * @brief Check security breach status
+     * 
+     * @return bool indicating if breach detected
+     */
+    bool checkSecurityBreach() const;
+
+    /**
+     * @brief Calculate security coverage percentage
+     * 
+     * @return double containing coverage percentage
+     */
+    double calculateSecurityCoverage() const;
 };
 
 class Curator;
@@ -980,6 +1392,34 @@ public:
     const char* getName() const {
         return name;
     }
+
+    /**
+     * @brief Check if exhibition is fully booked
+     * 
+     * @return bool indicating if exhibition is fully booked
+     */
+    virtual bool isFullyBooked() const;
+
+    /**
+     * @brief Calculate exhibition duration in hours
+     * 
+     * @return double containing exhibition duration
+     */
+    virtual double calculateExhibitionDuration() const;
+
+    /**
+     * @brief Check if exhibition is on time
+     * 
+     * @return bool indicating if exhibition is on time
+     */
+    virtual bool isOnTime() const;
+
+    /**
+     * @brief Get available seats count
+     * 
+     * @return int containing available seats
+     */
+    virtual int getAvailableSeats() const;
 };
 
 /**
@@ -2049,6 +2489,79 @@ public:
      * @return int containing access level
      */
     int getAccessLevel() const;
+
+    /**
+     * @brief Get the visitor name
+     * 
+     * @return const char* containing visitor name
+     */
+    const char* getName() const;
+
+    /**
+     * @brief Get the visit duration
+     * 
+     * @return double containing visit duration in minutes
+     */
+    double getVisitDuration() const;
+
+    /**
+     * @brief Calculate total baggage weight
+     * 
+     * @param checkedWeight double value containing checked baggage weight
+     * @param carryOnWeight double value containing carry-on weight
+     * @return double containing total weight
+     */
+    double calculateTotalBaggageWeight(double checkedWeight, double carryOnWeight) const;
+
+    /**
+     * @brief Check if visitor has valid visa
+     * 
+     * @param destinationCountry constant pointer to destination country
+     * @return bool indicating if visa is valid
+     */
+    bool hasValidVisa(const char* destinationCountry) const;
+
+    /**
+     * @brief Calculate ticket discount based on loyalty status
+     * 
+     * @param basePrice double value containing base ticket price
+     * @return double containing discounted price
+     */
+    double calculateLoyaltyDiscount(double basePrice) const;
+
+    /**
+     * @brief Request special meal
+     * 
+     * @param mealType constant pointer to meal type
+     * @return bool indicating if request was successful
+     */
+    bool requestSpecialMeal(const char* mealType);
+
+    /**
+     * @brief Check in for exhibition
+     * 
+     * @param exhibitionNumber constant pointer to exhibition number
+     * @return bool indicating if check-in was successful
+     */
+    bool checkInForExhibition(const char* exhibitionNumber);
+
+    /**
+     * @brief Cancel exhibition reservation
+     * 
+     * @param reservationId integer value containing reservation ID
+     * @return bool indicating if cancellation was successful
+     */
+    bool cancelReservation(int reservationId);
+
+    /**
+     * @brief Calculate total travel cost
+     * 
+     * @param ticketPrice double value containing ticket price
+     * @param baggageFee double value containing baggage fee
+     * @param mealFee double value containing meal fee
+     * @return double containing total cost
+     */
+    double calculateTotalTravelCost(double ticketPrice, double baggageFee, double mealFee) const;
 };
 
 /**
@@ -2093,4 +2606,189 @@ public:
      * @brief Run the menu system
      */
     void run();
+
+    /**
+     * @brief Get the number of exhibitions in the menu
+     * 
+     * @return int containing number of exhibitions
+     */
+    int getExhibitionCount() const;
+
+    /**
+     * @brief Get the current visitor
+     * 
+     * @return Visitor* pointer to current visitor or nullptr
+     */
+    Visitor* getCurrentVisitor() const;
+
+    /**
+     * @brief Search exhibitions by name
+     * 
+     * @param searchTerm constant pointer to search term
+     * @return int containing number of matching exhibitions
+     */
+    int searchExhibitions(const char* searchTerm) const;
+
+    /**
+     * @brief Filter exhibitions by availability
+     * 
+     * @return int containing number of available exhibitions
+     */
+    int filterAvailableExhibitions() const;
+
+    /**
+     * @brief Sort exhibitions by name
+     */
+    void sortExhibitionsByName();
+
+    /**
+     * @brief Get exhibition by index
+     * 
+     * @param index integer value containing exhibition index
+     * @return Exhibition* pointer to exhibition or nullptr
+     */
+    Exhibition* getExhibitionByIndex(int index) const;
+};
+
+/**
+ * @class TicketSystem
+ * @brief Class for managing gallery ticket bookings and reservations
+ * 
+ * Handles booking operations, payment processing, and reservation management.
+ */
+class TicketSystem {
+private:
+    const char* systemName;        ///< Name of the ticket system
+    int totalBookings;            ///< Total number of bookings
+    double totalRevenue;          ///< Total revenue from bookings
+    bool isActive;                ///< Whether the system is active
+    int maxBookings;              ///< Maximum number of bookings allowed
+    Visitor* currentBookingVisitor;  ///< Current visitor making booking
+    Exhibition* currentBookingExhibition;       ///< Current exhibition being booked
+
+public:
+    /**
+     * @brief Construct a new TicketSystem object
+     * 
+     * @param name constant pointer to system name
+     * @param max integer value containing maximum bookings
+     */
+    TicketSystem(const char* name = "TicketSystem", int max = 1000);
+
+    /**
+     * @brief Create a new booking
+     * 
+     * @param visitor pointer to Visitor object
+     * @param exhibition pointer to Exhibition object
+     * @return bool indicating if booking was successful
+     */
+    bool createBooking(Visitor* visitor, Exhibition* exhibition);
+
+    /**
+     * @brief Cancel an existing booking
+     * 
+     * @param bookingId integer value containing booking ID
+     * @return bool indicating if cancellation was successful
+     */
+    bool cancelBooking(int bookingId);
+
+    /**
+     * @brief Calculate ticket price for an exhibition
+     * 
+     * @param exhibition pointer to Exhibition object
+     * @param visitor pointer to Visitor object
+     * @return double containing calculated price
+     */
+    double calculateTicketPrice(Exhibition* exhibition, Visitor* visitor);
+
+    /**
+     * @brief Process payment for booking
+     * 
+     * @param amount double value containing payment amount
+     * @param cardNumber constant pointer to card number
+     * @return bool indicating if payment was successful
+     */
+    bool processPayment(double amount, const char* cardNumber);
+
+    /**
+     * @brief Transfer money from one card to another
+     * 
+     * @param fromCard constant pointer to source card number
+     * @param toCard constant pointer to destination card number
+     * @param amount double value containing amount to transfer
+     * @return bool indicating if transfer was successful
+     */
+    bool transferMoney(const char* fromCard, const char* toCard, double amount);
+
+    /**
+     * @brief Verify password for account
+     * 
+     * @param accountId constant pointer to account ID
+     * @param password constant pointer to password
+     * @return bool indicating if password is correct
+     */
+    bool verifyPassword(const char* accountId, const char* password);
+
+    /**
+     * @brief Check if exhibition is available for booking
+     * 
+     * @param exhibition pointer to Exhibition object
+     * @return bool indicating if exhibition is available
+     */
+    bool checkExhibitionAvailability(Exhibition* exhibition);
+
+    /**
+     * @brief Reserve a seat for visitor
+     * 
+     * @param visitor pointer to Visitor object
+     * @param seatNumber integer value containing seat number
+     * @return bool indicating if reservation was successful
+     */
+    bool reserveSeat(Visitor* visitor, int seatNumber);
+
+    /**
+     * @brief Cancel seat reservation
+     * 
+     * @param seatNumber integer value containing seat number
+     * @return bool indicating if cancellation was successful
+     */
+    bool cancelSeatReservation(int seatNumber);
+
+    /**
+     * @brief Calculate baggage fee
+     * 
+     * @param weight double value containing baggage weight in kg
+     * @return double containing calculated fee
+     */
+    double calculateBaggageFee(double weight);
+
+    /**
+     * @brief Check visa requirements for international exhibition
+     * 
+     * @param visitor pointer to Visitor object
+     * @param exhibition pointer to Exhibition object
+     * @return bool indicating if visa is required
+     */
+    bool checkVisaRequirement(Visitor* visitor, Exhibition* exhibition);
+
+    /**
+     * @brief Get total revenue
+     * 
+     * @return double containing total revenue
+     */
+    double getTotalRevenue() const;
+
+    /**
+     * @brief Get total bookings count
+     * 
+     * @return int containing total bookings
+     */
+    int getTotalBookings() const;
+
+    /**
+     * @brief Check if system is active
+     * 
+     * @return bool indicating if system is active
+     */
+    bool isSystemActive() const;
 };

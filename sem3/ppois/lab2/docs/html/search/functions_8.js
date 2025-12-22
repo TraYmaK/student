@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['joinguidedtour_0',['joinGuidedTour',['../classVisitor.html#a47f06207125e2e210d2c2a0809363458',1,'Visitor']]]
+  ['insufficientspaceexception_0',['InsufficientSpaceException',['../classInsufficientSpaceException.html#abd4d008bf60b2eac5192936587e667df',1,'InsufficientSpaceException']]],
+  ['interactiveexhibition_1',['InteractiveExhibition',['../classInteractiveExhibition.html#a4b0742e69ee9c5425fc6ac814c4e7d6e',1,'InteractiveExhibition']]],
+  ['invalidaccessexception_2',['InvalidAccessException',['../classInvalidAccessException.html#a69c3d955f266a13d1e2213c874e30518',1,'InvalidAccessException']]],
+  ['invalidconditionexception_3',['InvalidConditionException',['../classInvalidConditionException.html#a6a560d347d1f56b82ff38d118d34200b',1,'InvalidConditionException']]],
+  ['isalarmactive_4',['isAlarmActive',['../classClimateControl.html#a7c616550a0dff3ac8d6b083d6dc861cc',1,'ClimateControl']]],
+  ['isapproximate_5',['isApproximate',['../classSize.html#a09b739973acaceab237501f53cecc4a6',1,'Size']]],
+  ['isauthenticated_6',['isAuthenticated',['../classArtwork.html#a1a9c4fce9877ccc7aa8f4f9d334e51a9',1,'Artwork']]],
+  ['isavailable_7',['isAvailable',['../classGalleryTool.html#a0ec154ff5959a70207cd6eac631afd79',1,'GalleryTool']]],
+  ['isavailablefordisplay_8',['isAvailableForDisplay',['../classArtwork.html#ab4f347d9f164bb94223b5970ab0ce03a',1,'Artwork']]],
+  ['isdoorclosed_9',['isDoorClosed',['../classClimateControl.html#a291903c329c33bff106b402d65820a83',1,'ClimateControl']]],
+  ['isequipped_10',['isEquipped',['../classRestorationKit.html#afdccef6f26870523778ec8e1898f99db',1,'RestorationKit']]],
+  ['isfinished_11',['isFinished',['../classTimer.html#aa782187efa7fb2d24f73b2679afff000',1,'Timer']]],
+  ['isfragile_12',['isFragile',['../classArtwork.html#a65fff7df9949752e848c0000690f38f9',1,'Artwork']]],
+  ['isfullybooked_13',['isFullyBooked',['../classExhibition.html#a04f4dafdfa92b1312acf099a9c394684',1,'Exhibition']]],
+  ['isled_14',['isLED',['../classLighting.html#ad1ccd7a1ac17b47da20a733a558a788a',1,'Lighting']]],
+  ['ismetric_15',['isMetric',['../classDimension.html#a48e1c14caacd2221fb0793341cb3b323',1,'Dimension']]],
+  ['ison_16',['isOn',['../classClimateControl.html#ac05563b614d785f0d2e8a73dba165f6a',1,'ClimateControl::isOn()'],['../classSecuritySystem.html#aa4d1aa72ea38a8ddc10967c206a80149',1,'SecuritySystem::isOn()']]],
+  ['isontime_17',['isOnTime',['../classExhibition.html#a9b65c8c7d4af4cacae09df531f49f905',1,'Exhibition']]],
+  ['isoptimalclimate_18',['isOptimalClimate',['../classClimateControl.html#adbe2fb04b2030efb26e24ca7113d71f1',1,'ClimateControl']]],
+  ['isreached_19',['isReached',['../classConditionProfile.html#ac9eac124afc34e9422a0da397f6c6a1a',1,'ConditionProfile']]],
+  ['isrecording_20',['isRecording',['../classSecurityCamera.html#abbf5a928be672c8c0d9905c7f88ab903',1,'SecurityCamera']]],
+  ['isrunning_21',['isRunning',['../classTimer.html#a5941489845ec3d8395d7027c2df396ad',1,'Timer']]],
+  ['issafeforartwork_22',['isSafeForArtwork',['../classLighting.html#a901c22e1d7360daa18e134d57dabad4b',1,'Lighting']]],
+  ['isstandard_23',['isStandard',['../classDimension.html#aa8e66c45150317070c23d266aa7c1101',1,'Dimension']]],
+  ['issuitableforartwork_24',['isSuitableForArtwork',['../classFrame.html#a39eff72262782122f447259f678df69e',1,'Frame']]],
+  ['issystemactive_25',['isSystemActive',['../classTicketSystem.html#a3a27ffed5ab40d91a9db9293e9232058',1,'TicketSystem']]],
+  ['isvalidprofile_26',['isValidProfile',['../classConditionProfile.html#aa689d8bcb031ec60864961d568e78c00',1,'ConditionProfile']]],
+  ['iszero_27',['isZero',['../classSize.html#af7016575a87751d929b0d453162afdec',1,'Size']]]
 ];

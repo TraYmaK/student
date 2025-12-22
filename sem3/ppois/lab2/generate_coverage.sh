@@ -1,16 +1,27 @@
 #!/bin/bash
 
-# Script to generate test coverage report using lcov and integrate with Doxygen
+# Script to generate test coverage report using gcov/lcov
+# gcov/lcov works reliably on both macOS and Linux
+
+set -e
 
 cd "$(dirname "$0")"
 
 BUILD_DIR="cmake-build-debug"
-COVERAGE_DIR="coverage"
 COVERAGE_INFO="coverage.info"
 COVERAGE_HTML_DIR="coverage_html"
 COVERAGE_PAGE="coverage_report.html"
 
-echo "=== Generating test coverage report ==="
+echo "=== Generating test coverage report with gcov/lcov ==="
+
+# Check if lcov is installed
+if ! command -v lcov &> /dev/null; then
+    echo "Error: lcov is not installed."
+    echo "Installation instructions:"
+    echo "  macOS: brew install lcov"
+    echo "  Linux: sudo apt-get install lcov  (or use your distribution's package manager)"
+    exit 1
+fi
 
 # Check if build directory exists
 if [ ! -d "$BUILD_DIR" ]; then
@@ -18,25 +29,41 @@ if [ ! -d "$BUILD_DIR" ]; then
     exit 1
 fi
 
+# Ensure tests are built with coverage flags
 cd "$BUILD_DIR"
 
-# Run tests to generate coverage data
-echo "Running tests..."
-./tests --gtest_color=no > /dev/null 2>&1
-
-# Check if lcov is available
-if ! command -v lcov &> /dev/null; then
-    echo "Error: lcov is not installed. Please install it with: brew install lcov"
-    exit 1
+# Configure CMake with coverage flags if not already done
+if ! grep -q "coverage" CMakeCache.txt 2>/dev/null; then
+    echo "Configuring CMake with coverage support..."
+    cmake -DCMAKE_BUILD_TYPE=Debug \
+          -DCMAKE_CXX_FLAGS="-g --coverage -fprofile-arcs -ftest-coverage" \
+          -DCMAKE_EXE_LINKER_FLAGS="--coverage" \
+          .. > /dev/null 2>&1 || cmake -DCMAKE_BUILD_TYPE=Debug \
+          -DCMAKE_CXX_FLAGS="-g --coverage -fprofile-arcs -ftest-coverage" \
+          -DCMAKE_EXE_LINKER_FLAGS="--coverage" ..
 fi
+
+# Build tests with coverage
+echo "Building tests with coverage flags..."
+cmake --build . --target tests > /dev/null 2>&1 || cmake --build . --target tests
+
+# Run tests to generate coverage data
+cd ..
+echo "Running tests to generate coverage data..."
+cd "$BUILD_DIR"
+./tests --gtest_color=no > /dev/null 2>&1
+cd ..
 
 # Generate coverage info file
 echo "Collecting coverage data..."
-lcov --capture --directory . --output-file "$COVERAGE_INFO" \
-     --ignore-errors inconsistent,missing,unsupported > /dev/null 2>&1
+set +e  # Temporarily disable exit on error for lcov
+lcov --capture --directory "$BUILD_DIR" --output-file "$COVERAGE_INFO" \
+     --ignore-errors inconsistent,missing,unsupported,corrupt,empty,format,count 2>&1 | grep -v "WARNING\|ERROR" || true
+set -e  # Re-enable exit on error
 
 # Remove system and test files from coverage
 if [ -f "$COVERAGE_INFO" ]; then
+    set +e  # Temporarily disable exit on error
     lcov --remove "$COVERAGE_INFO" \
          '/usr/*' \
          '*/googletest/*' \
@@ -44,25 +71,32 @@ if [ -f "$COVERAGE_INFO" ]; then
          '*/tests/*' \
          '*/cmake-build-debug/_deps/*' \
          '*/CMakeFiles/*' \
+         '/Library/*' \
          --output-file "$COVERAGE_INFO" \
-         --ignore-errors inconsistent,missing,unsupported > /dev/null 2>&1
+         --ignore-errors inconsistent,missing,unsupported,corrupt,empty,format,count 2>&1 | grep -v "WARNING\|ERROR" || true
+    set -e  # Re-enable exit on error
 fi
 
 # Generate HTML report
 echo "Generating HTML report..."
 if [ -f "$COVERAGE_INFO" ]; then
+    set +e  # Temporarily disable exit on error
     genhtml "$COVERAGE_INFO" --output-directory "$COVERAGE_HTML_DIR" \
-            --ignore-errors inconsistent,missing,unsupported,corrupt,category > /dev/null 2>&1
+            --ignore-errors inconsistent,missing,unsupported,corrupt,category,empty \
+            --no-function-coverage \
+            --no-branch-coverage 2>&1 | grep -v "WARNING\|ERROR" || true
+    set -e  # Re-enable exit on error
 fi
 
-# Extract coverage percentage from HTML report (more reliable)
+# Extract coverage percentage from HTML report
+COVERAGE_PERCENT="0.00"
+TOTAL_LINES=0
+COVERED_LINES=0
+
 if [ -f "$COVERAGE_HTML_DIR/index.html" ]; then
     HTML_CONTENT=$(cat "$COVERAGE_HTML_DIR/index.html")
     
     # Extract from table row with Lines coverage
-    # Pattern: <td class="headerCovTableEntryHi">90.9&nbsp;%</td>
-    #          <td class="headerCovTableEntry">935</td>  (Total)
-    #          <td class="headerCovTableEntry">850</td> (Hit)
     LINES_SECTION=$(echo "$HTML_CONTENT" | grep -A 3 'class="headerItem">Lines:')
     
     if [ -n "$LINES_SECTION" ]; then
@@ -82,10 +116,10 @@ if [ -f "$COVERAGE_HTML_DIR/index.html" ]; then
     fi
 fi
 
-# Fallback: try lcov summary with error suppression
+# Fallback: try lcov summary
 if [ -z "$COVERAGE_PERCENT" ] || [ "$COVERAGE_PERCENT" = "0.00" ] || [ "$COVERAGE_PERCENT" = "" ]; then
     if [ -f "$COVERAGE_INFO" ]; then
-        LCOV_SUMMARY=$(lcov --summary "$COVERAGE_INFO" --ignore-errors inconsistent,missing,unsupported,corrupt 2>&1 | grep -v "ERROR\|WARNING")
+        LCOV_SUMMARY=$(lcov --summary "$COVERAGE_INFO" --ignore-errors inconsistent,missing,unsupported,corrupt,empty,format,count 2>&1 | grep -v "ERROR\|WARNING" | grep -E "lines|functions|branches")
         COVERAGE_LINE=$(echo "$LCOV_SUMMARY" | grep "lines.*:" | head -1)
         
         if [ -n "$COVERAGE_LINE" ]; then
@@ -106,17 +140,21 @@ fi
 if [ -z "$COVERAGE_PERCENT" ] || [ "$COVERAGE_PERCENT" = "" ]; then
     COVERAGE_PERCENT="0.00"
 fi
-if [ -z "$TOTAL_LINES" ] || [ "$TOTAL_LINES" = "" ]; then
+if [ -z "$TOTAL_LINES" ] || [ "$TOTAL_LINES" = "" ] || ! echo "$TOTAL_LINES" | grep -qE '^[0-9]+$'; then
     TOTAL_LINES=0
 fi
-if [ -z "$COVERED_LINES" ] || [ "$COVERED_LINES" = "" ]; then
+if [ -z "$COVERED_LINES" ] || [ "$COVERED_LINES" = "" ] || ! echo "$COVERED_LINES" | grep -qE '^[0-9]+$'; then
     COVERED_LINES=0
 fi
 
 echo "Coverage: $COVERAGE_PERCENT% ($COVERED_LINES / $TOTAL_LINES lines)"
 
+# Copy coverage HTML to docs directory for Doxygen
+# Copy coverage_html to docs/html/coverage so it's accessible from Doxygen
+mkdir -p docs/html/coverage
+cp -r "$COVERAGE_HTML_DIR"/* docs/html/coverage/ 2>/dev/null || true
+
 # Create a simple HTML page for Doxygen with link to detailed report
-cd ..
 cat > "$COVERAGE_PAGE" << EOF
 <!DOCTYPE html>
 <html>
@@ -199,10 +237,10 @@ cat > "$COVERAGE_PAGE" << EOF
                 <strong>Total lines:</strong> $TOTAL_LINES<br>
                 <strong>Uncovered lines:</strong> $((TOTAL_LINES - COVERED_LINES))
             </div>
-            <a href="$BUILD_DIR/$COVERAGE_HTML_DIR/index.html" class="link-button" target="_blank">View Detailed Report</a>
+            <a href="coverage_html/index.html" class="link-button" target="_blank">View Detailed lcov Report</a>
         </div>
         <p style="color: #666; font-size: 14px;">
-            This report was generated automatically using lcov from test execution coverage data.
+            This report was generated automatically using gcov/lcov from test execution coverage data.
             The coverage percentage represents the ratio of executed lines to total lines in the source code.
         </p>
     </div>
@@ -210,12 +248,62 @@ cat > "$COVERAGE_PAGE" << EOF
 </html>
 EOF
 
-echo "Coverage report generated: $COVERAGE_PAGE"
-echo "Detailed HTML report: $BUILD_DIR/$COVERAGE_HTML_DIR/index.html"
-echo "Coverage percentage: $COVERAGE_PERCENT%"
+# Copy coverage_report.html to docs/html for Doxygen integration
+mkdir -p docs/html
+cp "$COVERAGE_PAGE" docs/html/ 2>/dev/null || true
 
-# Update README.md with coverage information
-cat > README.md << EOF
+# Update README.md with coverage information (preserve existing content)
+if [ -f "README.md" ]; then
+    # Check if README has a Test Coverage section
+    if grep -q "## Test Coverage" README.md; then
+        # Update existing Test Coverage section
+        # Create a temporary file with updated coverage info
+        awk -v coverage="$COVERAGE_PERCENT" \
+            -v covered="$COVERED_LINES" \
+            -v total="$TOTAL_LINES" \
+            -v uncovered="$((TOTAL_LINES - COVERED_LINES))" '
+        BEGIN { in_coverage = 0; coverage_printed = 0 }
+        /^## Test Coverage/ {
+            in_coverage = 1
+            coverage_printed = 0
+            print "## Test Coverage"
+            print ""
+            print "**Current test coverage: " coverage "%**"
+            print ""
+            print "- **Covered lines:** " covered
+            print "- **Total lines:** " total
+            print "- **Uncovered lines:** " uncovered
+            print ""
+            print "For detailed coverage report, see [Coverage Report](coverage_report.html) or [Detailed lcov Report](coverage_html/index.html)."
+            next
+        }
+        /^## / && in_coverage {
+            in_coverage = 0
+        }
+        in_coverage {
+            next
+        }
+        { print }
+        ' README.md > README.md.tmp && mv README.md.tmp README.md
+    else
+        # Add Test Coverage section at the end
+        cat >> README.md << EOF
+
+## Test Coverage
+
+**Current test coverage: $COVERAGE_PERCENT%**
+
+- **Covered lines:** $COVERED_LINES
+- **Total lines:** $TOTAL_LINES
+- **Uncovered lines:** $((TOTAL_LINES - COVERED_LINES))
+
+For detailed coverage report, see [Coverage Report](coverage_report.html) or [Detailed lcov Report](coverage_html/index.html).
+EOF
+    fi
+    echo "README.md updated with coverage information"
+else
+    # Create new README if it doesn't exist
+    cat > README.md << EOF
 # Gallery Management System
 
 Gallery management system with artworks, exhibitions, tools, and visitor management.
@@ -228,8 +316,31 @@ Gallery management system with artworks, exhibitions, tools, and visitor managem
 - **Total lines:** $TOTAL_LINES
 - **Uncovered lines:** $((TOTAL_LINES - COVERED_LINES))
 
-For detailed coverage report, see [Coverage Report](coverage_report.html).
-EOF
+For detailed coverage report, see [Coverage Report](coverage_report.html) or [Detailed lcov Report](coverage_html/index.html).
 
-echo "README.md updated with coverage information"
+## Building and Testing
+
+\`\`\`bash
+# Build project
+./run.sh
+
+# Generate coverage report
+./generate_coverage.sh
+\`\`\`
+
+## Documentation
+
+Generate documentation with Doxygen:
+\`\`\`bash
+doxygen Doxyfile
+\`\`\`
+
+The documentation will be available in \`docs/html/index.html\`.
+EOF
+    echo "README.md created with coverage information"
+fi
+
+echo "Coverage report generated: $COVERAGE_PAGE"
+echo "Detailed HTML report: $COVERAGE_HTML_DIR/index.html"
+echo "Coverage percentage: $COVERAGE_PERCENT%"
 

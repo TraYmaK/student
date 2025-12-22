@@ -1,0 +1,3 @@
+/Users/jamesmaxwell/student/sem3/ppois/lab2/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+/Users/jamesmaxwell/student/sem3/ppois/lab2/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+/Users/jamesmaxwell/student/sem3/ppois/lab2/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir

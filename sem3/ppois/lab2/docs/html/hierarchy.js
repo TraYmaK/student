@@ -53,6 +53,7 @@ var hierarchy =
     ] ],
     [ "SecuritySystem", "classSecuritySystem.html", null ],
     [ "Size", "classSize.html", null ],
+    [ "TicketSystem", "classTicketSystem.html", null ],
     [ "Timer", "classTimer.html", null ],
     [ "Visitor", "classVisitor.html", null ]
 ];

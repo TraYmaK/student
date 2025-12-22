@@ -120,6 +120,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3435735796ca528eff93c761e146ab8a inherit pub_methods_classExhibition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classExhibition.html" title="Base class for all exhibition types.">Exhibition</a> object.  <br /></td></tr>
 <tr class="memitem:a97f0a298a67bc85f4b22f70cd1ea5878 inherit pub_methods_classExhibition" id="r_a97f0a298a67bc85f4b22f70cd1ea5878"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExhibition.html#a97f0a298a67bc85f4b22f70cd1ea5878">getName</a> () const</td></tr>
 <tr class="memdesc:a97f0a298a67bc85f4b22f70cd1ea5878 inherit pub_methods_classExhibition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the exhibition name.  <br /></td></tr>
+<tr class="memitem:a04f4dafdfa92b1312acf099a9c394684 inherit pub_methods_classExhibition" id="r_a04f4dafdfa92b1312acf099a9c394684"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExhibition.html#a04f4dafdfa92b1312acf099a9c394684">isFullyBooked</a> () const</td></tr>
+<tr class="memdesc:a04f4dafdfa92b1312acf099a9c394684 inherit pub_methods_classExhibition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if exhibition is fully booked.  <br /></td></tr>
+<tr class="memitem:aeedd679fad07eac3400c595fd9086e40 inherit pub_methods_classExhibition" id="r_aeedd679fad07eac3400c595fd9086e40"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExhibition.html#aeedd679fad07eac3400c595fd9086e40">calculateExhibitionDuration</a> () const</td></tr>
+<tr class="memdesc:aeedd679fad07eac3400c595fd9086e40 inherit pub_methods_classExhibition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate exhibition duration in hours.  <br /></td></tr>
+<tr class="memitem:a9b65c8c7d4af4cacae09df531f49f905 inherit pub_methods_classExhibition" id="r_a9b65c8c7d4af4cacae09df531f49f905"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExhibition.html#a9b65c8c7d4af4cacae09df531f49f905">isOnTime</a> () const</td></tr>
+<tr class="memdesc:a9b65c8c7d4af4cacae09df531f49f905 inherit pub_methods_classExhibition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if exhibition is on time.  <br /></td></tr>
+<tr class="memitem:a7faea73b16660249a6938065ad922328 inherit pub_methods_classExhibition" id="r_a7faea73b16660249a6938065ad922328"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExhibition.html#a7faea73b16660249a6938065ad922328">getAvailableSeats</a> () const</td></tr>
+<tr class="memdesc:a7faea73b16660249a6938065ad922328 inherit pub_methods_classExhibition"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get available seats count.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -152,7 +160,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Class for temporary exhibitions. </p>
 <p>Represents a temporary exhibition with two temporary artworks, display stand, lighting, security camera, and timer. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01513">1513</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01953">1953</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4bda7aaf72a15e66878adac9ae6a840a" name="a4bda7aaf72a15e66878adac9ae6a840a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bda7aaf72a15e66878adac9ae6a840a">&#9670;&#160;</a></span>TemporaryExhibition()</h2>
@@ -218,7 +226,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00500">500</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00764">764</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +258,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classExhibition.html#aafa4e33966a1df0aee128394af78036e">Exhibition</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00510">510</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00774">774</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -275,7 +283,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01514">1514</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01954">1954</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -302,7 +310,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Security camera. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01520">1520</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01960">1960</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +336,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p><a class="el" href="classCurator.html" title="Class for gallery curators.">Curator</a> organizing the exhibition. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01522">1522</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01962">1962</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -354,7 +362,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p><a class="el" href="classTimer.html" title="Class for timing operations.">Timer</a> for display duration. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01521">1521</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01961">1961</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -380,7 +388,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p><a class="el" href="classLighting.html" title="Class for gallery lighting systems.">Lighting</a> system. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01519">1519</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01959">1959</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -406,7 +414,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Display stand. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01518">1518</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01958">1958</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -432,7 +440,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>First temporary artwork. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01516">1516</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01956">1956</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -458,7 +466,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Second temporary artwork. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01517">1517</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01957">1957</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

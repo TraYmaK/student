@@ -43,6 +43,7 @@ var annotated_dup =
     [ "StorageException", "classStorageException.html", "classStorageException" ],
     [ "TemporaryExhibition", "classTemporaryExhibition.html", "classTemporaryExhibition" ],
     [ "ThematicExhibition", "classThematicExhibition.html", "classThematicExhibition" ],
+    [ "TicketSystem", "classTicketSystem.html", "classTicketSystem" ],
     [ "Timer", "classTimer.html", "classTimer" ],
     [ "TimerNotSetException", "classTimerNotSetException.html", "classTimerNotSetException" ],
     [ "ToolNotAvailableException", "classToolNotAvailableException.html", "classToolNotAvailableException" ],

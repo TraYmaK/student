@@ -108,6 +108,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac9eac124afc34e9422a0da397f6c6a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if target temperature is reached.  <br /></td></tr>
 <tr class="memitem:a3189a0c54622abd137fb9915c2d03190" id="r_a3189a0c54622abd137fb9915c2d03190"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3189a0c54622abd137fb9915c2d03190">reset</a> (double s, double t, int d)</td></tr>
 <tr class="memdesc:a3189a0c54622abd137fb9915c2d03190"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the profile with new parameters.  <br /></td></tr>
+<tr class="memitem:aff2a464b615e800f4267965436848d2a" id="r_aff2a464b615e800f4267965436848d2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff2a464b615e800f4267965436848d2a">getDuration</a> () const</td></tr>
+<tr class="memdesc:aff2a464b615e800f4267965436848d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the duration of the profile.  <br /></td></tr>
+<tr class="memitem:a7ebf0c04765f66ca1482685177a8a44d" id="r_a7ebf0c04765f66ca1482685177a8a44d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ebf0c04765f66ca1482685177a8a44d">calculateTemperatureChangeRate</a> () const</td></tr>
+<tr class="memdesc:a7ebf0c04765f66ca1482685177a8a44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate temperature change rate.  <br /></td></tr>
+<tr class="memitem:aa689d8bcb031ec60864961d568e78c00" id="r_aa689d8bcb031ec60864961d568e78c00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa689d8bcb031ec60864961d568e78c00">isValidProfile</a> () const</td></tr>
+<tr class="memdesc:aa689d8bcb031ec60864961d568e78c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if profile is valid.  <br /></td></tr>
+<tr class="memitem:ad5b3b3c93cbf135516b6a5a67295ff04" id="r_ad5b3b3c93cbf135516b6a5a67295ff04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5b3b3c93cbf135516b6a5a67295ff04">getEstimatedCompletionTime</a> (int currentElapsed) const</td></tr>
+<tr class="memdesc:ad5b3b3c93cbf135516b6a5a67295ff04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get estimated completion time.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -124,7 +132,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Class for climate condition profiles. </p>
 <p>Represents temperature profiles for gradual climate transitions. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00746">746</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01054">1054</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae51c52881f1e8c4874800cf551df8ecf" name="ae51c52881f1e8c4874800cf551df8ecf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae51c52881f1e8c4874800cf551df8ecf">&#9670;&#160;</a></span>ConditionProfile()</h2>
@@ -166,11 +174,33 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00208">208</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00409">409</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a7ebf0c04765f66ca1482685177a8a44d" name="a7ebf0c04765f66ca1482685177a8a44d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebf0c04765f66ca1482685177a8a44d">&#9670;&#160;</a></span>calculateTemperatureChangeRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ConditionProfile::calculateTemperatureChangeRate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate temperature change rate. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing change rate per second </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00429">429</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
 <a id="ad7d32ea887a31d7265fba964ae79aa05" name="ad7d32ea887a31d7265fba964ae79aa05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7d32ea887a31d7265fba964ae79aa05">&#9670;&#160;</a></span>currentTemp()</h2>
 
@@ -195,7 +225,57 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>double containing current temperature </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00210">210</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00411">411</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aff2a464b615e800f4267965436848d2a" name="aff2a464b615e800f4267965436848d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2a464b615e800f4267965436848d2a">&#9670;&#160;</a></span>getDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConditionProfile::getDuration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the duration of the profile. </p>
+<dl class="section return"><dt>Returns</dt><dd>int containing duration in seconds </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00426">426</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad5b3b3c93cbf135516b6a5a67295ff04" name="ad5b3b3c93cbf135516b6a5a67295ff04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b3b3c93cbf135516b6a5a67295ff04">&#9670;&#160;</a></span>getEstimatedCompletionTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConditionProfile::getEstimatedCompletionTime </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>currentElapsed</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get estimated completion time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentElapsed</td><td>integer value containing current elapsed seconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int containing remaining seconds </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00438">438</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -225,7 +305,29 @@ Private Attributes</h2></td></tr>
 <dd>
 false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00217">217</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00418">418</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa689d8bcb031ec60864961d568e78c00" name="aa689d8bcb031ec60864961d568e78c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa689d8bcb031ec60864961d568e78c00">&#9670;&#160;</a></span>isValidProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConditionProfile::isValidProfile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if profile is valid. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if profile is valid </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00435">435</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -263,7 +365,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00220">220</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00421">421</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +392,7 @@ false otherwise </dd></dl>
 
 <p>Duration in seconds. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00750">750</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01058">1058</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +418,7 @@ false otherwise </dd></dl>
 
 <p>Whether transition is gradual. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00751">751</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01059">1059</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +444,7 @@ false otherwise </dd></dl>
 
 <p>Starting temperature. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00748">748</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01056">1056</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +470,7 @@ false otherwise </dd></dl>
 
 <p>Target temperature. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00749">749</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01057">1057</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

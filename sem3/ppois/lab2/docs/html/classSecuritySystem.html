@@ -108,6 +108,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acacb2f8c8afaf07aaaa345a36244e44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivate a security zone.  <br /></td></tr>
 <tr class="memitem:a9938c32fbccce11fd5f78f0459258925" id="r_a9938c32fbccce11fd5f78f0459258925"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9938c32fbccce11fd5f78f0459258925">freeZones</a> () const</td></tr>
 <tr class="memdesc:a9938c32fbccce11fd5f78f0459258925"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of free zones.  <br /></td></tr>
+<tr class="memitem:aa4d1aa72ea38a8ddc10967c206a80149" id="r_aa4d1aa72ea38a8ddc10967c206a80149"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4d1aa72ea38a8ddc10967c206a80149">isOn</a> () const</td></tr>
+<tr class="memdesc:aa4d1aa72ea38a8ddc10967c206a80149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if security system is on.  <br /></td></tr>
+<tr class="memitem:ac3302bbe140eb101359af78ec1a3c489" id="r_ac3302bbe140eb101359af78ec1a3c489"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3302bbe140eb101359af78ec1a3c489">activateAllZones</a> ()</td></tr>
+<tr class="memdesc:ac3302bbe140eb101359af78ec1a3c489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate all security zones.  <br /></td></tr>
+<tr class="memitem:a9c2092b5ad20a7107acb78ebcdf73627" id="r_a9c2092b5ad20a7107acb78ebcdf73627"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c2092b5ad20a7107acb78ebcdf73627">deactivateAllZones</a> ()</td></tr>
+<tr class="memdesc:a9c2092b5ad20a7107acb78ebcdf73627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivate all security zones.  <br /></td></tr>
+<tr class="memitem:ab4c518282fd91bbe0b389bd5c8d15c2e" id="r_ab4c518282fd91bbe0b389bd5c8d15c2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4c518282fd91bbe0b389bd5c8d15c2e">checkSecurityBreach</a> () const</td></tr>
+<tr class="memdesc:ab4c518282fd91bbe0b389bd5c8d15c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check security breach status.  <br /></td></tr>
+<tr class="memitem:a17757b034ec4ebcd8b20318ea17ff943" id="r_a17757b034ec4ebcd8b20318ea17ff943"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17757b034ec4ebcd8b20318ea17ff943">calculateSecurityCoverage</a> () const</td></tr>
+<tr class="memdesc:a17757b034ec4ebcd8b20318ea17ff943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate security coverage percentage.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -124,7 +134,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Class for security systems. </p>
 <p>Manages security zones and alarm states for gallery protection. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00909">909</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01289">1289</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afd21d87c4b20bc9f40a63ada14b75502" name="afd21d87c4b20bc9f40a63ada14b75502"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd21d87c4b20bc9f40a63ada14b75502">&#9670;&#160;</a></span>SecuritySystem()</h2>
@@ -166,11 +176,32 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00294">294</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00540">540</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ac3302bbe140eb101359af78ec1a3c489" name="ac3302bbe140eb101359af78ec1a3c489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3302bbe140eb101359af78ec1a3c489">&#9670;&#160;</a></span>activateAllZones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SecuritySystem::activateAllZones </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Activate all security zones. </p>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00562">562</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
 <a id="afd6a886d0a59ef2ccaef543f647f4d76" name="afd6a886d0a59ef2ccaef543f647f4d76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd6a886d0a59ef2ccaef543f647f4d76">&#9670;&#160;</a></span>activateZone()</h2>
 
@@ -188,7 +219,72 @@ Private Attributes</h2></td></tr>
 
 <p>Activate a security zone. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00296">296</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00542">542</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a17757b034ec4ebcd8b20318ea17ff943" name="a17757b034ec4ebcd8b20318ea17ff943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17757b034ec4ebcd8b20318ea17ff943">&#9670;&#160;</a></span>calculateSecurityCoverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double SecuritySystem::calculateSecurityCoverage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate security coverage percentage. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing coverage percentage </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00571">571</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab4c518282fd91bbe0b389bd5c8d15c2e" name="ab4c518282fd91bbe0b389bd5c8d15c2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4c518282fd91bbe0b389bd5c8d15c2e">&#9670;&#160;</a></span>checkSecurityBreach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SecuritySystem::checkSecurityBreach </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check security breach status. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if breach detected </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00568">568</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9c2092b5ad20a7107acb78ebcdf73627" name="a9c2092b5ad20a7107acb78ebcdf73627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2092b5ad20a7107acb78ebcdf73627">&#9670;&#160;</a></span>deactivateAllZones()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SecuritySystem::deactivateAllZones </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deactivate all security zones. </p>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00565">565</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -209,7 +305,7 @@ Private Attributes</h2></td></tr>
 
 <p>Deactivate a security zone. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00302">302</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00548">548</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -231,7 +327,31 @@ Private Attributes</h2></td></tr>
 <p>Get number of free zones. </p>
 <dl class="section return"><dt>Returns</dt><dd>int containing number of free zones </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00310">310</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00556">556</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa4d1aa72ea38a8ddc10967c206a80149" name="aa4d1aa72ea38a8ddc10967c206a80149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4d1aa72ea38a8ddc10967c206a80149">&#9670;&#160;</a></span>isOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SecuritySystem::isOn </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if security system is on. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if system is on </dd>
+<dd>
+false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00559">559</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -258,7 +378,7 @@ Private Attributes</h2></td></tr>
 
 <p>Number of currently active zones. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00912">912</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01292">1292</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +404,7 @@ Private Attributes</h2></td></tr>
 
 <p>Whether alarm is enabled. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00913">913</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01293">1293</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -310,7 +430,7 @@ Private Attributes</h2></td></tr>
 
 <p>Whether security system is on. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00914">914</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01294">1294</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -336,7 +456,7 @@ Private Attributes</h2></td></tr>
 
 <p>Total number of security zones. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00911">911</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01291">1291</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

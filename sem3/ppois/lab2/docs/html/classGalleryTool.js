@@ -3,6 +3,7 @@ var classGalleryTool =
     [ "GalleryTool", "classGalleryTool.html#a4be3b56bbe0b1364d4cefe16400e96c5", null ],
     [ "breakTool", "classGalleryTool.html#a74c025dab0b8bd3907f6785be508b4f0", null ],
     [ "cleanTool", "classGalleryTool.html#a54974fc50e3780560ea6370ea3942d1c", null ],
+    [ "getName", "classGalleryTool.html#ab484369ad7825fbaf7470709c9ce076b", null ],
     [ "isAvailable", "classGalleryTool.html#a0ec154ff5959a70207cd6eac631afd79", null ],
     [ "useTool", "classGalleryTool.html#a3657d5bc1d59108c48e9e566f6964bf1", null ],
     [ "available", "classGalleryTool.html#a138413d4d8bf32f31d37d91b3fca50b8", null ],

@@ -124,6 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a74c025dab0b8bd3907f6785be508b4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Break the tool (set unavailable and zero durability).  <br /></td></tr>
 <tr class="memitem:a0ec154ff5959a70207cd6eac631afd79" id="r_a0ec154ff5959a70207cd6eac631afd79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ec154ff5959a70207cd6eac631afd79">isAvailable</a> () const</td></tr>
 <tr class="memdesc:a0ec154ff5959a70207cd6eac631afd79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if tool is available.  <br /></td></tr>
+<tr class="memitem:ab484369ad7825fbaf7470709c9ce076b" id="r_ab484369ad7825fbaf7470709c9ce076b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab484369ad7825fbaf7470709c9ce076b">getName</a> () const</td></tr>
+<tr class="memdesc:ab484369ad7825fbaf7470709c9ce076b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the tool name.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -142,7 +144,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Base class for all gallery tools. </p>
 <p>Provides common functionality for gallery tools including availability checking, cleaning, and durability management. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00388">388</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00503">503</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4be3b56bbe0b1364d4cefe16400e96c5" name="a4be3b56bbe0b1364d4cefe16400e96c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4be3b56bbe0b1364d4cefe16400e96c5">&#9670;&#160;</a></span>GalleryTool()</h2>
@@ -184,7 +186,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00068">68</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00143">143</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +208,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Break the tool (set unavailable and zero durability). </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00085">85</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00160">160</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -227,7 +229,29 @@ Protected Attributes</h2></td></tr>
 
 <p>Clean the tool. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00082">82</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00157">157</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab484369ad7825fbaf7470709c9ce076b" name="ab484369ad7825fbaf7470709c9ce076b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab484369ad7825fbaf7470709c9ce076b">&#9670;&#160;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * GalleryTool::getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the tool name. </p>
+<dl class="section return"><dt>Returns</dt><dd>const char* containing tool name </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00167">167</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +275,7 @@ Protected Attributes</h2></td></tr>
 <dd>
 false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00089">89</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00164">164</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -278,7 +302,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00070">70</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00145">145</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -305,7 +329,7 @@ false otherwise </dd></dl>
 
 <p>Whether the tool is available. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00392">392</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00507">507</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -331,7 +355,7 @@ false otherwise </dd></dl>
 
 <p>Whether the tool is currently in use. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00393">393</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00508">508</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -357,7 +381,7 @@ false otherwise </dd></dl>
 
 <p>Whether the tool is clean. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00391">391</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00506">506</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -383,7 +407,7 @@ false otherwise </dd></dl>
 
 <p>Durability level of the tool. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00394">394</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00509">509</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -409,7 +433,7 @@ false otherwise </dd></dl>
 
 <p>Name of the tool. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00390">390</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00505">505</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

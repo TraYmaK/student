@@ -110,6 +110,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1a8ebe97ffffc270fe16c66f575543e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current visitor.  <br /></td></tr>
 <tr class="memitem:abe5f027148280a9fe6a1c47e07f1edb1" id="r_abe5f027148280a9fe6a1c47e07f1edb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe5f027148280a9fe6a1c47e07f1edb1">run</a> ()</td></tr>
 <tr class="memdesc:abe5f027148280a9fe6a1c47e07f1edb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the menu system.  <br /></td></tr>
+<tr class="memitem:aaaf2921f716c181f96f25143514b0cfc" id="r_aaaf2921f716c181f96f25143514b0cfc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaf2921f716c181f96f25143514b0cfc">getExhibitionCount</a> () const</td></tr>
+<tr class="memdesc:aaaf2921f716c181f96f25143514b0cfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of exhibitions in the menu.  <br /></td></tr>
+<tr class="memitem:ada1797cdc13f32d61b070cf9bab5b1bc" id="r_ada1797cdc13f32d61b070cf9bab5b1bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVisitor.html">Visitor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada1797cdc13f32d61b070cf9bab5b1bc">getCurrentVisitor</a> () const</td></tr>
+<tr class="memdesc:ada1797cdc13f32d61b070cf9bab5b1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current visitor.  <br /></td></tr>
+<tr class="memitem:a5d580d92813120c852a728bf6d784dc0" id="r_a5d580d92813120c852a728bf6d784dc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d580d92813120c852a728bf6d784dc0">searchExhibitions</a> (const char *searchTerm) const</td></tr>
+<tr class="memdesc:a5d580d92813120c852a728bf6d784dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search exhibitions by name.  <br /></td></tr>
+<tr class="memitem:a2910e2f9b9e80da8c45cca6d367f6458" id="r_a2910e2f9b9e80da8c45cca6d367f6458"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2910e2f9b9e80da8c45cca6d367f6458">filterAvailableExhibitions</a> () const</td></tr>
+<tr class="memdesc:a2910e2f9b9e80da8c45cca6d367f6458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter exhibitions by availability.  <br /></td></tr>
+<tr class="memitem:a1abdc65c1c329debc640de376244d896" id="r_a1abdc65c1c329debc640de376244d896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1abdc65c1c329debc640de376244d896">sortExhibitionsByName</a> ()</td></tr>
+<tr class="memdesc:a1abdc65c1c329debc640de376244d896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort exhibitions by name.  <br /></td></tr>
+<tr class="memitem:a4636952b5b637087b5a46ab6345aa3cc" id="r_a4636952b5b637087b5a46ab6345aa3cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classExhibition.html">Exhibition</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4636952b5b637087b5a46ab6345aa3cc">getExhibitionByIndex</a> (int index) const</td></tr>
+<tr class="memdesc:a4636952b5b637087b5a46ab6345aa3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get exhibition by index.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -129,7 +141,7 @@ Static Private Attributes</h2></td></tr>
 <div class="textblock"><p>Class for gallery menu system. </p>
 <p>Manages exhibitions and provides interactive menu for visitors. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02060">2060</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02573">2573</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0851bf0b35f604fe83c581010b43afec" name="a0851bf0b35f604fe83c581010b43afec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0851bf0b35f604fe83c581010b43afec">&#9670;&#160;</a></span>GalleryMenu()</h2>
@@ -148,7 +160,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Construct a new <a class="el" href="classGalleryMenu.html" title="Class for gallery menu system.">GalleryMenu</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01110">1110</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01418">1418</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -176,7 +188,101 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01122">1122</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01430">1430</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2910e2f9b9e80da8c45cca6d367f6458" name="a2910e2f9b9e80da8c45cca6d367f6458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2910e2f9b9e80da8c45cca6d367f6458">&#9670;&#160;</a></span>filterAvailableExhibitions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GalleryMenu::filterAvailableExhibitions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filter exhibitions by availability. </p>
+<dl class="section return"><dt>Returns</dt><dd>int containing number of available exhibitions </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01476">1476</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ada1797cdc13f32d61b070cf9bab5b1bc" name="ada1797cdc13f32d61b070cf9bab5b1bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1797cdc13f32d61b070cf9bab5b1bc">&#9670;&#160;</a></span>getCurrentVisitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVisitor.html">Visitor</a> * GalleryMenu::getCurrentVisitor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current visitor. </p>
+<dl class="section return"><dt>Returns</dt><dd>Visitor* pointer to current visitor or nullptr </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01464">1464</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4636952b5b637087b5a46ab6345aa3cc" name="a4636952b5b637087b5a46ab6345aa3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4636952b5b637087b5a46ab6345aa3cc">&#9670;&#160;</a></span>getExhibitionByIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classExhibition.html">Exhibition</a> * GalleryMenu::getExhibitionByIndex </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get exhibition by index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>integer value containing exhibition index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Exhibition* pointer to exhibition or nullptr </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01496">1496</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aaaf2921f716c181f96f25143514b0cfc" name="aaaf2921f716c181f96f25143514b0cfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf2921f716c181f96f25143514b0cfc">&#9670;&#160;</a></span>getExhibitionCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GalleryMenu::getExhibitionCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of exhibitions in the menu. </p>
+<dl class="section return"><dt>Returns</dt><dd>int containing number of exhibitions </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01461">1461</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -197,7 +303,35 @@ Static Private Attributes</h2></td></tr>
 
 <p>Run the menu system. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01131">1131</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01439">1439</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5d580d92813120c852a728bf6d784dc0" name="a5d580d92813120c852a728bf6d784dc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d580d92813120c852a728bf6d784dc0">&#9670;&#160;</a></span>searchExhibitions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GalleryMenu::searchExhibitions </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>searchTerm</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search exhibitions by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">searchTerm</td><td>constant pointer to search term </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int containing number of matching exhibitions </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01467">1467</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +358,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01128">1128</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01436">1436</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +379,28 @@ Static Private Attributes</h2></td></tr>
 
 <p>Show the menu. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01115">1115</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01423">1423</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1abdc65c1c329debc640de376244d896" name="a1abdc65c1c329debc640de376244d896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1abdc65c1c329debc640de376244d896">&#9670;&#160;</a></span>sortExhibitionsByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GalleryMenu::sortExhibitionsByName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort exhibitions by name. </p>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01485">1485</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -272,7 +427,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Current visitor. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02065">2065</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02578">2578</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -298,7 +453,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Current number of exhibitions. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02064">2064</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02577">2577</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -324,7 +479,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Array of exhibition pointers. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02063">2063</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02576">2576</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -350,7 +505,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Maximum number of exhibitions. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02062">2062</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02575">2575</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

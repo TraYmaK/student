@@ -126,6 +126,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a055116c26a8be9746fb3cbe5213c6609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate the alarm.  <br /></td></tr>
 <tr class="memitem:a7c616550a0dff3ac8d6b083d6dc861cc" id="r_a7c616550a0dff3ac8d6b083d6dc861cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c616550a0dff3ac8d6b083d6dc861cc">isAlarmActive</a> () const</td></tr>
 <tr class="memdesc:a7c616550a0dff3ac8d6b083d6dc861cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if alarm is active.  <br /></td></tr>
+<tr class="memitem:a20f3296df0b3c08e3a15d2b6a1cdd187" id="r_a20f3296df0b3c08e3a15d2b6a1cdd187"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20f3296df0b3c08e3a15d2b6a1cdd187">getHumidity</a> () const</td></tr>
+<tr class="memdesc:a20f3296df0b3c08e3a15d2b6a1cdd187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current humidity level.  <br /></td></tr>
+<tr class="memitem:adc39de69991ba4f01f19519bd455beee" id="r_adc39de69991ba4f01f19519bd455beee"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc39de69991ba4f01f19519bd455beee">getTargetHumidity</a> () const</td></tr>
+<tr class="memdesc:adc39de69991ba4f01f19519bd455beee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the target humidity level.  <br /></td></tr>
+<tr class="memitem:a4f47705f7279d9941034d81159da7694" id="r_a4f47705f7279d9941034d81159da7694"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f47705f7279d9941034d81159da7694">calculateEnergyConsumption</a> () const</td></tr>
+<tr class="memdesc:a4f47705f7279d9941034d81159da7694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate energy consumption.  <br /></td></tr>
+<tr class="memitem:adbe2fb04b2030efb26e24ca7113d71f1" id="r_adbe2fb04b2030efb26e24ca7113d71f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbe2fb04b2030efb26e24ca7113d71f1">isOptimalClimate</a> () const</td></tr>
+<tr class="memdesc:adbe2fb04b2030efb26e24ca7113d71f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if climate is optimal for artworks.  <br /></td></tr>
+<tr class="memitem:aac9759787fde472dbb162dddc21d3d44" id="r_aac9759787fde472dbb162dddc21d3d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac9759787fde472dbb162dddc21d3d44">adjustTemperatureGradually</a> (double targetTemp, int duration)</td></tr>
+<tr class="memdesc:aac9759787fde472dbb162dddc21d3d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust temperature gradually.  <br /></td></tr>
+<tr class="memitem:a36421ce0f079a5431863021cc279caaf" id="r_a36421ce0f079a5431863021cc279caaf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36421ce0f079a5431863021cc279caaf">calculateMaintenanceSchedule</a> () const</td></tr>
+<tr class="memdesc:a36421ce0f079a5431863021cc279caaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate maintenance schedule.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -152,7 +164,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Class for climate control systems. </p>
 <p>Manages temperature, humidity, and door state for artwork preservation. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00798">798</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01135">1135</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa6c71f621ad5ae9fe50062f9a0303199" name="aa6c71f621ad5ae9fe50062f9a0303199"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6c71f621ad5ae9fe50062f9a0303199">&#9670;&#160;</a></span>ClimateControl()</h2>
@@ -188,7 +200,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00225">225</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00445">445</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -210,7 +222,83 @@ Private Attributes</h2></td></tr>
 
 <p>Activate the alarm. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00288">288</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00509">509</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aac9759787fde472dbb162dddc21d3d44" name="aac9759787fde472dbb162dddc21d3d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9759787fde472dbb162dddc21d3d44">&#9670;&#160;</a></span>adjustTemperatureGradually()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClimateControl::adjustTemperatureGradually </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>targetTemp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>duration</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adjust temperature gradually. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetTemp</td><td>double value containing target temperature </td></tr>
+    <tr><td class="paramname">duration</td><td>int value containing duration in minutes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00530">530</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4f47705f7279d9941034d81159da7694" name="a4f47705f7279d9941034d81159da7694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f47705f7279d9941034d81159da7694">&#9670;&#160;</a></span>calculateEnergyConsumption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ClimateControl::calculateEnergyConsumption </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate energy consumption. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing energy consumption in kWh </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00521">521</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a36421ce0f079a5431863021cc279caaf" name="a36421ce0f079a5431863021cc279caaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36421ce0f079a5431863021cc279caaf">&#9670;&#160;</a></span>calculateMaintenanceSchedule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ClimateControl::calculateMaintenanceSchedule </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate maintenance schedule. </p>
+<dl class="section return"><dt>Returns</dt><dd>int containing days until next maintenance </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00537">537</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -231,7 +319,51 @@ Private Attributes</h2></td></tr>
 
 <p>Close the door. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00253">253</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00474">474</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a20f3296df0b3c08e3a15d2b6a1cdd187" name="a20f3296df0b3c08e3a15d2b6a1cdd187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f3296df0b3c08e3a15d2b6a1cdd187">&#9670;&#160;</a></span>getHumidity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ClimateControl::getHumidity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current humidity level. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing humidity level </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00515">515</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adc39de69991ba4f01f19519bd455beee" name="adc39de69991ba4f01f19519bd455beee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc39de69991ba4f01f19519bd455beee">&#9670;&#160;</a></span>getTargetHumidity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ClimateControl::getTargetHumidity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the target humidity level. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing target humidity level </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00518">518</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +385,7 @@ Private Attributes</h2></td></tr>
 <p>Get the current temperature. </p>
 <dl class="section return"><dt>Returns</dt><dd>double containing current temperature </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00279">279</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00500">500</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +409,7 @@ Private Attributes</h2></td></tr>
 <dd>
 false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00291">291</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00512">512</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +433,7 @@ false otherwise </dd></dl>
 <dd>
 false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00282">282</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00503">503</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +457,29 @@ false otherwise </dd></dl>
 <dd>
 false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00276">276</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00497">497</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adbe2fb04b2030efb26e24ca7113d71f1" name="adbe2fb04b2030efb26e24ca7113d71f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe2fb04b2030efb26e24ca7113d71f1">&#9670;&#160;</a></span>isOptimalClimate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ClimateControl::isOptimalClimate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if climate is optimal for artworks. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if climate is optimal </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00527">527</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +500,7 @@ false otherwise </dd></dl>
 
 <p>Open the door. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00256">256</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00477">477</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +538,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00235">235</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00455">455</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -411,7 +565,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00285">285</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00506">506</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -444,7 +598,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00259">259</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00480">480</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -471,7 +625,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00265">265</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00486">486</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -492,7 +646,7 @@ false otherwise </dd></dl>
 
 <p>Turn off climate control. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00249">249</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00470">470</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -519,7 +673,7 @@ false otherwise </dd></dl>
 
 <p>Whether alarm is active. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00808">808</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01145">1145</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -545,7 +699,7 @@ false otherwise </dd></dl>
 
 <p><a class="el" href="classTimer.html" title="Class for timing operations.">Timer</a> for climate control. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00803">803</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01140">1140</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -571,7 +725,7 @@ false otherwise </dd></dl>
 
 <p>Whether the door is closed. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00802">802</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01139">1139</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -597,7 +751,7 @@ false otherwise </dd></dl>
 
 <p>Elapsed seconds since start. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00805">805</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01142">1142</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -623,7 +777,7 @@ false otherwise </dd></dl>
 
 <p>Current humidity level. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00806">806</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01143">1143</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -649,7 +803,7 @@ false otherwise </dd></dl>
 
 <p>Whether climate control is on. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00801">801</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01138">1138</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -675,7 +829,7 @@ false otherwise </dd></dl>
 
 <p>Temperature transition profile. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00804">804</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01141">1141</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -701,7 +855,7 @@ false otherwise </dd></dl>
 
 <p>Target humidity level. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00807">807</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01144">1144</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -727,7 +881,7 @@ false otherwise </dd></dl>
 
 <p>Current temperature. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00800">800</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01137">1137</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

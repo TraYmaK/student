@@ -48,5 +48,6 @@ var gallery_8hpp =
     [ "SoloExhibition", "classSoloExhibition.html", "classSoloExhibition" ],
     [ "Curator", "classCurator.html", "classCurator" ],
     [ "Visitor", "classVisitor.html", "classVisitor" ],
-    [ "GalleryMenu", "classGalleryMenu.html", "classGalleryMenu" ]
+    [ "GalleryMenu", "classGalleryMenu.html", "classGalleryMenu" ],
+    [ "TicketSystem", "classTicketSystem.html", "classTicketSystem" ]
 ];

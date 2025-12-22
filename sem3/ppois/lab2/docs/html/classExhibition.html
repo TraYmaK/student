@@ -135,6 +135,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aafa4e33966a1df0aee128394af78036e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Organize the exhibition (pure virtual).  <br /></td></tr>
 <tr class="memitem:a97f0a298a67bc85f4b22f70cd1ea5878" id="r_a97f0a298a67bc85f4b22f70cd1ea5878"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97f0a298a67bc85f4b22f70cd1ea5878">getName</a> () const</td></tr>
 <tr class="memdesc:a97f0a298a67bc85f4b22f70cd1ea5878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the exhibition name.  <br /></td></tr>
+<tr class="memitem:a04f4dafdfa92b1312acf099a9c394684" id="r_a04f4dafdfa92b1312acf099a9c394684"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04f4dafdfa92b1312acf099a9c394684">isFullyBooked</a> () const</td></tr>
+<tr class="memdesc:a04f4dafdfa92b1312acf099a9c394684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if exhibition is fully booked.  <br /></td></tr>
+<tr class="memitem:aeedd679fad07eac3400c595fd9086e40" id="r_aeedd679fad07eac3400c595fd9086e40"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeedd679fad07eac3400c595fd9086e40">calculateExhibitionDuration</a> () const</td></tr>
+<tr class="memdesc:aeedd679fad07eac3400c595fd9086e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate exhibition duration in hours.  <br /></td></tr>
+<tr class="memitem:a9b65c8c7d4af4cacae09df531f49f905" id="r_a9b65c8c7d4af4cacae09df531f49f905"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b65c8c7d4af4cacae09df531f49f905">isOnTime</a> () const</td></tr>
+<tr class="memdesc:a9b65c8c7d4af4cacae09df531f49f905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if exhibition is on time.  <br /></td></tr>
+<tr class="memitem:a7faea73b16660249a6938065ad922328" id="r_a7faea73b16660249a6938065ad922328"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7faea73b16660249a6938065ad922328">getAvailableSeats</a> () const</td></tr>
+<tr class="memdesc:a7faea73b16660249a6938065ad922328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get available seats count.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -145,7 +153,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Base class for all exhibition types. </p>
 <p>Abstract base class providing common interface for organizing exhibitions. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00953">953</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01365">1365</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acc0dc486647aaa6b8e03cd7e563fa27d" name="acc0dc486647aaa6b8e03cd7e563fa27d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc0dc486647aaa6b8e03cd7e563fa27d">&#9670;&#160;</a></span>Exhibition()</h2>
@@ -170,7 +178,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00313">313</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l00577">577</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -199,11 +207,71 @@ Protected Attributes</h2></td></tr>
 
 <p>Destroy the <a class="el" href="classExhibition.html" title="Base class for all exhibition types.">Exhibition</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00968">968</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01380">1380</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aeedd679fad07eac3400c595fd9086e40" name="aeedd679fad07eac3400c595fd9086e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeedd679fad07eac3400c595fd9086e40">&#9670;&#160;</a></span>calculateExhibitionDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Exhibition::calculateExhibitionDuration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate exhibition duration in hours. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing exhibition duration </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01505">1505</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7faea73b16660249a6938065ad922328" name="a7faea73b16660249a6938065ad922328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7faea73b16660249a6938065ad922328">&#9670;&#160;</a></span>getAvailableSeats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Exhibition::getAvailableSeats </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get available seats count. </p>
+<dl class="section return"><dt>Returns</dt><dd>int containing available seats </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01511">1511</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a97f0a298a67bc85f4b22f70cd1ea5878" name="a97f0a298a67bc85f4b22f70cd1ea5878"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97f0a298a67bc85f4b22f70cd1ea5878">&#9670;&#160;</a></span>getName()</h2>
 
@@ -230,7 +298,67 @@ Protected Attributes</h2></td></tr>
 <p>Get the exhibition name. </p>
 <dl class="section return"><dt>Returns</dt><dd>const char* containing exhibition name </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00980">980</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01392">1392</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a04f4dafdfa92b1312acf099a9c394684" name="a04f4dafdfa92b1312acf099a9c394684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04f4dafdfa92b1312acf099a9c394684">&#9670;&#160;</a></span>isFullyBooked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Exhibition::isFullyBooked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if exhibition is fully booked. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if exhibition is fully booked </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01502">1502</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9b65c8c7d4af4cacae09df531f49f905" name="a9b65c8c7d4af4cacae09df531f49f905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b65c8c7d4af4cacae09df531f49f905">&#9670;&#160;</a></span>isOnTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Exhibition::isOnTime </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if exhibition is on time. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if exhibition is on time </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01508">1508</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -286,7 +414,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Name of the exhibition. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l00955">955</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01367">1367</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

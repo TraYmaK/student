@@ -116,6 +116,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a26f4105c6789c183f75053a237a1a876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if visitor can access restricted areas.  <br /></td></tr>
 <tr class="memitem:a951992d7f3e20248943f4aa61225ba56" id="r_a951992d7f3e20248943f4aa61225ba56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a951992d7f3e20248943f4aa61225ba56">getAccessLevel</a> () const</td></tr>
 <tr class="memdesc:a951992d7f3e20248943f4aa61225ba56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the access level.  <br /></td></tr>
+<tr class="memitem:aa88c6e846fab0f4f74102b25a0185de8" id="r_aa88c6e846fab0f4f74102b25a0185de8"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa88c6e846fab0f4f74102b25a0185de8">getName</a> () const</td></tr>
+<tr class="memdesc:aa88c6e846fab0f4f74102b25a0185de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the visitor name.  <br /></td></tr>
+<tr class="memitem:ac5e4acfc052eb882f23d81a671000e22" id="r_ac5e4acfc052eb882f23d81a671000e22"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5e4acfc052eb882f23d81a671000e22">getVisitDuration</a> () const</td></tr>
+<tr class="memdesc:ac5e4acfc052eb882f23d81a671000e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the visit duration.  <br /></td></tr>
+<tr class="memitem:a8ea6b22e92bdca56a6b9effd5c70408b" id="r_a8ea6b22e92bdca56a6b9effd5c70408b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ea6b22e92bdca56a6b9effd5c70408b">calculateTotalBaggageWeight</a> (double checkedWeight, double carryOnWeight) const</td></tr>
+<tr class="memdesc:a8ea6b22e92bdca56a6b9effd5c70408b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate total baggage weight.  <br /></td></tr>
+<tr class="memitem:a3869cc06d19b3f6f997fa35f4143d140" id="r_a3869cc06d19b3f6f997fa35f4143d140"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3869cc06d19b3f6f997fa35f4143d140">hasValidVisa</a> (const char *destinationCountry) const</td></tr>
+<tr class="memdesc:a3869cc06d19b3f6f997fa35f4143d140"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if visitor has valid visa.  <br /></td></tr>
+<tr class="memitem:a3a26ddf2763f997462e38b7d9db537b5" id="r_a3a26ddf2763f997462e38b7d9db537b5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a26ddf2763f997462e38b7d9db537b5">calculateLoyaltyDiscount</a> (double basePrice) const</td></tr>
+<tr class="memdesc:a3a26ddf2763f997462e38b7d9db537b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate ticket discount based on loyalty status.  <br /></td></tr>
+<tr class="memitem:a5fa95c765bdba37be807a84e8159cbed" id="r_a5fa95c765bdba37be807a84e8159cbed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fa95c765bdba37be807a84e8159cbed">requestSpecialMeal</a> (const char *mealType)</td></tr>
+<tr class="memdesc:a5fa95c765bdba37be807a84e8159cbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request special meal.  <br /></td></tr>
+<tr class="memitem:a2304129ccc9efa3a221fa31c5e2aa59a" id="r_a2304129ccc9efa3a221fa31c5e2aa59a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2304129ccc9efa3a221fa31c5e2aa59a">checkInForExhibition</a> (const char *exhibitionNumber)</td></tr>
+<tr class="memdesc:a2304129ccc9efa3a221fa31c5e2aa59a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check in for exhibition.  <br /></td></tr>
+<tr class="memitem:a53fde23272b5f7f9d6ca3e47f7edee26" id="r_a53fde23272b5f7f9d6ca3e47f7edee26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53fde23272b5f7f9d6ca3e47f7edee26">cancelReservation</a> (int reservationId)</td></tr>
+<tr class="memdesc:a53fde23272b5f7f9d6ca3e47f7edee26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel exhibition reservation.  <br /></td></tr>
+<tr class="memitem:a9fd947b6cad178ac18220a43e45af6eb" id="r_a9fd947b6cad178ac18220a43e45af6eb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fd947b6cad178ac18220a43e45af6eb">calculateTotalTravelCost</a> (double ticketPrice, double baggageFee, double mealFee) const</td></tr>
+<tr class="memdesc:a9fd947b6cad178ac18220a43e45af6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate total travel cost.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -136,7 +154,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Class for gallery visitors. </p>
 <p>Represents a visitor with access level, ticket status, and visit tracking. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01989">1989</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02429">2429</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a715ae96ec298657e0399842aad78d342" name="a715ae96ec298657e0399842aad78d342"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a715ae96ec298657e0399842aad78d342">&#9670;&#160;</a></span>Visitor()</h2>
@@ -172,7 +190,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01077">1077</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01341">1341</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -194,7 +212,107 @@ Private Attributes</h2></td></tr>
 
 <p>Add an artwork to favorites. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01096">1096</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01360">1360</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3a26ddf2763f997462e38b7d9db537b5" name="a3a26ddf2763f997462e38b7d9db537b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a26ddf2763f997462e38b7d9db537b5">&#9670;&#160;</a></span>calculateLoyaltyDiscount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Visitor::calculateLoyaltyDiscount </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>basePrice</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate ticket discount based on loyalty status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">basePrice</td><td>double value containing base ticket price </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double containing discounted price </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01389">1389</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ea6b22e92bdca56a6b9effd5c70408b" name="a8ea6b22e92bdca56a6b9effd5c70408b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea6b22e92bdca56a6b9effd5c70408b">&#9670;&#160;</a></span>calculateTotalBaggageWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Visitor::calculateTotalBaggageWeight </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>checkedWeight</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>carryOnWeight</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate total baggage weight. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkedWeight</td><td>double value containing checked baggage weight </td></tr>
+    <tr><td class="paramname">carryOnWeight</td><td>double value containing carry-on weight </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double containing total weight </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01380">1380</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9fd947b6cad178ac18220a43e45af6eb" name="a9fd947b6cad178ac18220a43e45af6eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fd947b6cad178ac18220a43e45af6eb">&#9670;&#160;</a></span>calculateTotalTravelCost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Visitor::calculateTotalTravelCost </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>ticketPrice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>baggageFee</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>mealFee</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate total travel cost. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ticketPrice</td><td>double value containing ticket price </td></tr>
+    <tr><td class="paramname">baggageFee</td><td>double value containing baggage fee </td></tr>
+    <tr><td class="paramname">mealFee</td><td>double value containing meal fee </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double containing total cost </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01415">1415</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +336,63 @@ Private Attributes</h2></td></tr>
 <dd>
 false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01104">1104</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01368">1368</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a53fde23272b5f7f9d6ca3e47f7edee26" name="a53fde23272b5f7f9d6ca3e47f7edee26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53fde23272b5f7f9d6ca3e47f7edee26">&#9670;&#160;</a></span>cancelReservation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Visitor::cancelReservation </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>reservationId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cancel exhibition reservation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reservationId</td><td>integer value containing reservation ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if cancellation was successful </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01409">1409</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2304129ccc9efa3a221fa31c5e2aa59a" name="a2304129ccc9efa3a221fa31c5e2aa59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2304129ccc9efa3a221fa31c5e2aa59a">&#9670;&#160;</a></span>checkInForExhibition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Visitor::checkInForExhibition </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>exhibitionNumber</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check in for exhibition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exhibitionNumber</td><td>constant pointer to exhibition number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if check-in was successful </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01403">1403</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +419,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01083">1083</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01347">1347</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +441,79 @@ false otherwise </dd></dl>
 <p>Get the access level. </p>
 <dl class="section return"><dt>Returns</dt><dd>int containing access level </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01107">1107</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01371">1371</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa88c6e846fab0f4f74102b25a0185de8" name="aa88c6e846fab0f4f74102b25a0185de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa88c6e846fab0f4f74102b25a0185de8">&#9670;&#160;</a></span>getName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Visitor::getName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the visitor name. </p>
+<dl class="section return"><dt>Returns</dt><dd>const char* containing visitor name </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01374">1374</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac5e4acfc052eb882f23d81a671000e22" name="ac5e4acfc052eb882f23d81a671000e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e4acfc052eb882f23d81a671000e22">&#9670;&#160;</a></span>getVisitDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Visitor::getVisitDuration </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the visit duration. </p>
+<dl class="section return"><dt>Returns</dt><dd>double containing visit duration in minutes </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01377">1377</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3869cc06d19b3f6f997fa35f4143d140" name="a3869cc06d19b3f6f997fa35f4143d140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3869cc06d19b3f6f997fa35f4143d140">&#9670;&#160;</a></span>hasValidVisa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Visitor::hasValidVisa </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>destinationCountry</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if visitor has valid visa. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destinationCountry</td><td>constant pointer to destination country </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if visa is valid </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01383">1383</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,7 +534,7 @@ false otherwise </dd></dl>
 
 <p>Join a guided tour. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01100">1100</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01364">1364</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -309,7 +555,35 @@ false otherwise </dd></dl>
 
 <p>Purchase a ticket. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01079">1079</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01343">1343</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5fa95c765bdba37be807a84e8159cbed" name="a5fa95c765bdba37be807a84e8159cbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa95c765bdba37be807a84e8159cbed">&#9670;&#160;</a></span>requestSpecialMeal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Visitor::requestSpecialMeal </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>mealType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request special meal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mealType</td><td>constant pointer to meal type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool indicating if request was successful </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01397">1397</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +616,7 @@ false otherwise </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01089">1089</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8cpp_source.html#l01353">1353</a> of file <a class="el" href="gallery_8cpp_source.html">gallery.cpp</a>.</p>
 
 </div>
 </div>
@@ -369,7 +643,7 @@ false otherwise </dd></dl>
 
 <p>Access level of the visitor. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01992">1992</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02432">2432</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -395,7 +669,7 @@ false otherwise </dd></dl>
 
 <p>Number of favorite artworks. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01995">1995</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02435">2435</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +695,7 @@ false otherwise </dd></dl>
 
 <p>Whether the visitor is on a guided tour. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01996">1996</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02436">2436</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -447,7 +721,7 @@ false otherwise </dd></dl>
 
 <p>Whether the visitor has a ticket. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01993">1993</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02433">2433</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -473,7 +747,7 @@ false otherwise </dd></dl>
 
 <p>Name of the visitor. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01991">1991</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02431">2431</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>
@@ -499,7 +773,7 @@ false otherwise </dd></dl>
 
 <p>Duration of the visit in minutes. </p>
 
-<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l01994">1994</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gallery_8hpp_source.html#l02434">2434</a> of file <a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>.</p>
 
 </div>
 </div>

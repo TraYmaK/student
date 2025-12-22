@@ -96,11 +96,15 @@ $(function(){initNavTree('main_8cpp.html','',''); });
 <p>Main entry point for the Gallery management system.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="gallery_8hpp_source.html">gallery.hpp</a>&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a54bda36f5305a965c1223aec0e009178" id="r_a54bda36f5305a965c1223aec0e009178"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54bda36f5305a965c1223aec0e009178">runGallerySystem</a> (bool skipMenuRun=false)</td></tr>
+<tr class="memdesc:a54bda36f5305a965c1223aec0e009178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the gallery system.  <br /></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function.  <br /></td></tr>
 </table>
@@ -129,10 +133,39 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Main function. </p>
-<p>Creates artworks, tools, exhibitions, and runs the gallery menu system.</p>
+<p>Entry point for the gallery management system.</p>
 <dl class="section return"><dt>Returns</dt><dd>int exit code (0 on success, 1 on error) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00021">21</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00314">314</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a54bda36f5305a965c1223aec0e009178" name="a54bda36f5305a965c1223aec0e009178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54bda36f5305a965c1223aec0e009178">&#9670;&#160;</a></span>runGallerySystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int runGallerySystem </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>skipMenuRun</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run the gallery system. </p>
+<p>Creates artworks, tools, exhibitions, and runs the gallery menu system. This function can be called from <a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main function.">main()</a> or from tests.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">skipMenuRun</td><td>if true, skips menu.run() call (useful for testing) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int exit code (0 on success, 1 on error) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00141">141</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

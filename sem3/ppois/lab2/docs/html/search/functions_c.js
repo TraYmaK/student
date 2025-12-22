@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['opendoor_0',['openDoor',['../classClimateControl.html#a72a32bd17bf17775e2c5ebda19fc1041',1,'ClimateControl']]],
-  ['organize_1',['organize',['../classExhibition.html#aafa4e33966a1df0aee128394af78036e',1,'Exhibition::organize()'],['../classPaintingExhibition.html#acba7f40c631f05abbf8c5a58b7e6d196',1,'PaintingExhibition::organize()'],['../classSculptureExhibition.html#a4f8b3d8d08da03a01fd946e994a31049',1,'SculptureExhibition::organize()'],['../classPhotographyExhibition.html#aa55fee6d04b716c668cd87cd58bc283b',1,'PhotographyExhibition::organize()'],['../classMixedMediaExhibition.html#ae786ee5e7d1bfc94b9e8f8d6670cbdd1',1,'MixedMediaExhibition::organize()'],['../classDigitalArtExhibition.html#ac72b0692ce147b54367bd31a63ccaed0',1,'DigitalArtExhibition::organize()'],['../classVintageExhibition.html#a3d8353c6b125a37209d16b56a8102bcd',1,'VintageExhibition::organize()'],['../classContemporaryExhibition.html#a33c3a73261603c4773132ac26695f794',1,'ContemporaryExhibition::organize()'],['../classMinimalistExhibition.html#a9cfbf3df70249dd69921adac13cd9139',1,'MinimalistExhibition::organize()'],['../classAbstractExhibition.html#a9b6e3e057fdf96495adda346f9082394',1,'AbstractExhibition::organize()'],['../classPortraitExhibition.html#ad60d398d54b161f737505b209976d56f',1,'PortraitExhibition::organize()'],['../classLandscapeExhibition.html#a85f909d21abdabecc5e6aefe08d8212e',1,'LandscapeExhibition::organize()'],['../classRestorationExhibition.html#a5144fa634e0b807bcd7538642cf706f9',1,'RestorationExhibition::organize()'],['../classTemporaryExhibition.html#ade707eb29ecf19bb4278b02b8751fca2',1,'TemporaryExhibition::organize()'],['../classPermanentExhibition.html#a61f48f73490c84e71f07d0883fdf3a9f',1,'PermanentExhibition::organize()'],['../classInteractiveExhibition.html#a66b2e9a610b5d9f0330aa9513966c87a',1,'InteractiveExhibition::organize()'],['../classThematicExhibition.html#a9687cfee0b4cfbdc2108c4b6b9d2204a',1,'ThematicExhibition::organize()'],['../classRetrospectiveExhibition.html#a56ff60eb6b38f339125dd4fd016c9220',1,'RetrospectiveExhibition::organize()'],['../classGroupExhibition.html#a6e8ff9f8324245e08076ddf9ad0deb94',1,'GroupExhibition::organize()'],['../classSoloExhibition.html#acc8e4149418ce4cb411a51f91245882a',1,'SoloExhibition::organize()']]],
-  ['organizeabstract_2',['organizeAbstract',['../classCurator.html#a1b2f37f166dc7ea95c978bfa05708f76',1,'Curator']]],
-  ['organizecontemporary_3',['organizeContemporary',['../classCurator.html#a1c7803e27c4b0750efa281c490b18a1f',1,'Curator']]],
-  ['organizedigitalart_4',['organizeDigitalArt',['../classCurator.html#a7c1fca8cdfbb38bd9ddb9e4ed88b50eb',1,'Curator']]],
-  ['organizegroup_5',['organizeGroup',['../classCurator.html#ab41f125d42f97658f70270a6a46e68a3',1,'Curator']]],
-  ['organizeinteractive_6',['organizeInteractive',['../classCurator.html#ab913f213c98b6c0e5abbc0bb7fc27354',1,'Curator']]],
-  ['organizelandscape_7',['organizeLandscape',['../classCurator.html#ac30f7f9349651b21606627552a6815e5',1,'Curator']]],
-  ['organizeminimalist_8',['organizeMinimalist',['../classCurator.html#aea392a84c7af17a491776710c761a2f0',1,'Curator']]],
-  ['organizemixedmedia_9',['organizeMixedMedia',['../classCurator.html#a959ea543a408a09270f08e508c38f269',1,'Curator']]],
-  ['organizepainting_10',['organizePainting',['../classCurator.html#a4f1d0e1ff950fe82c293619d02f0f5ae',1,'Curator']]],
-  ['organizepermanent_11',['organizePermanent',['../classCurator.html#a64c2cdc578b6fe89edc9776ee461f267',1,'Curator']]],
-  ['organizephotography_12',['organizePhotography',['../classCurator.html#ac986f3d2bc906ff70fd759197be41199',1,'Curator']]],
-  ['organizeportrait_13',['organizePortrait',['../classCurator.html#a6e552c4ab67dbc9706fd87648718baad',1,'Curator']]],
-  ['organizerestoration_14',['organizeRestoration',['../classCurator.html#ada3aaf3fa305bc9d7c1a8397e159b4ff',1,'Curator']]],
-  ['organizeretrospective_15',['organizeRetrospective',['../classCurator.html#a226889250f57537a805f5efa792dc884',1,'Curator']]],
-  ['organizesculpture_16',['organizeSculpture',['../classCurator.html#a534fe414c4287379bdcae90268f475c5',1,'Curator']]],
-  ['organizesolo_17',['organizeSolo',['../classCurator.html#a9a5907035f3fe0a06e052a1c774f66a4',1,'Curator']]],
-  ['organizetemporary_18',['organizeTemporary',['../classCurator.html#a67eb401d2ac8d05dbb327559f14222f9',1,'Curator']]],
-  ['organizethematic_19',['organizeThematic',['../classCurator.html#a63bd68fbc6cb067002318a054591d2c3',1,'Curator']]],
-  ['organizevintage_20',['organizeVintage',['../classCurator.html#a8ec4bcfa962fa4586685d0b1eb43cd01',1,'Curator']]],
-  ['overexposedartworkexception_21',['OverexposedArtworkException',['../classOverexposedArtworkException.html#a93c66f79e13c523ac80ff93fac29ec65',1,'OverexposedArtworkException']]]
+  ['needsinspection_0',['needsInspection',['../classArtwork.html#a37f79f7efd20df5c839fbe09da6a26f1',1,'Artwork']]],
+  ['notenoughartworkexception_1',['NotEnoughArtworkException',['../classNotEnoughArtworkException.html#aa3550f22d098be053091bb9cca4f37fb',1,'NotEnoughArtworkException']]]
 ];

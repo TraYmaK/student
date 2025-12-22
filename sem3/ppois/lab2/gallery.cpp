@@ -1,4 +1,5 @@
 #include "gallery.hpp"
+#include <cstring>
 Dimension::Dimension(const char* n, double c, bool m, int i)
     : name(n), cmPerUnit(c), metric(m), id(i), precision(0.1), standard(true) {}
 double Dimension::toCentimeters(double amount) const {
@@ -16,6 +17,20 @@ void Dimension::setPrecision(double p) {
 bool Dimension::isStandard() const {
     return standard;
 }
+double Dimension::fromCentimeters(double cm) const {
+    if (cmPerUnit <= 0.0) return 0.0;
+    return cm / cmPerUnit;
+}
+double Dimension::convertTo(double amount, Dimension* targetDimension) const {
+    if (!targetDimension) {
+        return 0.0;
+    }
+    double cm = toCentimeters(amount);
+    return targetDimension->fromCentimeters(cm);
+}
+bool Dimension::validateConversion(double amount) const {
+    return amount >= 0.0 && cmPerUnit > 0.0;
+}
 Size::Size(double v, Dimension* d, bool appr, int i)
     : value(v), dimension(d), approximate(appr), id(i) {}
 double Size::toCentimeters() const {
@@ -29,6 +44,24 @@ void Size::scale(double factor) {
 }
 bool Size::isZero() const {
     return value <= 0.0;
+}
+double Size::getValue() const {
+    return value;
+}
+bool Size::isApproximate() const {
+    return approximate;
+}
+double Size::convertToDimension(Dimension* targetDimension) const {
+    if (!targetDimension || !dimension) {
+        return 0.0;
+    }
+    double cm = toCentimeters();
+    return targetDimension->fromCentimeters(cm);
+}
+double Size::calculateDifference(const Size& otherSize) const {
+    double thisCm = toCentimeters();
+    double otherCm = otherSize.toCentimeters();
+    return thisCm > otherCm ? thisCm - otherCm : otherCm - thisCm;
 }
 Artwork::Artwork(const char* n, const Size& s, double v, bool fr)
     : name(n), size(s), value(v), fragile(fr), year(0), artist("Unknown"), authenticated(false), insuranceValue(0.0) {}
@@ -65,6 +98,48 @@ int Artwork::getYear() const {
 const char* Artwork::getArtist() const {
     return artist;
 }
+const char* Artwork::getName() const {
+    return name;
+}
+double Artwork::getValue() const {
+    return value;
+}
+bool Artwork::isAuthenticated() const {
+    return authenticated;
+}
+double Artwork::calculateMaintenanceCost() const {
+    double baseCost = 1000.0;
+    if (authenticated) {
+        baseCost *= 0.9;
+    }
+    int age = 2025 - year;
+    return baseCost * (1.0 + age * 0.05);
+}
+bool Artwork::isAvailableForDisplay() const {
+    return authenticated && !fragile;
+}
+double Artwork::calculateDepreciation(int currentYear) const {
+    if (year <= 0 || currentYear < year) {
+        return value;
+    }
+    int age = currentYear - year;
+    double depreciationRate = 0.1;
+    return value * (1.0 - depreciationRate * age);
+}
+bool Artwork::needsInspection() const {
+    if (year == 0) {
+        return false;
+    }
+    int age = 2025 - year;
+    return age > 5;
+}
+double Artwork::calculateRestorationCost(double damageLevel) const {
+    if (damageLevel <= 0.0) {
+        return 0.0;
+    }
+    double baseCost = 500.0;
+    return baseCost * damageLevel;
+}
 GalleryTool::GalleryTool(const char* n, bool c, bool a, int d)
     : name(n), clean(c), available(a), busy(false), durability(d) {}
 void GalleryTool::useTool() {
@@ -89,6 +164,9 @@ void GalleryTool::breakTool() {
 bool GalleryTool::isAvailable() const {
     return available && clean && durability > 0;
 }
+const char* GalleryTool::getName() const {
+    return name;
+}
 Frame::Frame(const char* n, bool p, int w, int i)
     : GalleryTool(n, true, true, 100),
       protective(p), width(w), id(i) {}
@@ -101,6 +179,32 @@ void Frame::removeProtection() {
 bool Frame::canProtect() const {
     return isAvailable() && protective;
 }
+int Frame::getWidth() const {
+    return width;
+}
+double Frame::calculateComfortScore() const {
+    double score = 5.0;
+    if (protective) {
+        score += 2.0;
+    }
+    if (width > 50) {
+        score += 1.0;
+    }
+    if (isAvailable()) {
+        score += 2.0;
+    }
+    return score > 10.0 ? 10.0 : score;
+}
+bool Frame::isSuitableForArtwork(double artworkWeight) const {
+    if (artworkWeight <= 0.0) {
+        return false;
+    }
+    return artworkWeight <= 150.0 && isAvailable();
+}
+void Frame::adjustPosition(int position) {
+    if (position >= -45 && position <= 45) {
+    }
+}
 Lighting::Lighting(const char* n, bool l, bool d, int i)
     : GalleryTool(n, true, true, 100),
       led(l), dimmed(d), id(i) {}
@@ -112,6 +216,23 @@ void Lighting::brighten() {
 }
 bool Lighting::isSafeForArtwork() const {
     return led && !dimmed && isAvailable();
+}
+bool Lighting::isLED() const {
+    return led;
+}
+double Lighting::calculatePowerConsumption() const {
+    if (led) {
+        return dimmed ? 5.0 : 10.0;
+    }
+    return dimmed ? 20.0 : 40.0;
+}
+void Lighting::setBrightness(int level) {
+    if (level >= 0 && level <= 100) {
+        dimmed = (level < 50);
+    }
+}
+bool Lighting::meetsSafetyStandards() const {
+    return led && isAvailable();
 }
 SecurityCamera::SecurityCamera(const char* n, double a, bool r, bool act)
     : GalleryTool(n, true, true, 100),
@@ -131,6 +252,28 @@ void SecurityCamera::stopRecording() {
 bool SecurityCamera::isRecording() const {
     return recording;
 }
+double SecurityCamera::getAngle() const {
+    return angle;
+}
+void SecurityCamera::adjustAngle(double newAngle) {
+    if (newAngle >= 0.0 && newAngle <= 360.0) {
+        angle = newAngle;
+    }
+}
+double SecurityCamera::calculateCoverageArea(double distance) const {
+    if (distance <= 0.0) {
+        return 0.0;
+    }
+    double radius = distance * tan(angle * 3.14159 / 180.0 / 2.0);
+    return 3.14159 * radius * radius;
+}
+bool SecurityCamera::canMonitorArea(double areaSize) const {
+    if (areaSize <= 0.0 || !active) {
+        return false;
+    }
+    double maxArea = calculateCoverageArea(50.0);
+    return areaSize <= maxArea;
+}
 DisplayStand::DisplayStand(const char* n, double c, bool hc, bool u)
     : GalleryTool(n, true, true, 100),
       capacity(c), hasCover(hc), inUse(u) {}
@@ -146,6 +289,25 @@ void DisplayStand::stopDisplay() {
 }
 bool DisplayStand::canDisplay(double sqMeters) const {
     return sqMeters <= capacity;
+}
+bool DisplayStand::checkHasCover() const {
+    return hasCover;
+}
+double DisplayStand::calculateDisplayTime(int visitorCount) const {
+    if (visitorCount <= 0) {
+        return 0.0;
+    }
+    return visitorCount * 0.5;
+}
+bool DisplayStand::canHandleVisitorLoad(int visitorCount) const {
+    double requiredCapacity = visitorCount * 0.5;
+    return capacity >= requiredCapacity;
+}
+double DisplayStand::calculateUtilization() const {
+    if (capacity <= 0.0) {
+        return 0.0;
+    }
+    return inUse ? 75.0 : 25.0;
 }
 Timer::Timer(int s, bool r, int e, int i)
     : seconds(s), running(r), elapsed(e), id(i) {}
@@ -168,6 +330,30 @@ void Timer::tick(int delta) {
 }
 bool Timer::isFinished() const {
     return !running && elapsed >= seconds && seconds > 0;
+}
+int Timer::getElapsed() const {
+    return elapsed;
+}
+bool Timer::isRunning() const {
+    return running;
+}
+int Timer::calculateRemainingTime() const {
+    if (seconds <= 0) {
+        return 0;
+    }
+    return seconds - elapsed;
+}
+void Timer::reset() {
+    elapsed = 0;
+    running = false;
+}
+void Timer::pause() {
+    running = false;
+}
+void Timer::resume() {
+    if (seconds > 0 && elapsed < seconds) {
+        running = true;
+    }
 }
 RestorationKit::RestorationKit(const char* n, bool eq)
     : GalleryTool(n, true, true, 100),
@@ -195,6 +381,18 @@ void RestorationKit::restore() {
     cout << "Cleaning and repairing artwork...\n";
     cout << "Restoration process completed.\n";
 }
+bool RestorationKit::isEquipped() const {
+    return equipped;
+}
+double RestorationKit::calculateRestorationEfficiency() const {
+    if (!isEquipped()) {
+        return 0.0;
+    }
+    return isAvailable() ? 85.0 : 50.0;
+}
+bool RestorationKit::hasRequiredTools(int toolCount) const {
+    return isEquipped() && toolCount > 0 && toolCount <= 10;
+}
 CleaningKit::CleaningKit(const char* n, int i)
     : GalleryTool(n, true, true, 100),
       id(i) {}
@@ -204,6 +402,9 @@ void CleaningKit::clean() {
     }
     useTool();
     cout << "Using cleaning kit... clean-clean-clean...\n";
+}
+int CleaningKit::getId() const {
+    return id;
 }
 ConditionProfile::ConditionProfile(double s, double t, int d, bool g)
     : startTemp(s), targetTemp(t), duration(d), gradual(g) {}
@@ -221,6 +422,25 @@ void ConditionProfile::reset(double s, double t, int d) {
     startTemp = s;
     targetTemp = t;
     duration = d;
+}
+int ConditionProfile::getDuration() const {
+    return duration;
+}
+double ConditionProfile::calculateTemperatureChangeRate() const {
+    if (duration <= 0) {
+        return 0.0;
+    }
+    return (targetTemp - startTemp) / duration;
+}
+bool ConditionProfile::isValidProfile() const {
+    return duration > 0 && startTemp >= -50.0 && targetTemp <= 50.0;
+}
+int ConditionProfile::getEstimatedCompletionTime(int currentElapsed) const {
+    if (currentElapsed < 0) {
+        return duration;
+    }
+    int remaining = duration - currentElapsed;
+    return remaining > 0 ? remaining : 0;
 }
 ClimateControl::ClimateControl(double t, bool o, bool d)
     : temperature(t),
@@ -245,6 +465,7 @@ void ClimateControl::setConditions(double t, int warmupMinutes) {
     profile.reset(temperature, t, warmupMinutes * 60);
     elapsedSeconds = 0;
     on = true;
+    temperature = t;
 }
 void ClimateControl::turnOff() {
     on = false;
@@ -291,6 +512,31 @@ void ClimateControl::activateAlarm() {
 bool ClimateControl::isAlarmActive() const {
     return alarmActive;
 }
+double ClimateControl::getHumidity() const {
+    return humidity;
+}
+double ClimateControl::getTargetHumidity() const {
+    return targetHumidity;
+}
+double ClimateControl::calculateEnergyConsumption() const {
+    if (!on) {
+        return 0.0;
+    }
+    return 2.5 * (temperature / 20.0);
+}
+bool ClimateControl::isOptimalClimate() const {
+    return temperature >= 20.0 && temperature <= 24.0 && humidity >= 40.0 && humidity <= 60.0;
+}
+void ClimateControl::adjustTemperatureGradually(double targetTemp, int duration) {
+    if (duration > 0 && targetTemp > 0.0 && targetTemp <= 30.0) {
+        profile.reset(temperature, targetTemp, duration * 60);
+        elapsedSeconds = 0;
+        on = true;
+    }
+}
+int ClimateControl::calculateMaintenanceSchedule() const {
+    return 30;
+}
 SecuritySystem::SecuritySystem(int z, int act, bool a, bool o)
     : zones(z), activeZones(act), alarm(a), on(o) {}
 void SecuritySystem::activateZone() {
@@ -309,6 +555,24 @@ void SecuritySystem::deactivateZone() {
 }
 int SecuritySystem::freeZones() const {
     return zones - activeZones;
+}
+bool SecuritySystem::isOn() const {
+    return on;
+}
+void SecuritySystem::activateAllZones() {
+    activeZones = zones;
+}
+void SecuritySystem::deactivateAllZones() {
+    activeZones = 0;
+}
+bool SecuritySystem::checkSecurityBreach() const {
+    return activeZones < zones && on;
+}
+double SecuritySystem::calculateSecurityCoverage() const {
+    if (zones == 0) {
+        return 0.0;
+    }
+    return (activeZones * 100.0) / zones;
 }
 Exhibition::Exhibition(const char* n) : name(n) {}
 PaintingExhibition::PaintingExhibition(const char* n,
@@ -1107,6 +1371,50 @@ bool Visitor::canAccessRestricted() const {
 int Visitor::getAccessLevel() const {
     return accessLevel;
 }
+const char* Visitor::getName() const {
+    return name;
+}
+double Visitor::getVisitDuration() const {
+    return visitDuration;
+}
+double Visitor::calculateTotalBaggageWeight(double checkedWeight, double carryOnWeight) const {
+    return checkedWeight + carryOnWeight;
+}
+bool Visitor::hasValidVisa(const char* destinationCountry) const {
+    if (!destinationCountry) {
+        return false;
+    }
+    return accessLevel >= 2;
+}
+double Visitor::calculateLoyaltyDiscount(double basePrice) const {
+    if (favoriteCount > 10) {
+        return basePrice * 0.15;
+    } else if (favoriteCount > 5) {
+        return basePrice * 0.10;
+    }
+    return 0.0;
+}
+bool Visitor::requestSpecialMeal(const char* mealType) {
+    if (!mealType) {
+        return false;
+    }
+    return hasTicket;
+}
+bool Visitor::checkInForExhibition(const char* exhibitionNumber) {
+    if (!exhibitionNumber || !hasTicket) {
+        return false;
+    }
+    return true;
+}
+bool Visitor::cancelReservation(int reservationId) {
+    if (reservationId < 0) {
+        return false;
+    }
+    return hasTicket;
+}
+double Visitor::calculateTotalTravelCost(double ticketPrice, double baggageFee, double mealFee) const {
+    return ticketPrice + baggageFee + mealFee;
+}
 GalleryMenu::GalleryMenu() : exhibitionCount(0), currentVisitor(nullptr) {
     for (int i = 0; i < MAX_EXHIBITIONS; i++) {
         exhibitions[i] = nullptr;
@@ -1149,4 +1457,152 @@ void GalleryMenu::run() {
         cout << "Exhibition \"" << exhibitions[choice - 1]->getName()
              << "\" successfully organized.\n";
     }
+}
+int GalleryMenu::getExhibitionCount() const {
+    return exhibitionCount;
+}
+Visitor* GalleryMenu::getCurrentVisitor() const {
+    return currentVisitor;
+}
+int GalleryMenu::searchExhibitions(const char* searchTerm) const {
+    int count = 0;
+    for (int i = 0; i < exhibitionCount; i++) {
+        if (exhibitions[i] && strstr(exhibitions[i]->getName(), searchTerm)) {
+            count++;
+        }
+    }
+    return count;
+}
+int GalleryMenu::filterAvailableExhibitions() const {
+    int count = 0;
+    for (int i = 0; i < exhibitionCount; i++) {
+        if (exhibitions[i] && !exhibitions[i]->isFullyBooked()) {
+            count++;
+        }
+    }
+    return count;
+}
+void GalleryMenu::sortExhibitionsByName() {
+    for (int i = 0; i < exhibitionCount - 1; i++) {
+        for (int j = i + 1; j < exhibitionCount; j++) {
+            if (exhibitions[i] && exhibitions[j] && strcmp(exhibitions[i]->getName(), exhibitions[j]->getName()) > 0) {
+                Exhibition* temp = exhibitions[i];
+                exhibitions[i] = exhibitions[j];
+                exhibitions[j] = temp;
+            }
+        }
+    }
+}
+Exhibition* GalleryMenu::getExhibitionByIndex(int index) const {
+    if (index >= 0 && index < exhibitionCount) {
+        return exhibitions[index];
+    }
+    return nullptr;
+}
+bool Exhibition::isFullyBooked() const {
+    return false;
+}
+double Exhibition::calculateExhibitionDuration() const {
+    return 2.5;
+}
+bool Exhibition::isOnTime() const {
+    return true;
+}
+int Exhibition::getAvailableSeats() const {
+    return 150;
+}
+TicketSystem::TicketSystem(const char* name, int max)
+    : systemName(name), totalBookings(0), totalRevenue(0.0), isActive(true), maxBookings(max),
+      currentBookingVisitor(nullptr), currentBookingExhibition(nullptr) {}
+bool TicketSystem::createBooking(Visitor* visitor, Exhibition* exhibition) {
+    if (!isActive || totalBookings >= maxBookings || !visitor || !exhibition) {
+        return false;
+    }
+    if (exhibition->isFullyBooked()) {
+        return false;
+    }
+    currentBookingVisitor = visitor;
+    currentBookingExhibition = exhibition;
+    totalBookings++;
+    return true;
+}
+bool TicketSystem::cancelBooking(int bookingId) {
+    if (bookingId < 0 || bookingId >= totalBookings) {
+        return false;
+    }
+    totalBookings--;
+    return true;
+}
+double TicketSystem::calculateTicketPrice(Exhibition* exhibition, Visitor* visitor) {
+    if (!exhibition || !visitor) {
+        return 0.0;
+    }
+    double basePrice = 500.0;
+    double discount = visitor->calculateLoyaltyDiscount(basePrice);
+    return basePrice - discount;
+}
+bool TicketSystem::processPayment(double amount, const char* cardNumber) {
+    if (amount <= 0.0 || !cardNumber || strlen(cardNumber) < 13) {
+        return false;
+    }
+    totalRevenue += amount;
+    return true;
+}
+bool TicketSystem::transferMoney(const char* fromCard, const char* toCard, double amount) {
+    if (!fromCard || !toCard || amount <= 0.0) {
+        return false;
+    }
+    if (strlen(fromCard) < 13 || strlen(toCard) < 13) {
+        return false;
+    }
+    return true;
+}
+bool TicketSystem::verifyPassword(const char* accountId, const char* password) {
+    if (!accountId || !password) {
+        return false;
+    }
+    return strlen(password) >= 6;
+}
+bool TicketSystem::checkExhibitionAvailability(Exhibition* exhibition) {
+    if (!exhibition) {
+        return false;
+    }
+    return !exhibition->isFullyBooked();
+}
+bool TicketSystem::reserveSeat(Visitor* visitor, int seatNumber) {
+    if (!visitor || seatNumber < 1 || seatNumber > 500) {
+        return false;
+    }
+    return true;
+}
+bool TicketSystem::cancelSeatReservation(int seatNumber) {
+    if (seatNumber < 1 || seatNumber > 500) {
+        return false;
+    }
+    return true;
+}
+double TicketSystem::calculateBaggageFee(double weight) {
+    if (weight <= 0.0) {
+        return 0.0;
+    }
+    if (weight <= 23.0) {
+        return 0.0;
+    }
+    double excess = weight - 23.0;
+    return excess * 10.0;
+}
+bool TicketSystem::checkVisaRequirement(Visitor* visitor, Exhibition* exhibition) {
+    if (!visitor || !exhibition) {
+        return false;
+    }
+    return visitor->hasValidVisa("International");
+}
+double TicketSystem::getTotalRevenue() const {
+    return totalRevenue;
+}
+int TicketSystem::getTotalBookings() const {
+    return totalBookings;
+}
+bool TicketSystem::isSystemActive() const {
+    return isActive;
 }

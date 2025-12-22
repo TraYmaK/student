@@ -71,6 +71,40 @@ else
     echo -e "\033[31m✗ Some tests failed (exit code: $TEST_RESULT)\033[0m"
 fi
 
+cd ..
+
+echo ""
+echo "=== Generating coverage report ==="
+if [ -f "generate_coverage.sh" ]; then
+    ./generate_coverage.sh
+else
+    echo "Warning: generate_coverage.sh not found, skipping coverage generation"
+fi
+
+echo ""
+echo "=== Generating Doxygen documentation ==="
+if [ -f "Doxyfile" ]; then
+    doxygen Doxyfile > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+        echo "✓ Doxygen documentation generated"
+    else
+        echo "✗ Doxygen generation failed"
+    fi
+else
+    echo "Warning: Doxyfile not found, skipping Doxygen generation"
+fi
+
+echo ""
+echo "=== Opening Doxygen documentation ==="
+# Open only Doxygen documentation (it contains links to all coverage reports)
+if [ -f "docs/html/index.html" ]; then
+    open docs/html/index.html 2>/dev/null || xdg-open docs/html/index.html 2>/dev/null
+    echo "✓ Opened docs/html/index.html (all reports accessible from here)"
+else
+    echo "Warning: Doxygen documentation not found"
+fi
+
 echo ""
 echo "=== Running main program ==="
+cd cmake-build-debug
 ./lab2

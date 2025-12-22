@@ -1,6 +1,10 @@
 var classSize =
 [
     [ "Size", "classSize.html#a9d47cccde4dc2e5204cd3f536db30541", null ],
+    [ "calculateDifference", "classSize.html#a3c66a6cb5c7e820521014bcf3d87589d", null ],
+    [ "convertToDimension", "classSize.html#a272e8a7016ccf58e18ee76a0ce71a487", null ],
+    [ "getValue", "classSize.html#a17a5a27a1664ae3a53ec5de9e828798b", null ],
+    [ "isApproximate", "classSize.html#a09b739973acaceab237501f53cecc4a6", null ],
     [ "isZero", "classSize.html#af7016575a87751d929b0d453162afdec", null ],
     [ "scale", "classSize.html#a47a5d5886aebc9b9a00ae0c2adefe9be", null ],
     [ "toCentimeters", "classSize.html#a38d4354eff319eb592fbbd052ac6a437", null ],
