@@ -1,0 +1,5 @@
+if(EXISTS "/Users/jamesmaxwell/student/sem3/ppois/lab1/cmake-build-debug/tests[1]_tests.cmake")
+  include("/Users/jamesmaxwell/student/sem3/ppois/lab1/cmake-build-debug/tests[1]_tests.cmake")
+else()
+  add_test(tests_NOT_BUILT tests_NOT_BUILT)
+endif()
