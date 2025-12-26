@@ -1,0 +1,10 @@
+concept_mobile_company
+<- sc_node_class;
+=> nrel_main_idtf:
+    [компания мобильной разработки]
+    (*
+        <- lang_ru;;
+    *);
+<= nrel_inclusion:
+    concept_organization;;
+

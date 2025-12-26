@@ -1,0 +1,54 @@
+@search_developer_experience_template = {
+    rrel_init_template: {
+        rrel_template: [*
+            @input_param1 = (.._mobile_company <-_ concept_mobile_company);;
+            rrel_project _-> (.._mobile_company _-> .._project);;
+            @output_param1 = (.._project <-_ concept_mobile_project);;
+        *];
+        rrel_template_input_params: {
+            @input_param1
+        };
+        rrel_template_output_params: {
+            @output_param1
+        }
+    } (* <- nrel_search_set_template;; *);
+    rrel_next_template: {
+        rrel_init_template: {
+            rrel_template: [*
+                @input_param1 = (.._project <-_ concept_mobile_project);;
+                rrel_developer _-> (.._project _-> .._developer);;
+                @output_param1 = (.._developer <-_ concept_developer);;
+            *];
+            rrel_template_input_params: {
+                @input_param1
+            };
+            rrel_template_output_params: {
+                @output_param1
+            }
+        } (* <- nrel_search_set_template;; *);
+        rrel_next_template: {
+            rrel_init_template: {
+                rrel_template: [*
+                    @input_param1 = (.._developer <-_ concept_developer);;
+                    nrel_experience_years _-> (.._developer _=> .._experience);;
+                    @output_param1 = (.._experience <-_ concept_number);;
+                *];
+                rrel_template_input_params: {
+                    @input_param1
+                };
+                rrel_template_output_params: {
+                    @output_param1
+                }
+            } (* <- nrel_search_template;; *)
+        } (* <- nrel_fixed_search_strategy_template;; *)
+    } (* <- nrel_fixed_search_strategy_template;; *)
+};;
+
+@search_developer_experience_template
+<- nrel_fixed_search_strategy_template;
+=> nrel_main_idtf:
+    [Шаблон поиска платформы разработки]
+    (*
+        <- lang_ru;;
+    *);;
+

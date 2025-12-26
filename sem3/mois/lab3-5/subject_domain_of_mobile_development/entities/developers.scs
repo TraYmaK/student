@@ -1,0 +1,40 @@
+Smith
+<- concept_developer;
+=> nrel_name: nrel_main_idtf:
+    [Смит Джон]
+    (*
+        <- lang_ru;;
+    *);
+=> nrel_experience_years:
+    [6.5];;
+
+Johnson
+<- concept_developer;
+=> nrel_name: nrel_main_idtf:
+    [Джонсон Майк]
+    (*
+        <- lang_ru;;
+    *);
+=> nrel_experience_years:
+    [4.2];;
+
+Williams
+<- concept_developer;
+=> nrel_name: nrel_main_idtf:
+    [Уильямс Том]
+    (*
+        <- lang_ru;;
+    *);
+=> nrel_experience_years:
+    [7.8];;
+
+Brown
+<- concept_developer;
+=> nrel_name: nrel_main_idtf:
+    [Браун Дэвид]
+    (*
+        <- lang_ru;;
+    *);
+=> nrel_experience_years:
+    [3.9];;
+

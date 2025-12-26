@@ -1,0 +1,33 @@
+MobileDevCompany
+<- concept_mobile_company;
+=> nrel_main_idtf:
+    [Компания мобильной разработки]
+    (*
+        <- lang_ru;;
+    *);
+-> rrel_project:
+    project1;
+    project2;;
+
+project1
+=> nrel_main_idtf:
+    [Проект iOS приложения]
+    (*
+        <- lang_ru;;
+    *);
+<- concept_mobile_project;
+-> rrel_developer:
+    Smith;
+    Johnson;;
+
+project2
+=> nrel_main_idtf:
+    [Проект Android приложения]
+    (*
+        <- lang_ru;;
+    *);
+<- concept_mobile_project;
+-> rrel_developer:
+    Williams;
+    Brown;;
+

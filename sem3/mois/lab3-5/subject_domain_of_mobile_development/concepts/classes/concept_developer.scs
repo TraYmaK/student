@@ -1,0 +1,10 @@
+concept_developer
+<- sc_node_class;
+=> nrel_main_idtf:
+    [разработчик]
+    (*
+        <- lang_ru;;
+    *);
+<= nrel_inclusion:
+    concept_human;;
+

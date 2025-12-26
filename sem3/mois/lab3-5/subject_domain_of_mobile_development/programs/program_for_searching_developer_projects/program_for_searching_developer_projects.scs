@@ -1,0 +1,264 @@
+// ==========================================================================================
+// ПРОГРАММА: Программа поиска проектов разработчика
+// ==========================================================================================
+// НАЗНАЧЕНИЕ:
+//   Эта scp-программа ищет все проекты, в которых участвует указанный разработчик,
+//   и собирает их в результирующее множество.
+//
+// ВХОДНЫЕ ПАРАМЕТРЫ:
+//   .._developer - разработчик, проекты которого нужно найти.
+//
+// ВЫХОДНЫЕ ПАРАМЕТРЫ:
+//   .._result_projects - результирующая структура, содержащая все найденные проекты разработчика.
+//
+// АЛГОРИТМ:
+//   1. Создать пустое результирующее множество проектов.
+//   2. Проверить, что входной аргумент - это экземпляр класса разработчиков.
+//   3. Найти все проекты, в которых участвует указанный разработчик.
+//   4. Для каждого проекта проверить принадлежность к классу проектов.
+//   5. Добавить проект в результирующее множество.
+//   6. Очистить временные множества и вернуть результат.
+//
+// ИСПОЛЬЗУЕМЫЕ КЛЮЧЕВЫЕ SC-ЭЛЕМЕНТЫ:
+//   - concept_developer: класс разработчиков
+//   - rrel_developer: связывает проекты с разработчиками (обратная связь)
+//   - concept_mobile_project: класс мобильных проектов
+//
+// ==========================================================================================
+
+program_for_searching_developer_projects
+=> nrel_main_idtf:
+	[Программа поиска проектов заданного разработчика]
+    (*
+        <- lang_ru;;
+    *);
+	[Program for searching projects of specified developer]
+    (*
+        <- lang_en;;
+    *);
+<- scp_program;
+-> rrel_key_sc_element:
+    .._process;;
+
+program_for_searching_developer_projects = [*
+.._process
+<-_ scp_process;
+
+// ОБЪЯВЛЕНИЕ ВХОДНЫХ И ВЫХОДНЫХ ПАРАМЕТРОВ:
+_-> rrel_1:: rrel_in:: .._developer; // разработчик, проекты которого нужно найти.
+_-> rrel_2:: rrel_out:: .._result_projects; // результирующая структура проектов разработчика.
+
+<=_ nrel_decomposition_of_action:: _...
+(*
+	// ШАГ 1: ИНИЦИАЛИЗАЦИЯ РЕЗУЛЬТИРУЮЩЕЙ СТРУКТУРЫ
+	// Создать пустую структуру для добавления проектов.
+	_-> rrel_1:: .._generate_result_set_of_developer_projects
+	(*
+		<-_ genElStr3;;
+
+		_-> rrel_1:: rrel_assign:: rrel_scp_var:: rrel_const:: rrel_node:: rrel_structure:: .._result_projects;;
+		_-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_const_perm_pos_arc:: .._arc_from_result_projects_to_class;;
+		_-> rrel_3:: rrel_fixed:: rrel_scp_const:: concept_mobile_project;;
+
+        // Перейти к проверке входного аргумента.
+		_=> nrel_goto:: .._check_developer;;
+	*);;
+
+	// ШАГ 2: ПРОВЕРКА ВХОДНОГО АРГУМЕНТА
+	// Проверить, что входной аргумент действительно является экземпляром класса разработчиков.
+	_-> .._check_developer
+	(*
+		<-_ searchElStr3;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_const:: concept_developer;;
+		_-> rrel_2:: rrel_assign:: rrel_const_perm_pos_arc:: rrel_scp_var:: .._arc_from_class_to_developer;;
+		_-> rrel_3:: rrel_fixed:: rrel_scp_const:: .._developer;;
+
+		// Если входной аргумент является экземпляром класса разработчиков, 
+		// то перейти к печати в терминал, что он является разработчиком.
+		_=> nrel_then:: .._print_that_specified_argument_is_developer;;
+		// Если входной аргумент не является экземпляром класса разработчиков, 
+		// то перейти к печати в терминал, что он не является разработчиком.
+		_=> nrel_else:: .._print_that_specified_argument_is_not_developer;;
+	*);;
+
+	// Напечатать в терминал, что входной аргумент является разработчиком.
+	_-> .._print_that_specified_argument_is_developer
+	(*
+		<-_ printNl;;		
+		_-> rrel_1:: rrel_fixed:: rrel_scp_const:: [Specified argument is developer];;
+
+		// Перейти к поиску всех проектов разработчика.
+		_=> nrel_goto:: .._search_developer_projects;;
+	*);;
+
+	// ШАГ 3: ПОИСК ВСЕХ ПРОЕКТОВ РАЗРАБОТЧИКА
+	// Найти все проекты, в которых участвует разработчик, сформировать множество из них и записать в .._found_projects.
+	// Используем обратный поиск: project -> arc1 -> developer <- arc2 <- rrel_developer (ищем project, зная developer)
+	// Структура: project -> arc1 -> developer <- arc2 <- rrel_developer (пятиэлементная структура)
+	_-> .._search_developer_projects
+	(*
+		<-_ searchSetStr5;;
+
+		_-> rrel_1:: rrel_assign:: rrel_scp_var:: rrel_const:: rrel_node:: .._project;;
+		_-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_const_perm_pos_arc:: .._arc_from_project_to_developer;;
+		_-> rrel_3:: rrel_fixed:: rrel_scp_const:: .._developer;;
+		_-> rrel_4:: rrel_assign:: rrel_scp_var:: rrel_const_perm_pos_arc:: .._arc_to_arc_from_project_to_developer;;
+		_-> rrel_5:: rrel_fixed:: rrel_scp_const:: rrel_developer;;
+	
+		_-> rrel_set_1:: rrel_assign:: rrel_scp_var:: .._found_projects;;
+
+		// Если проекты найдены, то перейти к выбору проекта.
+		_=> nrel_then:: .._get_next_project;;
+		// Если проекты не найдены, то перейти к печати в терминал, что все проекты были пройдены.
+		_=> nrel_else:: .._print_that_all_projects_were_iterated;;
+	*);;
+
+	// ШАГ 4: ВЫБРАТЬ ПРОЕКТ ИЗ МНОЖЕСТВА НАЙДЕННЫХ ПРОЕКТОВ
+	// Найти любой проект во множестве найденных проектов, являющегося значением переменной .._found_projects.
+	_-> .._get_next_project
+	(*
+		<-_ searchElStr3;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_var:: .._found_projects;;
+		_-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_const_perm_pos_arc:: .._arc_from_project_set_to_project;;
+		_-> rrel_3:: rrel_assign:: rrel_scp_var:: .._project;;
+
+		// Если проекты еще остались, то перейти к удалению выбранного проекта из множества.
+		_=> nrel_then:: .._pop_project_from_set;;
+		// Если все проекты были пройдены, то перейти к печати в терминал, что все проекты были пройдены.
+		_=> nrel_else:: .._print_that_all_projects_were_iterated;;
+	*);;
+
+	// ШАГ 5: УДАЛИТЬ ВЫБРАННЫЙ ПРОЕКТ ИЗ МНОЖЕСТВА НАЙДЕННЫХ ПРОЕКТОВ
+	// Удалить sc-дугу между множеством в .._found_projects и выбранным проектом.
+	_-> .._pop_project_from_set
+	(*
+		<-_ eraseEl;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_var:: rrel_erase:: .._arc_from_project_set_to_project;;
+
+		// Перейти к печати в терминал, что проект успешно извлечен из множества.
+		_=> nrel_goto:: .._print_that_developer_project_was_found;;
+	*);;
+
+	// Напечатать в терминал, что проект успешно извлечен из множества.
+	_-> .._print_that_developer_project_was_found
+	(*
+		<-_ printNl;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_const:: [Project was found for specified developer];;
+
+		// Перейти к проверке принадлежности проекта к классу concept_mobile_project.
+		_=> nrel_goto:: .._check_project_class;;
+	*);;
+
+	// ШАГ 6: ПРОВЕРКА ПРИНАДЛЕЖНОСТИ К КЛАССУ ПРОЕКТОВ И ДОБАВЛЕНИЕ В РЕЗУЛЬТАТ
+	// Проверить, что проект принадлежит классу concept_mobile_project.
+	// Если проект принадлежит классу concept_mobile_project, то он автоматически добавляется в результирующее множество.
+	// Если нет - элемент просто не добавляется, и мы переходим к следующему проекту.
+	_-> .._check_project_class
+	(*
+		<-_ searchSetStr3;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_const:: concept_mobile_project;;
+		_-> rrel_2:: rrel_assign:: rrel_scp_var:: rrel_const_perm_pos_arc:: .._arc_from_class_to_project;;
+		_-> rrel_3:: rrel_fixed:: rrel_scp_var:: .._project;;
+
+		_-> rrel_set_2:: rrel_fixed:: rrel_scp_var:: .._result_projects;;
+
+		// Перейти к печати (если проект принадлежит классу, он уже добавлен в результат).
+		_=> nrel_goto:: .._print_that_project_was_added_to_result_projects_set;;
+	*);;
+
+	// Напечатать в терминал, что проект успешно добавлен в результат.
+	_-> .._print_that_project_was_added_to_result_projects_set
+	(*
+		<-_ printNl;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_const:: [Project was added to result projects set];;
+
+		// Перейти к выбору следующего проекта.
+		_=> nrel_goto:: .._get_next_project;;
+	*);;
+
+	// Напечатать в терминал, что все проекты разработчика были обработаны.
+	_-> .._print_that_all_projects_were_iterated
+	(*
+		<-_ printNl;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_const:: [All projects were iterated for specified developer];;
+
+		// Перейти к проверке, была ли переменная множества присвоена.
+		_=> nrel_goto:: .._check_if_projects_set_exists;;
+	*);;
+
+	// ПРОВЕРКА СУЩЕСТВОВАНИЯ МНОЖЕСТВА ПРОЕКТОВ
+	// Проверить, была ли переменная множества проектов присвоена перед удалением.
+	_-> .._check_if_projects_set_exists
+	(*
+		<-_ ifVarAssign;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_var:: .._found_projects;;
+
+		// Если переменная была присвоена, то перейти к удалению множества.
+		_=> nrel_then:: .._erase_found_projects_set;;
+		// Если переменная не была присвоена, то перейти к удалению дуги к классу.
+		_=> nrel_else:: .._erase_result_class_arc;;
+	*);;
+
+	// Удалить временное множество проектов.
+	_-> .._erase_found_projects_set
+	(*
+		<-_ eraseEl;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_var:: rrel_erase:: .._found_projects;;
+
+		// Перейти к удалению дуги к классу.
+		_=> nrel_goto:: .._erase_result_class_arc;;
+	*);;
+
+	// Напечатать в терминал, что указанный аргумент не является разработчиком.
+	_-> .._print_that_specified_argument_is_not_developer
+	(*
+		<-_ printNl;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_const:: [Specified argument is not developer];;
+
+		// Перейти к удалению дуги к классу (если она была создана).
+		_=> nrel_goto:: .._erase_result_class_arc;;
+	*);;
+
+	// Удалить дугу от результата к классу concept_mobile_project перед возвратом.
+	// Это нужно, чтобы в результате были только проекты, без связи с классом.
+	_-> .._erase_result_class_arc
+	(*
+		<-_ ifVarAssign;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_var:: .._arc_from_result_projects_to_class;;
+
+		// Если переменная была присвоена, то перейти к удалению дуги.
+		_=> nrel_then:: .._erase_result_class_arc_do;;
+		// Если переменная не была присвоена, то перейти к завершению программы.
+		_=> nrel_else:: .._return_result;;
+	*);;
+
+	// Удалить дугу от результата к классу.
+	_-> .._erase_result_class_arc_do
+	(*
+		<-_ eraseEl;;
+
+		_-> rrel_1:: rrel_fixed:: rrel_scp_var:: rrel_erase:: .._arc_from_result_projects_to_class;;
+
+		// Перейти к завершению программы.
+		_=> nrel_goto:: .._return_result;;
+	*);;
+
+	// Завершить программу.
+	_-> .._return_result
+	(*
+		<-_ return;;
+	*);;
+*);;
+*];;
+

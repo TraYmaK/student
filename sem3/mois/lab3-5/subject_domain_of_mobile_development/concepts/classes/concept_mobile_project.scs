@@ -1,0 +1,10 @@
+concept_mobile_project
+<- sc_node_class;
+=> nrel_main_idtf:
+    [мобильный проект]
+    (*
+        <- lang_ru;;
+    *);
+<= nrel_inclusion:
+    concept_set;;
+
