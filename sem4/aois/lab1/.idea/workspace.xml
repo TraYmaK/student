@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6bdc2f92-8dc8-46b8-bc66-6391b8e7143a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 1. Представление числовой информации.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 2. Преобразование логических функций, представленных в разных формах.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 3. Минимизация логических функций.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 4. Синтез логических схем.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 5. Синтез цифровых автоматов.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 6. Моделирование таблиц хеширования.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 7. Моделирование ассоциативного процессора и ассоциативной памяти.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../course work/my.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../course work/my.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../igisit/tor/лабораторный практикум.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lois/tor/loislab1_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lois/tor/loislab1_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lois/tor/loislab1_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mois/lab1/lab1.gwf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mois/lab1/lab1.gwf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3CxSkEJ4qnn0S93GQSIfpyLsf4y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-b63d5a1f7c97-b61e75351b1f-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.22158.340" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bdc2f92-8dc8-46b8-bc66-6391b8e7143a" name="Changes" comment="" />
+      <created>1777325868280</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1777325868280</updated>
+      <workItem from="1777325869370" duration="628000" />
+      <workItem from="1777328308383" duration="1042000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lab1$main.coverage" NAME="main Coverage Results" MODIFIED="1777328355884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
