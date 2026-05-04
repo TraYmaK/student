@@ -1,0 +1,17 @@
+[
+  "tests/test_cli.py::test_cli_create_and_show_conference",
+  "tests/test_cli.py::test_cli_fails_for_invalid_command_arguments",
+  "tests/test_cli.py::test_cli_rejects_scheduling_unknown_submission",
+  "tests/test_cli.py::test_cli_show_schedule_when_empty",
+  "tests/test_cli.py::test_interactive_menu_create_show_and_exit",
+  "tests/test_cli.py::test_interactive_menu_handles_unknown_option",
+  "tests/test_models.py::test_conference_rejects_invalid_dates",
+  "tests/test_models.py::test_participant_rejects_invalid_email",
+  "tests/test_models.py::test_session_rejects_invalid_duration",
+  "tests/test_models.py::test_submission_rejects_empty_abstract",
+  "tests/test_services.py::test_assign_submission_requires_accepted_status",
+  "tests/test_services.py::test_happy_path_creates_sorted_schedule",
+  "tests/test_services.py::test_register_participant_fails_for_duplicate_id",
+  "tests/test_services.py::test_schedule_fails_for_overlapping_session_in_same_room",
+  "tests/test_services.py::test_submit_paper_fails_for_unknown_participant"
+]
