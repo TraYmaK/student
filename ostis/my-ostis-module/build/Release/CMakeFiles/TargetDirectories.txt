@@ -1,0 +1,4 @@
+/Users/jamesmaxwell/my-ostis-module/build/Release/CMakeFiles/logistics-module.dir
+/Users/jamesmaxwell/my-ostis-module/build/Release/CMakeFiles/logistics-module-tests.dir
+/Users/jamesmaxwell/my-ostis-module/build/Release/CMakeFiles/edit_cache.dir
+/Users/jamesmaxwell/my-ostis-module/build/Release/CMakeFiles/rebuild_cache.dir

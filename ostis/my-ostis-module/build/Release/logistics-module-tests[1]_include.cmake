@@ -1,0 +1,5 @@
+if(EXISTS "/Users/jamesmaxwell/my-ostis-module/build/Release/logistics-module-tests[1]_tests.cmake")
+  include("/Users/jamesmaxwell/my-ostis-module/build/Release/logistics-module-tests[1]_tests.cmake")
+else()
+  add_test(logistics-module-tests_NOT_BUILT logistics-module-tests_NOT_BUILT)
+endif()

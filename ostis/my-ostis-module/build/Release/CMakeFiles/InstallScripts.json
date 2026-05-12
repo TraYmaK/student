@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/jamesmaxwell/my-ostis-module/build/Release/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

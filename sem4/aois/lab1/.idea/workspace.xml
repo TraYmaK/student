@@ -2,26 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bdc2f92-8dc8-46b8-bc66-6391b8e7143a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lab1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 1. Представление числовой информации.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 2. Преобразование логических функций, представленных в разных формах.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 3. Минимизация логических функций.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 4. Синтез логических схем.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 5. Синтез цифровых автоматов.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 6. Моделирование таблиц хеширования.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tor/Лабораторная работа 7. Моделирование ассоциативного процессора и ассоциативной памяти.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../course work/my.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../course work/my.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../igisit/tor/лабораторный практикум.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lois/tor/loislab1_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lois/tor/loislab1_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lois/tor/loislab1_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mois/lab1/lab1.gwf" beforeDir="false" afterPath="$PROJECT_DIR$/../../mois/lab1/lab1.gwf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/.idea/editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/.idea/lab1_demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1_demo/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/Отчет lab2.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/Отчет lab2.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/Отчет lab3.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/Отчет lab3.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Отчет lab4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Отчет lab4.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maksim_reqs/Отчет lab1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maksim_reqs/Отчет lab2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maksim_reqs/Отчет lab3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maksim_reqs/Отчет lab4.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maksim_reqs/Отчет lab5.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/prac1/Авторский договор (заказа на создание статьи).docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/prac1/договор.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/prac2/pe2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/Авторский договор заказа.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/Авторский_договор_заказа_на_создание_статьи.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1/Ћ“€‘ Џ‡ ь1/Ђўв®абЄЁ© ¤®Ј®ў®а § Є § .pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1/Ћ“€‘ Џ‡ ь1/Ђўв®абЄЁ© ¤®Ј®ў®а ® ЇҐаҐ¤ зҐ Їа ў.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1/Ћ“€‘ Џ‡ ь1/Џа ЄвЁзҐбЄ®Ґ § ­пвЁҐ ь1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1/Ћ“€‘ Џ‡ ь1/ЏаЁ«®¦Ґ­ЁҐ ЋЏ”.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1/Ћ“€‘ Џ‡ ь1/ЏаЁ¬Ґа § Ї®«­Ґ­Ёп  ўв®абЄ®Ј® ¤®Ј®ў®а  § Є § .docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1/Ћ“€‘ Џ‡ ь1/Авторский договор (заказа на создание статьи).docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС ПЗ №1/Ћ“€‘ Џ‡ ь1/ђ §¬Ґал  ўв®абЄ®Ј® ў®§­ Ја ¦¤Ґ­Ёп.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ОУИС_таблицы-2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ПЗ ОУИС №2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ПЗ ОУИС №2/Џ‡ Ћ“€‘ ь2/Џа ЄвЁзҐбЄ®Ґ § ¤ ­ЁҐ ь2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ПЗ ОУИС №2/Џ‡ Ћ“€‘ ь2/ЏаЁ«®¦Ґ­ЁҐ Ђ Ѓ« ­Є.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/ПЗ ОУИС №2/Џ‡ Ћ“€‘ ь2/ЏаЁ«®¦Ґ­ЁҐ Ѓ.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ouis/tech/smth/договор.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,18 +58,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,6 +87,7 @@
       <updated>1777325868280</updated>
       <workItem from="1777325869370" duration="628000" />
       <workItem from="1777328308383" duration="1042000" />
+      <workItem from="1778151578792" duration="1063000" />
     </task>
     <servers />
   </component>

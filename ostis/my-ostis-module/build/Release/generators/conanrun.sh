@@ -1,0 +1,1 @@
+. "/Users/jamesmaxwell/my-ostis-module/build/Release/generators/conanrunenv-release-armv8.sh"
