@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students>
+  <student>
+    <full_name>Ivan Novikov #200-1</full_name>
+    <course>1</course>
+    <group_name>P-12</group_name>
+    <total_works>11</total_works>
+    <completed_works>11</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+  <student>
+    <full_name>Anna Orlova #200-2</full_name>
+    <course>1</course>
+    <group_name>P-21</group_name>
+    <total_works>10</total_works>
+    <completed_works>9</completed_works>
+    <programming_language>Kotlin</programming_language>
+  </student>
+  <student>
+    <full_name>Dmitry Lebedev #200-3</full_name>
+    <course>3</course>
+    <group_name>P-32</group_name>
+    <total_works>8</total_works>
+    <completed_works>7</completed_works>
+    <programming_language>Rust</programming_language>
+  </student>
+  <student>
+    <full_name>Olga Karpova #200-4</full_name>
+    <course>2</course>
+    <group_name>P-32</group_name>
+    <total_works>8</total_works>
+    <completed_works>7</completed_works>
+    <programming_language>Python</programming_language>
+  </student>
+  <student>
+    <full_name>Kirill Petrov #200-5</full_name>
+    <course>3</course>
+    <group_name>P-42</group_name>
+    <total_works>15</total_works>
+    <completed_works>14</completed_works>
+    <programming_language>Java</programming_language>
+  </student>
+  <student>
+    <full_name>Elena Smirnova #200-6</full_name>
+    <course>2</course>
+    <group_name>P-42</group_name>
+    <total_works>11</total_works>
+    <completed_works>10</completed_works>
+    <programming_language>C++</programming_language>
+  </student>
+  <student>
+    <full_name>Sergey Kuznetsov #200-7</full_name>
+    <course>1</course>
+    <group_name>P-42</group_name>
+    <total_works>12</total_works>
+    <completed_works>11</completed_works>
+    <programming_language>JavaScript</programming_language>
+  </student>
+  <student>
+    <full_name>Mariya Fedorova #200-8</full_name>
+    <course>4</course>
+    <group_name>P-22</group_name>
+    <total_works>13</total_works>
+    <completed_works>10</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+  <student>
+    <full_name>Nikita Volkov #200-9</full_name>
+    <course>1</course>
+    <group_name>P-12</group_name>
+    <total_works>15</total_works>
+    <completed_works>13</completed_works>
+    <programming_language>Kotlin</programming_language>
+  </student>
+  <student>
+    <full_name>Pavel Romanova #200-10</full_name>
+    <course>2</course>
+    <group_name>P-22</group_name>
+    <total_works>18</total_works>
+    <completed_works>15</completed_works>
+    <programming_language>Rust</programming_language>
+  </student>
+  <student>
+    <full_name>Artem Morozov #200-11</full_name>
+    <course>3</course>
+    <group_name>P-32</group_name>
+    <total_works>18</total_works>
+    <completed_works>3</completed_works>
+    <programming_language>Python</programming_language>
+  </student>
+  <student>
+    <full_name>Svetlana Sokolova #200-12</full_name>
+    <course>2</course>
+    <group_name>P-32</group_name>
+    <total_works>10</total_works>
+    <completed_works>7</completed_works>
+    <programming_language>Java</programming_language>
+  </student>
+  <student>
+    <full_name>Ivan Novikov #200-13</full_name>
+    <course>4</course>
+    <group_name>P-11</group_name>
+    <total_works>10</total_works>
+    <completed_works>3</completed_works>
+    <programming_language>C++</programming_language>
+  </student>
+  <student>
+    <full_name>Anna Orlova #200-14</full_name>
+    <course>4</course>
+    <group_name>P-12</group_name>
+    <total_works>15</total_works>
+    <completed_works>3</completed_works>
+    <programming_language>JavaScript</programming_language>
+  </student>
+  <student>
+    <full_name>Dmitry Lebedev #200-15</full_name>
+    <course>2</course>
+    <group_name>P-11</group_name>
+    <total_works>16</total_works>
+    <completed_works>10</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+  <student>
+    <full_name>Olga Karpova #200-16</full_name>
+    <course>1</course>
+    <group_name>P-11</group_name>
+    <total_works>10</total_works>
+    <completed_works>8</completed_works>
+    <programming_language>Kotlin</programming_language>
+  </student>
+  <student>
+    <full_name>Kirill Petrov #200-17</full_name>
+    <course>2</course>
+    <group_name>P-21</group_name>
+    <total_works>18</total_works>
+    <completed_works>1</completed_works>
+    <programming_language>Rust</programming_language>
+  </student>
+  <student>
+    <full_name>Elena Smirnova #200-18</full_name>
+    <course>3</course>
+    <group_name>P-31</group_name>
+    <total_works>10</total_works>
+    <completed_works>7</completed_works>
+    <programming_language>Python</programming_language>
+  </student>
+  <student>
+    <full_name>Sergey Kuznetsov #200-19</full_name>
+    <course>4</course>
+    <group_name>P-41</group_name>
+    <total_works>17</total_works>
+    <completed_works>9</completed_works>
+    <programming_language>Java</programming_language>
+  </student>
+  <student>
+    <full_name>Mariya Fedorova #200-20</full_name>
+    <course>3</course>
+    <group_name>P-41</group_name>
+    <total_works>11</total_works>
+    <completed_works>1</completed_works>
+    <programming_language>C++</programming_language>
+  </student>
+  <student>
+    <full_name>Nikita Volkov #200-21</full_name>
+    <course>2</course>
+    <group_name>P-41</group_name>
+    <total_works>13</total_works>
+    <completed_works>4</completed_works>
+    <programming_language>JavaScript</programming_language>
+  </student>
+  <student>
+    <full_name>Pavel Romanova #200-22</full_name>
+    <course>3</course>
+    <group_name>P-11</group_name>
+    <total_works>9</total_works>
+    <completed_works>4</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+  <student>
+    <full_name>Artem Morozov #200-23</full_name>
+    <course>3</course>
+    <group_name>P-12</group_name>
+    <total_works>16</total_works>
+    <completed_works>0</completed_works>
+    <programming_language>Kotlin</programming_language>
+  </student>
+  <student>
+    <full_name>Svetlana Sokolova #200-24</full_name>
+    <course>2</course>
+    <group_name>P-12</group_name>
+    <total_works>16</total_works>
+    <completed_works>6</completed_works>
+    <programming_language>Rust</programming_language>
+  </student>
+  <student>
+    <full_name>Ivan Novikov #200-25</full_name>
+    <course>3</course>
+    <group_name>P-22</group_name>
+    <total_works>18</total_works>
+    <completed_works>2</completed_works>
+    <programming_language>Python</programming_language>
+  </student>
+  <student>
+    <full_name>Anna Orlova #200-26</full_name>
+    <course>1</course>
+    <group_name>P-21</group_name>
+    <total_works>15</total_works>
+    <completed_works>10</completed_works>
+    <programming_language>Java</programming_language>
+  </student>
+  <student>
+    <full_name>Dmitry Lebedev #200-27</full_name>
+    <course>1</course>
+    <group_name>P-22</group_name>
+    <total_works>12</total_works>
+    <completed_works>5</completed_works>
+    <programming_language>C++</programming_language>
+  </student>
+  <student>
+    <full_name>Olga Karpova #200-28</full_name>
+    <course>1</course>
+    <group_name>P-31</group_name>
+    <total_works>12</total_works>
+    <completed_works>10</completed_works>
+    <programming_language>JavaScript</programming_language>
+  </student>
+  <student>
+    <full_name>Kirill Petrov #200-29</full_name>
+    <course>3</course>
+    <group_name>P-42</group_name>
+    <total_works>12</total_works>
+    <completed_works>1</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+  <student>
+    <full_name>Elena Smirnova #200-30</full_name>
+    <course>2</course>
+    <group_name>P-42</group_name>
+    <total_works>8</total_works>
+    <completed_works>8</completed_works>
+    <programming_language>Kotlin</programming_language>
+  </student>
+  <student>
+    <full_name>Sergey Kuznetsov #200-31</full_name>
+    <course>4</course>
+    <group_name>P-21</group_name>
+    <total_works>11</total_works>
+    <completed_works>7</completed_works>
+    <programming_language>Rust</programming_language>
+  </student>
+  <student>
+    <full_name>Mariya Fedorova #200-32</full_name>
+    <course>4</course>
+    <group_name>P-22</group_name>
+    <total_works>11</total_works>
+    <completed_works>0</completed_works>
+    <programming_language>Python</programming_language>
+  </student>
+  <student>
+    <full_name>Nikita Volkov #200-33</full_name>
+    <course>2</course>
+    <group_name>P-21</group_name>
+    <total_works>16</total_works>
+    <completed_works>14</completed_works>
+    <programming_language>Java</programming_language>
+  </student>
+  <student>
+    <full_name>Pavel Romanova #200-34</full_name>
+    <course>1</course>
+    <group_name>P-21</group_name>
+    <total_works>18</total_works>
+    <completed_works>9</completed_works>
+    <programming_language>C++</programming_language>
+  </student>
+  <student>
+    <full_name>Artem Morozov #200-35</full_name>
+    <course>4</course>
+    <group_name>P-41</group_name>
+    <total_works>8</total_works>
+    <completed_works>0</completed_works>
+    <programming_language>JavaScript</programming_language>
+  </student>
+  <student>
+    <full_name>Svetlana Sokolova #200-36</full_name>
+    <course>1</course>
+    <group_name>P-31</group_name>
+    <total_works>12</total_works>
+    <completed_works>9</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+  <student>
+    <full_name>Ivan Novikov #200-37</full_name>
+    <course>1</course>
+    <group_name>P-32</group_name>
+    <total_works>12</total_works>
+    <completed_works>2</completed_works>
+    <programming_language>Kotlin</programming_language>
+  </student>
+  <student>
+    <full_name>Anna Orlova #200-38</full_name>
+    <course>2</course>
+    <group_name>P-42</group_name>
+    <total_works>15</total_works>
+    <completed_works>0</completed_works>
+    <programming_language>Rust</programming_language>
+  </student>
+  <student>
+    <full_name>Dmitry Lebedev #200-39</full_name>
+    <course>4</course>
+    <group_name>P-21</group_name>
+    <total_works>10</total_works>
+    <completed_works>0</completed_works>
+    <programming_language>Python</programming_language>
+  </student>
+  <student>
+    <full_name>Olga Karpova #200-40</full_name>
+    <course>4</course>
+    <group_name>P-22</group_name>
+    <total_works>12</total_works>
+    <completed_works>3</completed_works>
+    <programming_language>Java</programming_language>
+  </student>
+  <student>
+    <full_name>Kirill Petrov #200-41</full_name>
+    <course>4</course>
+    <group_name>P-31</group_name>
+    <total_works>17</total_works>
+    <completed_works>16</completed_works>
+    <programming_language>C++</programming_language>
+  </student>
+  <student>
+    <full_name>Elena Smirnova #200-42</full_name>
+    <course>2</course>
+    <group_name>P-22</group_name>
+    <total_works>10</total_works>
+    <completed_works>0</completed_works>
+    <programming_language>JavaScript</programming_language>
+  </student>
+  <student>
+    <full_name>Sergey Kuznetsov #200-43</full_name>
+    <course>1</course>
+    <group_name>P-22</group_name>
+    <total_works>15</total_works>
+    <completed_works>14</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+  <student>
+    <full_name>Mariya Fedorova #200-44</full_name>
+    <course>1</course>
+    <group_name>P-31</group_name>
+    <total_works>18</total_works>
+    <completed_works>3</completed_works>
+    <programming_language>Kotlin</programming_language>
+  </student>
+  <student>
+    <full_name>Nikita Volkov #200-45</full_name>
+    <course>1</course>
+    <group_name>P-32</group_name>
+    <total_works>9</total_works>
+    <completed_works>3</completed_works>
+    <programming_language>Rust</programming_language>
+  </student>
+  <student>
+    <full_name>Pavel Romanova #200-46</full_name>
+    <course>1</course>
+    <group_name>P-41</group_name>
+    <total_works>14</total_works>
+    <completed_works>13</completed_works>
+    <programming_language>Python</programming_language>
+  </student>
+  <student>
+    <full_name>Artem Morozov #200-47</full_name>
+    <course>4</course>
+    <group_name>P-21</group_name>
+    <total_works>8</total_works>
+    <completed_works>1</completed_works>
+    <programming_language>Java</programming_language>
+  </student>
+  <student>
+    <full_name>Svetlana Sokolova #200-48</full_name>
+    <course>2</course>
+    <group_name>P-12</group_name>
+    <total_works>18</total_works>
+    <completed_works>16</completed_works>
+    <programming_language>C++</programming_language>
+  </student>
+  <student>
+    <full_name>Ivan Novikov #200-49</full_name>
+    <course>2</course>
+    <group_name>P-21</group_name>
+    <total_works>10</total_works>
+    <completed_works>6</completed_works>
+    <programming_language>JavaScript</programming_language>
+  </student>
+  <student>
+    <full_name>Anna Orlova #200-50</full_name>
+    <course>1</course>
+    <group_name>P-21</group_name>
+    <total_works>15</total_works>
+    <completed_works>7</completed_works>
+    <programming_language>Go</programming_language>
+  </student>
+</students>
