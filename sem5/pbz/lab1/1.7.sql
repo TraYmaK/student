@@ -1,0 +1,1 @@
+SELECT DISTINCT * FROM Преподаватель WHERE Специальность LIKE '%АСОИ%'

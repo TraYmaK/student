@@ -1,0 +1,1104 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  18 SEP 2026 22:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**report.tex
+(./report.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/extsizes/exta
+rticle.cls
+Document Class: extarticle 1996/10/08 v1.0 Non Standard LaTeX document class
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/extsizes/size
+14.clo
+File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/base/exscale.
+sty
+Package: exscale 2025/06/05 v2.1i Standard LaTeX package exscale
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+\big@size=\dimen148
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen149
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/base/inputenc
+.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/base/fontenc.
+sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/cyrillic/t2ae
+nc.def
+File: t2aenc.def 2023/11/07 v1.0k Cyrillic encoding definition file
+Now handling font encoding T2A ...
+... processing UTF-8 mapping file for font encoding T2A
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/base/t2aenc.d
+fu
+File: t2aenc.dfu 2022/06/07 v1.3c UTF-8 support
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0237 (decimal 567)
+   defining Unicode char U+0400 (decimal 1024)
+   defining Unicode char U+0401 (decimal 1025)
+   defining Unicode char U+0402 (decimal 1026)
+   defining Unicode char U+0403 (decimal 1027)
+   defining Unicode char U+0404 (decimal 1028)
+   defining Unicode char U+0405 (decimal 1029)
+   defining Unicode char U+0406 (decimal 1030)
+   defining Unicode char U+0407 (decimal 1031)
+   defining Unicode char U+0408 (decimal 1032)
+   defining Unicode char U+0409 (decimal 1033)
+   defining Unicode char U+040A (decimal 1034)
+   defining Unicode char U+040B (decimal 1035)
+   defining Unicode char U+040C (decimal 1036)
+   defining Unicode char U+040D (decimal 1037)
+   defining Unicode char U+040E (decimal 1038)
+   defining Unicode char U+040F (decimal 1039)
+   defining Unicode char U+0410 (decimal 1040)
+   defining Unicode char U+0411 (decimal 1041)
+   defining Unicode char U+0412 (decimal 1042)
+   defining Unicode char U+0413 (decimal 1043)
+   defining Unicode char U+0414 (decimal 1044)
+   defining Unicode char U+0415 (decimal 1045)
+   defining Unicode char U+0416 (decimal 1046)
+   defining Unicode char U+0417 (decimal 1047)
+   defining Unicode char U+0418 (decimal 1048)
+   defining Unicode char U+0419 (decimal 1049)
+   defining Unicode char U+041A (decimal 1050)
+   defining Unicode char U+041B (decimal 1051)
+   defining Unicode char U+041C (decimal 1052)
+   defining Unicode char U+041D (decimal 1053)
+   defining Unicode char U+041E (decimal 1054)
+   defining Unicode char U+041F (decimal 1055)
+   defining Unicode char U+0420 (decimal 1056)
+   defining Unicode char U+0421 (decimal 1057)
+   defining Unicode char U+0422 (decimal 1058)
+   defining Unicode char U+0423 (decimal 1059)
+   defining Unicode char U+0424 (decimal 1060)
+   defining Unicode char U+0425 (decimal 1061)
+   defining Unicode char U+0426 (decimal 1062)
+   defining Unicode char U+0427 (decimal 1063)
+   defining Unicode char U+0428 (decimal 1064)
+   defining Unicode char U+0429 (decimal 1065)
+   defining Unicode char U+042A (decimal 1066)
+   defining Unicode char U+042B (decimal 1067)
+   defining Unicode char U+042C (decimal 1068)
+   defining Unicode char U+042D (decimal 1069)
+   defining Unicode char U+042E (decimal 1070)
+   defining Unicode char U+042F (decimal 1071)
+   defining Unicode char U+0430 (decimal 1072)
+   defining Unicode char U+0431 (decimal 1073)
+   defining Unicode char U+0432 (decimal 1074)
+   defining Unicode char U+0433 (decimal 1075)
+   defining Unicode char U+0434 (decimal 1076)
+   defining Unicode char U+0435 (decimal 1077)
+   defining Unicode char U+0436 (decimal 1078)
+   defining Unicode char U+0437 (decimal 1079)
+   defining Unicode char U+0438 (decimal 1080)
+   defining Unicode char U+0439 (decimal 1081)
+   defining Unicode char U+043A (decimal 1082)
+   defining Unicode char U+043B (decimal 1083)
+   defining Unicode char U+043C (decimal 1084)
+   defining Unicode char U+043D (decimal 1085)
+   defining Unicode char U+043E (decimal 1086)
+   defining Unicode char U+043F (decimal 1087)
+   defining Unicode char U+0440 (decimal 1088)
+   defining Unicode char U+0441 (decimal 1089)
+   defining Unicode char U+0442 (decimal 1090)
+   defining Unicode char U+0443 (decimal 1091)
+   defining Unicode char U+0444 (decimal 1092)
+   defining Unicode char U+0445 (decimal 1093)
+   defining Unicode char U+0446 (decimal 1094)
+   defining Unicode char U+0447 (decimal 1095)
+   defining Unicode char U+0448 (decimal 1096)
+   defining Unicode char U+0449 (decimal 1097)
+   defining Unicode char U+044A (decimal 1098)
+   defining Unicode char U+044B (decimal 1099)
+   defining Unicode char U+044C (decimal 1100)
+   defining Unicode char U+044D (decimal 1101)
+   defining Unicode char U+044E (decimal 1102)
+   defining Unicode char U+044F (decimal 1103)
+   defining Unicode char U+0450 (decimal 1104)
+   defining Unicode char U+0451 (decimal 1105)
+   defining Unicode char U+0452 (decimal 1106)
+   defining Unicode char U+0453 (decimal 1107)
+   defining Unicode char U+0454 (decimal 1108)
+   defining Unicode char U+0455 (decimal 1109)
+   defining Unicode char U+0456 (decimal 1110)
+   defining Unicode char U+0457 (decimal 1111)
+   defining Unicode char U+0458 (decimal 1112)
+   defining Unicode char U+0459 (decimal 1113)
+   defining Unicode char U+045A (decimal 1114)
+   defining Unicode char U+045B (decimal 1115)
+   defining Unicode char U+045C (decimal 1116)
+   defining Unicode char U+045D (decimal 1117)
+   defining Unicode char U+045E (decimal 1118)
+   defining Unicode char U+045F (decimal 1119)
+   defining Unicode char U+0490 (decimal 1168)
+   defining Unicode char U+0491 (decimal 1169)
+   defining Unicode char U+0492 (decimal 1170)
+   defining Unicode char U+0493 (decimal 1171)
+   defining Unicode char U+0496 (decimal 1174)
+   defining Unicode char U+0497 (decimal 1175)
+   defining Unicode char U+0498 (decimal 1176)
+   defining Unicode char U+0499 (decimal 1177)
+   defining Unicode char U+049A (decimal 1178)
+   defining Unicode char U+049B (decimal 1179)
+   defining Unicode char U+049C (decimal 1180)
+   defining Unicode char U+049D (decimal 1181)
+   defining Unicode char U+04A0 (decimal 1184)
+   defining Unicode char U+04A1 (decimal 1185)
+   defining Unicode char U+04A2 (decimal 1186)
+   defining Unicode char U+04A3 (decimal 1187)
+   defining Unicode char U+04A4 (decimal 1188)
+   defining Unicode char U+04A5 (decimal 1189)
+   defining Unicode char U+04AA (decimal 1194)
+   defining Unicode char U+04AB (decimal 1195)
+   defining Unicode char U+04AE (decimal 1198)
+   defining Unicode char U+04AF (decimal 1199)
+   defining Unicode char U+04B0 (decimal 1200)
+   defining Unicode char U+04B1 (decimal 1201)
+   defining Unicode char U+04B2 (decimal 1202)
+   defining Unicode char U+04B3 (decimal 1203)
+   defining Unicode char U+04B6 (decimal 1206)
+   defining Unicode char U+04B7 (decimal 1207)
+   defining Unicode char U+04B8 (decimal 1208)
+   defining Unicode char U+04B9 (decimal 1209)
+   defining Unicode char U+04BA (decimal 1210)
+   defining Unicode char U+04BB (decimal 1211)
+   defining Unicode char U+04C0 (decimal 1216)
+   defining Unicode char U+04C1 (decimal 1217)
+   defining Unicode char U+04C2 (decimal 1218)
+   defining Unicode char U+04D0 (decimal 1232)
+   defining Unicode char U+04D1 (decimal 1233)
+   defining Unicode char U+04D2 (decimal 1234)
+   defining Unicode char U+04D3 (decimal 1235)
+   defining Unicode char U+04D4 (decimal 1236)
+   defining Unicode char U+04D5 (decimal 1237)
+   defining Unicode char U+04D6 (decimal 1238)
+   defining Unicode char U+04D7 (decimal 1239)
+   defining Unicode char U+04D8 (decimal 1240)
+   defining Unicode char U+04D9 (decimal 1241)
+   defining Unicode char U+04DA (decimal 1242)
+   defining Unicode char U+04DB (decimal 1243)
+   defining Unicode char U+04DC (decimal 1244)
+   defining Unicode char U+04DD (decimal 1245)
+   defining Unicode char U+04DE (decimal 1246)
+   defining Unicode char U+04DF (decimal 1247)
+   defining Unicode char U+04E2 (decimal 1250)
+   defining Unicode char U+04E3 (decimal 1251)
+   defining Unicode char U+04E4 (decimal 1252)
+   defining Unicode char U+04E5 (decimal 1253)
+   defining Unicode char U+04E6 (decimal 1254)
+   defining Unicode char U+04E7 (decimal 1255)
+   defining Unicode char U+04E8 (decimal 1256)
+   defining Unicode char U+04E9 (decimal 1257)
+   defining Unicode char U+04EC (decimal 1260)
+   defining Unicode char U+04ED (decimal 1261)
+   defining Unicode char U+04EE (decimal 1262)
+   defining Unicode char U+04EF (decimal 1263)
+   defining Unicode char U+04F0 (decimal 1264)
+   defining Unicode char U+04F1 (decimal 1265)
+   defining Unicode char U+04F2 (decimal 1266)
+   defining Unicode char U+04F3 (decimal 1267)
+   defining Unicode char U+04F4 (decimal 1268)
+   defining Unicode char U+04F5 (decimal 1269)
+   defining Unicode char U+04F8 (decimal 1272)
+   defining Unicode char U+04F9 (decimal 1273)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+3008 (decimal 12296)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+3009 (decimal 12297)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+27E8 (decimal 10216)
+   defining Unicode char U+27E9 (decimal 10217)
+   defining Unicode char U+FB00 (decimal 64256)
+   defining Unicode char U+FB01 (decimal 64257)
+   defining Unicode char U+FB02 (decimal 64258)
+   defining Unicode char U+FB03 (decimal 64259)
+   defining Unicode char U+FB04 (decimal 64260)
+   defining Unicode char U+FB05 (decimal 64261)
+   defining Unicode char U+FB06 (decimal 64262)
+))
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 1
+16.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/cyrillic/t2ac
+mr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+))
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/babel/babel
+.sty
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
+\babel@savecnt=\count283
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
+\U@D=\dimen150
+\l@unhyphenated=\language91
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/babel/txtba
+bel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count284
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/babel/local
+e/en/babel-english.tex)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/babel/local
+e/ru/babel-russian.tex)
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 4330.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/babel-engli
+sh/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language22). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language22). Reported on input line 108.
+)
+Package babel Info: Importing font and identification data for russian
+(babel)             from babel-ru.ini. Reported on input line 4330.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/babel-russi
+an/russianb.ldf
+File: russianb.ldf 2021/01/10 1.3m Russian support for the Babel system
+Language: russian 2020/09/09 1.3k Russian support for the Babel system
+Package babel Info: Making " an active character on input line 124.
+Package babel Info: Default for \cyrdash is provided on input line 163.
+))
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/geometry/geom
+etry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/graphics/keyv
+al.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/iftex/ifvte
+x.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/iftex/iftex
+.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count285
+\Gm@cntv=\count286
+\c@Gm@tempcnt=\count287
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks20
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/setspace/sets
+pace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/graphics/grap
+hicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/graphics/grap
+hics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/graphics/trig
+.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/graphics-cfg/
+graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/graphics-def/
+pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/float/float.s
+ty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count288
+\float@exts=\toks21
+\float@box=\box53
+\@float@everytoks=\toks22
+\@floatcapt=\box54
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/enumitem/enum
+item.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip51
+\enit@outerparindent=\dimen161
+\enit@toks=\toks23
+\enit@inbox=\box55
+\enit@count@id=\count289
+\enitdp@description=\count290
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/tools/array.s
+ty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen162
+\ar@mcellbox=\box56
+\extrarowheight=\dimen163
+\NC@list=\toks24
+\extratabsurround=\skip52
+\backup@length=\skip53
+\ar@cellbox=\box57
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/tools/longtab
+le.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip54
+\LTright=\skip55
+\LTpre=\skip56
+\LTpost=\skip57
+\LTchunksize=\count291
+\LTcapwidth=\dimen164
+\LT@head=\box58
+\LT@firsthead=\box59
+\LT@foot=\box60
+\LT@lastfoot=\box61
+\LT@gbox=\box62
+\LT@cols=\count292
+\LT@rows=\count293
+\c@LT@tables=\count294
+\c@LT@chunks=\count295
+\LT@p@ftn=\toks25
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/hype
+rref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/kvsetkeys/kvs
+etkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/kvdefinekey
+s/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pdfescape/p
+dfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/ltxcmds/ltx
+cmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/pdftexcmds/
+pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/infwarerr/i
+nfwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hycolor/hycol
+or.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/name
+ref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/refcount/refc
+ount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/gettitlestr
+ing/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/kvoptions/kvo
+ptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count296
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/etoolbox/etoo
+lbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count297
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/stringenc/s
+tringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen165
+\Hy@linkcounter=\count298
+\Hy@pagecounter=\count299
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/pd1e
+nc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/intcalc/int
+calc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count300
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/puen
+c.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 3166.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count301
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen166
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/bitset/bits
+et.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/bigintcalc/
+bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count302
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count303
+\c@Item=\count304
+\c@Hfootnote=\count305
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/hyperref/hpdf
+tex.def
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+\Fld@listcount=\count306
+\c@bookmark@seq@number=\count307
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/rerunfilechec
+k/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/generic/uniquecount
+er/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip58
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/caption/capti
+on.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/caption/capti
+on3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen169
+\captionmargin=\dimen170
+\caption@leftmargin=\dimen171
+\caption@rightmargin=\dimen172
+\caption@width=\dimen173
+\caption@indent=\dimen174
+\caption@parindent=\dimen175
+\caption@hangindent=\dimen176
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count308
+\c@continuedfloat=\count309
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/caption/ltcap
+tion.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+))
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/l3backend/l3b
+ackend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count310
+) (./report.aux
+Package babel Info: 'russian' activates 'russian' shorthands.
+(babel)             Reported on input line 8.
+)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Info: Redefining \th on input line 44.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 469.47049pt, 42.67912pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=469.47049pt
+* \textheight=731.23584pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-54.36449pt
+* \headheight=14.0pt
+* \headsep=25.0pt
+* \topskip=14.0pt
+* \footskip=30.0pt
+* \marginparwidth=15.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=12.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/context/base/mkii/s
+upp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count311
+\scratchdimen=\dimen177
+\scratchbox=\box63
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen178
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks27
+)
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/epstopdf-pkg/
+epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/latexconfig/e
+pstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring OFF on input line 44.
+ (./report.out) (./report.out)
+\@outlinefile=\write3
+\openout3 = `report.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex7' loaded for size
+(Font)              <7> on input line 68.
+
+Underfull \hbox (badness 1769) in paragraph at lines 68--72
+[]\T2A/cmr/m/n/14.4 Выполнил(а): сту-дент(ка) груп-пы
+ []
+
+[1
+
+{/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/map/pdftex/updmap
+/pdftex.map}{/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/enc/d
+vips/cm-super/cm-super-t2a.enc}] (./report.toc
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.127 ...° СЃ РєСЌС€РµРј}{24}{subsubsection.4.4.2}
+                                                  % [1])
+\tf@toc=\write4
+\openout4 = `report.toc'.
+
+ [2]
+Overfull \hbox (5.92142pt too wide) in paragraph at lines 99--100
+[]\T2A/cmr/m/n/14.4 изучение фи-зи-че-ских ха-рак-те-ри-стик и мо-ду-лей меж-се
+-те-вых устройств. 
+ []
+
+
+Overfull \hbox (4.92976pt too wide) in paragraph at lines 106--112
+\T2A/cmr/m/n/14.4 Модель OSI/ISO опи-сы-ва-ет пе-ре-да-чу дан-ных как вза-и-мо-
+дей-ствие се-ми уров-
+ []
+
+
+Overfull \hbox (17.69926pt too wide) in paragraph at lines 106--112
+\T2A/cmr/m/n/14.4 нии свя-зи. Ка-наль-ный уро-вень фор-ми-ру-ет кад-ры, ис-поль
+-зу-ет MAC-адресацию
+ []
+
+[3] [4]
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
+157.
+
+(/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/latex/cyrillic/t2ac
+mtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+) [5] [6]
+Overfull \hbox (6.71695pt too wide) in paragraph at lines 179--187
+\T2A/cmr/m/n/14.4 Cisco IOS предо-став-ля-ет иерар-хи-че-ский ин-тер-фейс ко-ма
+нд-ной стро-ки. Поль-
+ []
+
+
+Overfull \hbox (36.50577pt too wide) in paragraph at lines 179--187
+\T2A/cmr/m/n/14.4 Ко-ман-да \T2A/cmtt/m/n/14.4 enable \T2A/cmr/m/n/14.4 пе-ре-в
+о-дит устрой-ство в при-ви-ле-ги-ро-ван-ный ре-жим, а \T2A/cmtt/m/n/14.4 config
+ure
+ []
+
+
+Overfull \hbox (37.28868pt too wide) in paragraph at lines 179--187
+\T2A/cmr/m/n/14.4 сто-я-ния ис-поль-зу-ют-ся ко-ман-ды се-мей-ства \T2A/cmtt/m/
+n/14.4 show\T2A/cmr/m/n/14.4 , на-при-мер \T2A/cmtt/m/n/14.4 show running-confi
+g\T2A/cmr/m/n/14.4 ,
+ []
+
+[7] [8] [9]
+Overfull \hbox (94.36736pt too wide) in paragraph at lines 243--245
+[]\T2A/cmr/m/n/14.4 включено шиф-ро-ва-ние от-кры-тых па-ро-лей ко-ман-дой \T2A
+/cmtt/m/n/14.4 service password-encryption\T2A/cmr/m/n/14.4 ; 
+ []
+
+
+Overfull \hbox (25.57059pt too wide) in paragraph at lines 256--260
+\T2A/cmr/m/n/14.4 В рам-ках за-да-ния ис-сле-до-ва-лась таб-ли-ца ARP опе-ра-ци
+-он-ной си-сте-мы Windows.
+ []
+
+[10{/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/enc/dvips/cm-s
+uper/cm-super-ts1.enc}]
+Overfull \hbox (4.67877pt too wide) in paragraph at lines 290--290
+[]\T2A/cmr/bx/n/20.74 Пошаговое вы-пол-не-ние за-да-ния по ме-то-дич-
+ []
+
+[11]
+Overfull \hbox (21.64508pt too wide) in paragraph at lines 298--298
+[]\T2A/cmr/bx/n/17.28 Задание 3.1. Зна-ком-ство с ин-тер-фей-сом Packet Tracer 
+
+ []
+
+
+Overfull \hbox (38.7304pt too wide) in paragraph at lines 309--314
+\T2A/cmr/m/n/14.4 Для это-го ис-поль-зу-ют-ся филь-тры со-бы-тий, \T2A/cmr/m/it
+/14.4 Capture/Forward \T2A/cmr/m/n/14.4 и \T2A/cmr/m/it/14.4 Auto Capture/Play\
+T2A/cmr/m/n/14.4 . 
+ []
+
+
+Overfull \hbox (30.47891pt too wide) in paragraph at lines 329--331
+ []\T2A/cmr/bx/n/14.4 г. При-оста-нов-ка мо-де-ли-ро-ва-ния.[] \T2A/cmr/m/n/14.
+4 По-втор-ным на-жа-ти-ем \T2A/cmr/m/it/14.4 Auto Capture/Play
+ []
+
+[12]
+Overfull \hbox (6.15404pt too wide) in paragraph at lines 343--346
+ []\T2A/cmr/bx/n/14.4 Шаг 3. Ло-ги-че-ский и фи-зи-че-ский ви-ды.[] \T2A/cmr/m/
+n/14.4 Про-ве-ре-ны ло-ги-че-ское пред-
+ []
+
+
+Overfull \hbox (14.39294pt too wide) in paragraph at lines 360--362
+ []\T2A/cmr/bx/n/14.4 г. Воз-врат в Logical.[] \T2A/cmr/m/n/14.4 Кноп-кой пе-ре
+-клю-че-ния вы-пол-нен воз-врат из \T2A/cmr/m/it/14.4 Physical
+ []
+
+
+Overfull \hbox (6.29138pt too wide) in paragraph at lines 366--370
+ []\T2A/cmr/bx/n/14.4 Шаг 1. Ком-по-нен-ты се-ти.[] \T2A/cmr/m/n/14.4 Рас-смот-
+ре-ны ка-те-го-рии \T2A/cmr/m/it/14.4 End Devices\T2A/cmr/m/n/14.4 , \T2A/cmr/m
+/it/14.4 Network
+ []
+
+[13]
+Overfull \hbox (27.46165pt too wide) in paragraph at lines 392--395
+ []\T2A/cmr/bx/n/14.4 д. Марш-ру-ти-за-то-ры.[] \T2A/cmr/m/n/14.4 От-дель-но по
+д-счи-ты-ва-ют-ся марш-ру-ти-за-то-ры. Устрой-
+ []
+
+[14]
+Overfull \hbox (0.26pt too wide) in paragraph at lines 435--437
+ []\T2A/cmr/bx/n/14.4 Шаг 3в. Ло-каль-ные се-ти в Packet Tracer.[] \T2A/cmr/m/n
+/14.4 Ло-каль-ные сег-мен-ты пред-
+ []
+
+[15] [16] [17] [18]
+Overfull \hbox (5.20094pt too wide) in paragraph at lines 570--572
+\T2A/cmr/m/n/14.4 ра-мет-ра \T2A/cmtt/m/n/14.4 terminal \T2A/cmr/m/n/14.4 по ум
+ол-ча-нию. При-гла-ше-ние из-ме-ни-лось на \T2A/cmtt/m/n/14.4 S1(config)#\T2A/c
+mr/m/n/14.4 . 
+ []
+
+[19]
+Overfull \hbox (0.49773pt too wide) in paragraph at lines 593--595
+ []\T2A/cmr/bx/n/14.4 в. Кон-текст-ная справ-ка clock.[] \T2A/cmr/m/n/14.4 Ко-м
+ан-дой \T2A/cmtt/m/n/14.4 clock ? \T2A/cmr/m/n/14.4 по-лу-чен спи-сок про-
+ []
+
+[20]
+Overfull \hbox (4.60356pt too wide) in paragraph at lines 643--644
+ []\T2A/cmr/bx/n/14.4 Шаг 1.[] \T2A/cmr/m/n/14.4 Вы-пол-нен пе-ре-ход в при-ви-
+ле-ги-ро-ван-ный ре-жим ко-ман-дой \T2A/cmtt/m/n/14.4 enable\T2A/cmr/m/n/14.4 .
+ 
+ []
+
+
+Overfull \hbox (15.74759pt too wide) in paragraph at lines 646--649
+\T2A/cmr/m/n/14.4 ра-ция. Про-ве-ря-ют-ся ко-ли-че-ство FastEthernet- и Gigabit
+Ethernet-интерфейсов,
+ []
+
+[21]
+Overfull \hbox (74.12617pt too wide) in paragraph at lines 664--666
+ []\T2A/cmr/bx/n/14.4 г. Про-смотр NVRAM.[] \T2A/cmr/m/n/14.4 Те-ку-щую кон-фи-
+гу-ра-цию по-ка-зы-ва-ет \T2A/cmtt/m/n/14.4 show running-config\T2A/cmr/m/n/14.
+4 ,
+ []
+
+
+Overfull \hbox (29.7533pt too wide) in paragraph at lines 668--671
+ []\T2A/cmr/bx/n/14.4 д. От-сут-ствие startup-config.[] \T2A/cmr/m/n/14.4 Со-об
+-ще-ние \T2A/cmtt/m/n/14.4 startup-config is not present
+ []
+
+[22]
+Overfull \hbox (41.57272pt too wide) in paragraph at lines 709--713
+\T2A/cmr/m/n/14.4 Введена ко-ман-да \T2A/cmtt/m/n/14.4 banner motd "This is a s
+ecure system. Authorized Access
+ []
+
+
+Overfull \hbox (0.37233pt too wide) in paragraph at lines 733--735
+ []\T2A/cmr/bx/n/14.4 б. За-щи-та кон-со-ли.[] \T2A/cmr/m/n/14.4 Для \T2A/cmtt/
+m/n/14.4 line console 0 \T2A/cmr/m/n/14.4 за-дан па-роль \T2A/cmtt/m/n/14.4 let
+mein \T2A/cmr/m/n/14.4 и вклю-
+ []
+
+
+Overfull \hbox (71.99835pt too wide) in paragraph at lines 741--743
+ []\T2A/cmr/bx/n/14.4 г. Бан-нер MOTD.[] \T2A/cmr/m/n/14.4 На-стро-е-но со-об-щ
+е-ние: \T2A/cmtt/m/n/14.4 Authorized access only. Unauthorized
+ []
+
+
+Overfull \hbox (5.57323pt too wide) in paragraph at lines 741--743
+\T2A/cmtt/m/n/14.4 access is prohibited and violators will be prosecuted to the
+ full
+ []
+
+[23] [24] [25]
+Overfull \hbox (52.81235pt too wide) in paragraph at lines 830--832
+ []\T2A/cmr/bx/n/14.4 з. По-втор-ный ping.[] \T2A/cmr/m/n/14.4 По-сле очист-ки 
+кэ-ша вы-пол-не-на ко-ман-да \T2A/cmtt/m/n/14.4 ping 192.168.1.1\T2A/cmr/m/n/14
+.4 ,
+ []
+
+
+Overfull \hbox (0.85027pt too wide) in paragraph at lines 834--836
+ []\T2A/cmr/bx/n/14.4 и. Срав-не-ние вре-ме-ни.[] \T2A/cmr/m/n/14.4 Пер-вый pin
+g вклю-ча-ет вре-мя ARP-разрешения,
+ []
+
+
+Overfull \hbox (0.51889pt too wide) in paragraph at lines 851--855
+\T2A/cmtt/m/n/14.4 10.10.10.150/24\T2A/cmr/m/n/14.4 , Manager --- \T2A/cmtt/m/n
+/14.4 10.10.10.4/24 \T2A/cmr/m/n/14.4 и Reception --- \T2A/cmtt/m/n/14.4 10.10.
+10.5/24\T2A/cmr/m/n/14.4 .
+ []
+
+[26]
+Overfull \hbox (8.9236pt too wide) in paragraph at lines 869--871
+\T2A/cmr/m/n/14.4 поль-зу-ет-ся для ло-каль-но-го CLI-доступа и пер-во-на-чаль-
+ной на-строй-ки устрой-
+ []
+
+
+Overfull \hbox (70.53264pt too wide) in paragraph at lines 882--887
+ []\T2A/cmr/bx/n/14.4 Шаг 2в. Про-пуск-ная спо-соб-ность.[] \T2A/cmr/m/n/14.4 К
+о-ман-дой \T2A/cmtt/m/n/14.4 show interface gigabitethernet
+ []
+
+
+Overfull \hbox (41.87373pt too wide) in paragraph at lines 882--887
+\T2A/cmtt/m/n/14.4 0/0 \T2A/cmr/m/n/14.4 опре-де-ле-на ско-рость ин-тер-фей-са 
+GigabitEthernet, а ко-ман-дой \T2A/cmtt/m/n/14.4 show interface
+ []
+
+
+Overfull \hbox (7.52269pt too wide) in paragraph at lines 882--887
+\T2A/cmtt/m/n/14.4 serial 0/0/0 \T2A/cmr/m/n/14.4 про-ве-ре-на ско-рость по-сле
+-до-ва-тель-но-го ин-тер-фей-са. Для Serial
+ []
+
+[27] [28] [29] [30] [31]
+<image1.png, id=533, 1444.64719pt x 762.59906pt>
+File: image1.png Graphic file (type png)
+<use image1.png>
+Package pdftex.def Info: image1.png  used on input line 1005.
+(pdftex.def)             Requested size: 469.4607pt x 247.81848pt.
+<image2.png, id=535, 1444.64719pt x 584.93532pt>
+File: image2.png Graphic file (type png)
+<use image2.png>
+Package pdftex.def Info: image2.png  used on input line 1016.
+(pdftex.def)             Requested size: 469.4607pt x 190.08386pt.
+ [32 <./image1.png>]
+<image3.png, id=544, 1444.64719pt x 501.37312pt>
+File: image3.png Graphic file (type png)
+<use image3.png>
+Package pdftex.def Info: image3.png  used on input line 1026.
+(pdftex.def)             Requested size: 469.4607pt x 162.92903pt.
+ [33 <./image2.png> <./image3.png>]
+<image4.png, id=555, 1444.64719pt x 706.89093pt>
+File: image4.png Graphic file (type png)
+<use image4.png>
+Package pdftex.def Info: image4.png  used on input line 1038.
+(pdftex.def)             Requested size: 469.4607pt x 229.71526pt.
+
+Overfull \hbox (6.36539pt too wide) in paragraph at lines 1041--1047
+\T2A/cmr/m/n/14.4 пол-не-ние по кла-ви-ше Tab, пе-ре-ход в гло-баль-ный ре-жим 
+ко-ман-дой \T2A/cmtt/m/n/14.4 configure
+ []
+
+<image5.png, id=556, 1444.64719pt x 465.99094pt>
+File: image5.png Graphic file (type png)
+<use image5.png>
+Package pdftex.def Info: image5.png  used on input line 1048.
+(pdftex.def)             Requested size: 469.4607pt x 151.43103pt.
+
+Overfull \hbox (1.3188pt too wide) in paragraph at lines 1051--1057
+\T2A/cmr/m/n/14.4 опре-де-лить обя-за-тель-ные па-ра-мет-ры. За-тем с по-мо-щью
+ зна-ка во-про-са уточ-
+ []
+
+[34 <./image4.png> <./image5.png>]
+<image6.png, id=566, 1444.64719pt x 655.69969pt>
+File: image6.png Graphic file (type png)
+<use image6.png>
+Package pdftex.def Info: image6.png  used on input line 1058.
+(pdftex.def)             Requested size: 469.4607pt x 213.07986pt.
+<image7.png, id=567, 1443.89438pt x 511.15968pt>
+File: image7.png Graphic file (type png)
+<use image7.png>
+Package pdftex.def Info: image7.png  used on input line 1067.
+(pdftex.def)             Requested size: 469.4584pt x 166.19511pt.
+ [35 <./image6.png>]
+<image8.png, id=576, 1444.64719pt x 578.91281pt>
+File: image8.png Graphic file (type png)
+<use image8.png>
+Package pdftex.def Info: image8.png  used on input line 1079.
+(pdftex.def)             Requested size: 469.4607pt x 188.12675pt.
+ [36 <./image7.png> <./image8.png>]
+<image9.png, id=588, 1444.64719pt x 667.74469pt>
+File: image9.png Graphic file (type png)
+<use image9.png>
+Package pdftex.def Info: image9.png  used on input line 1089.
+(pdftex.def)             Requested size: 469.4607pt x 216.99406pt.
+<image10.png, id=589, 1444.64719pt x 752.8125pt>
+File: image10.png Graphic file (type png)
+<use image10.png>
+Package pdftex.def Info: image10.png  used on input line 1100.
+(pdftex.def)             Requested size: 469.4607pt x 244.63818pt.
+ [37 <./image9.png>]
+<image11.png, id=597, 1444.64719pt x 450.18187pt>
+File: image11.png Graphic file (type png)
+<use image11.png>
+Package pdftex.def Info: image11.png  used on input line 1110.
+(pdftex.def)             Requested size: 469.4607pt x 146.29362pt.
+ [38 <./image10.png> <./image11.png>]
+<image12.png, id=608, 1444.64719pt x 502.87875pt>
+File: image12.png Graphic file (type png)
+<use image12.png>
+Package pdftex.def Info: image12.png  used on input line 1121.
+(pdftex.def)             Requested size: 469.4607pt x 163.4183pt.
+<image13.png, id=609, 1444.64719pt x 902.6222pt>
+File: image13.png Graphic file (type png)
+<use image13.png>
+Package pdftex.def Info: image13.png  used on input line 1134.
+(pdftex.def)             Requested size: 469.4607pt x 293.3212pt.
+ [39 <./image12.png>]
+<image14.png, id=617, 409.53pt x 166.37157pt>
+File: image14.png Graphic file (type png)
+<use image14.png>
+Package pdftex.def Info: image14.png  used on input line 1144.
+(pdftex.def)             Requested size: 469.49983pt x 190.73428pt.
+
+Overfull \hbox (11.50328pt too wide) in paragraph at lines 1149--1157
+\T2A/cmtt/m/n/14.4 interface brief\T2A/cmr/m/n/14.4 , \T2A/cmtt/m/n/14.4 show i
+nterface gigabitEthernet 0/0 \T2A/cmr/m/n/14.4 и \T2A/cmtt/m/n/14.4 show interf
+ace
+ []
+
+[40 <./image13.png> <./image14.png>]
+<image15.png, id=627, 1444.64719pt x 604.50844pt>
+File: image15.png Graphic file (type png)
+<use image15.png>
+Package pdftex.def Info: image15.png  used on input line 1158.
+(pdftex.def)             Requested size: 469.4607pt x 196.44446pt.
+
+Overfull \hbox (15.11897pt too wide) in paragraph at lines 1161--1167
+\T2A/cmr/m/n/14.4 ся мо-ду-ли, до-бав-ля-ю-щие необ-хо-ди-мые по-сле-до-ва-тель
+-ные или GigabitEthernet-
+ []
+
+<image16.png, id=628, 1444.64719pt x 484.81125pt>
+File: image16.png Graphic file (type png)
+<use image16.png>
+Package pdftex.def Info: image16.png  used on input line 1168.
+(pdftex.def)             Requested size: 469.4607pt x 157.54698pt.
+[41 <./image15.png>]
+<image17.png, id=637, 1444.64719pt x 802.49812pt>
+File: image17.png Graphic file (type png)
+<use image17.png>
+Package pdftex.def Info: image17.png  used on input line 1179.
+(pdftex.def)             Requested size: 469.4607pt x 260.7843pt.
+ [42 <./image16.png> <./image17.png>]
+<image18.png, id=649, 576.65437pt x 365.11406pt>
+File: image18.png Graphic file (type png)
+<use image18.png>
+Package pdftex.def Info: image18.png  used on input line 1189.
+(pdftex.def)             Requested size: 469.48961pt x 297.26169pt.
+ [43 <./image18.png>]
+(./report.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: 8A2C07E90E5396113AA22E49D877D2CC;13153.
+ ) 
+Here is how much of TeX's memory you used:
+ 13730 strings out of 467525
+ 224530 string characters out of 5408440
+ 641536 words of memory out of 5000000
+ 42208 multiletter control sequences out of 15000+600000
+ 636290 words of font info for 55 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 75i,6n,79p,496b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm
+-super/sfbx1440.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fon
+ts/type1/public/cm-super/sfbx1728.pfb></opt/homebrew/Cellar/texlive/20260301/sh
+are/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></opt/homebrew/Cellar/t
+exlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt
+/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/
+sfrm1440.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type
+1/public/cm-super/sfti1440.pfb></opt/homebrew/Cellar/texlive/20260301/share/tex
+mf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on report.pdf (44 pages, 1127802 bytes).
+PDF statistics:
+ 756 PDF objects out of 1000 (max. 8388607)
+ 652 compressed objects within 7 object streams
+ 284 named destinations out of 1000 (max. 500000)
+ 451 words of extra memory for PDF output out of 10000 (max. 10000000)
+

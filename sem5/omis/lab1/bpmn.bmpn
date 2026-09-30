@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             id="Definitions_Finance"
+             targetNamespace="http://example.com/omis/finance">
+  <collaboration id="Collaboration_Finance">
+    <participant id="Participant_Finance" name="Система учета и мониторинга движения финансов" processRef="Process_RegisterExpense"/>
+    <participant id="Participant_Monitoring" name="Мониторинг и проверка финансовых операций" processRef="Process_Monitoring"/>
+    <participant id="Participant_Reporting" name="Формирование и утверждение финансового отчета" processRef="Process_Reporting"/>
+  </collaboration>
+
+  <process id="Process_RegisterExpense" name="Регистрация финансовой операции: поступление, расход или перевод" isExecutable="false">
+    <laneSet id="LaneSet_Finance">
+      <lane id="Lane_Operator" name="Операционист">
+        <flowNodeRef>Start_RegisterExpense</flowNodeRef>
+        <flowNodeRef>Task_EnterExpense</flowNodeRef>
+        <flowNodeRef>Task_SaveDraft</flowNodeRef>
+        <flowNodeRef>Task_ConfirmWarning</flowNodeRef>
+      </lane>
+      <lane id="Lane_System" name="Финансовая система">
+        <flowNodeRef>Task_ValidateData</flowNodeRef>
+        <flowNodeRef>Gateway_DataValid</flowNodeRef>
+        <flowNodeRef>Task_CalculateBalance</flowNodeRef>
+        <flowNodeRef>Gateway_LimitExceeded</flowNodeRef>
+        <flowNodeRef>Task_SaveExpense</flowNodeRef>
+        <flowNodeRef>End_Posted</flowNodeRef>
+      </lane>
+      <lane id="Lane_Accountant" name="Бухгалтер">
+        <flowNodeRef>Task_ReviewDraft</flowNodeRef>
+        <flowNodeRef>End_DraftReview</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <startEvent id="Start_RegisterExpense" name="Начало регистрации финансовой операции">
+      <outgoing>Flow_StartToEnter</outgoing>
+    </startEvent>
+
+    <userTask id="Task_EnterExpense" name="Ввести реквизиты операции и ее тип">
+      <incoming>Flow_StartToEnter</incoming>
+      <outgoing>Flow_EnterToValidate</outgoing>
+    </userTask>
+
+    <serviceTask id="Task_ValidateData" name="Проверить обязательные реквизиты">
+      <incoming>Flow_EnterToValidate</incoming>
+      <outgoing>Flow_ValidateToGateway</outgoing>
+    </serviceTask>
+
+    <exclusiveGateway id="Gateway_DataValid" name="Данные корректны?">
+      <incoming>Flow_ValidateToGateway</incoming>
+      <outgoing>Flow_Invalid</outgoing>
+      <outgoing>Flow_Valid</outgoing>
+    </exclusiveGateway>
+
+    <userTask id="Task_SaveDraft" name="Сохранить операцию как черновик">
+      <incoming>Flow_Invalid</incoming>
+      <outgoing>Flow_DraftToReview</outgoing>
+    </userTask>
+
+    <serviceTask id="Task_CalculateBalance" name="Рассчитать остаток и проверить лимит операции">
+      <incoming>Flow_Valid</incoming>
+      <outgoing>Flow_CalculateToLimit</outgoing>
+    </serviceTask>
+
+    <exclusiveGateway id="Gateway_LimitExceeded" name="Лимит превышен?">
+      <incoming>Flow_CalculateToLimit</incoming>
+      <outgoing>Flow_LimitExceeded</outgoing>
+      <outgoing>Flow_LimitNotExceeded</outgoing>
+    </exclusiveGateway>
+
+    <userTask id="Task_ConfirmWarning" name="Подтвердить операцию с предупреждением">
+      <incoming>Flow_LimitExceeded</incoming>
+      <outgoing>Flow_WarningToSave</outgoing>
+    </userTask>
+
+    <serviceTask id="Task_SaveExpense" name="Сохранить операцию как проведенную">
+      <incoming>Flow_WarningToSave</incoming>
+      <incoming>Flow_LimitNotExceeded</incoming>
+      <outgoing>Flow_SaveToPosted</outgoing>
+    </serviceTask>
+
+    <endEvent id="End_Posted" name="Финансовая операция проведена">
+      <incoming>Flow_SaveToPosted</incoming>
+    </endEvent>
+
+    <userTask id="Task_ReviewDraft" name="Проверить и вернуть черновик на исправление">
+      <incoming>Flow_DraftToReview</incoming>
+      <outgoing>Flow_ReviewToEnd</outgoing>
+    </userTask>
+
+    <endEvent id="End_DraftReview" name="Черновик передан бухгалтеру">
+      <incoming>Flow_ReviewToEnd</incoming>
+    </endEvent>
+
+    <sequenceFlow id="Flow_StartToEnter" sourceRef="Start_RegisterExpense" targetRef="Task_EnterExpense"/>
+    <sequenceFlow id="Flow_EnterToValidate" sourceRef="Task_EnterExpense" targetRef="Task_ValidateData"/>
+    <sequenceFlow id="Flow_ValidateToGateway" sourceRef="Task_ValidateData" targetRef="Gateway_DataValid"/>
+    <sequenceFlow id="Flow_Invalid" name="нет" sourceRef="Gateway_DataValid" targetRef="Task_SaveDraft"/>
+    <sequenceFlow id="Flow_Valid" name="да" sourceRef="Gateway_DataValid" targetRef="Task_CalculateBalance"/>
+    <sequenceFlow id="Flow_CalculateToLimit" sourceRef="Task_CalculateBalance" targetRef="Gateway_LimitExceeded"/>
+    <sequenceFlow id="Flow_LimitExceeded" name="да" sourceRef="Gateway_LimitExceeded" targetRef="Task_ConfirmWarning"/>
+    <sequenceFlow id="Flow_LimitNotExceeded" name="нет" sourceRef="Gateway_LimitExceeded" targetRef="Task_SaveExpense"/>
+    <sequenceFlow id="Flow_WarningToSave" sourceRef="Task_ConfirmWarning" targetRef="Task_SaveExpense"/>
+    <sequenceFlow id="Flow_SaveToPosted" sourceRef="Task_SaveExpense" targetRef="End_Posted"/>
+    <sequenceFlow id="Flow_DraftToReview" sourceRef="Task_SaveDraft" targetRef="Task_ReviewDraft"/>
+    <sequenceFlow id="Flow_ReviewToEnd" sourceRef="Task_ReviewDraft" targetRef="End_DraftReview"/>
+
+    <dataObject id="Data_ExpenseDocument" name="Подтверждающий документ"/>
+    <dataObjectReference id="DataRef_ExpenseDocument" name="Подтверждающий документ" dataObjectRef="Data_ExpenseDocument"/>
+    <dataObject id="Data_ExpenseOperation" name="Финансовая операция"/>
+    <dataObjectReference id="DataRef_ExpenseOperation" name="Финансовая операция" dataObjectRef="Data_ExpenseOperation"/>
+    <dataInputAssociation id="Association_DocumentInput">
+      <sourceRef>DataRef_ExpenseDocument</sourceRef>
+      <targetRef>Task_EnterExpense</targetRef>
+    </dataInputAssociation>
+    <dataOutputAssociation id="Association_OperationOutput">
+      <sourceRef>Task_SaveExpense</sourceRef>
+      <targetRef>DataRef_ExpenseOperation</targetRef>
+    </dataOutputAssociation>
+  </process>
+
+  <process id="Process_Monitoring" name="Мониторинг и проверка финансовых операций" isExecutable="false">
+    <laneSet id="LaneSet_Monitoring">
+      <lane id="Lane_MonitoringAccountant" name="Бухгалтер">
+        <flowNodeRef>Start_Monitoring</flowNodeRef>
+        <flowNodeRef>Task_SelectMonitoringParameters</flowNodeRef>
+        <flowNodeRef>Task_ReviewOperation</flowNodeRef>
+      </lane>
+      <lane id="Lane_MonitoringSystem" name="Финансовая система">
+        <flowNodeRef>Task_DisplayMonitoring</flowNodeRef>
+        <flowNodeRef>Task_RecalculateBalances</flowNodeRef>
+        <flowNodeRef>Gateway_DeviationFound</flowNodeRef>
+        <flowNodeRef>Task_RecordDecision</flowNodeRef>
+      </lane>
+      <lane id="Lane_MonitoringManager" name="Финансовый менеджер">
+        <flowNodeRef>Task_ReviewAlert</flowNodeRef>
+        <flowNodeRef>End_Monitoring</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <startEvent id="Start_Monitoring" name="Начало мониторинга">
+      <outgoing>Flow_MonitoringStart</outgoing>
+    </startEvent>
+    <userTask id="Task_SelectMonitoringParameters" name="Выбрать период, счета и категории">
+      <incoming>Flow_MonitoringStart</incoming>
+      <outgoing>Flow_ParametersSelected</outgoing>
+    </userTask>
+    <serviceTask id="Task_DisplayMonitoring" name="Показать операции и остатки">
+      <incoming>Flow_ParametersSelected</incoming>
+      <outgoing>Flow_MonitoringDisplayed</outgoing>
+    </serviceTask>
+    <serviceTask id="Task_RecalculateBalances" name="Пересчитать остатки и проверить лимиты">
+      <incoming>Flow_MonitoringDisplayed</incoming>
+      <outgoing>Flow_BalancesCalculated</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="Gateway_DeviationFound" name="Найдено превышение или отклонение?">
+      <incoming>Flow_BalancesCalculated</incoming>
+      <outgoing>Flow_DeviationFound</outgoing>
+      <outgoing>Flow_NoDeviation</outgoing>
+    </exclusiveGateway>
+    <userTask id="Task_ReviewAlert" name="Рассмотреть предупреждение">
+      <incoming>Flow_DeviationFound</incoming>
+      <outgoing>Flow_AlertReviewed</outgoing>
+    </userTask>
+    <userTask id="Task_ReviewOperation" name="Проверить документ и операцию">
+      <incoming>Flow_NoDeviation</incoming>
+      <incoming>Flow_AlertReviewed</incoming>
+      <outgoing>Flow_OperationReviewed</outgoing>
+    </userTask>
+    <serviceTask id="Task_RecordDecision" name="Зафиксировать результат проверки">
+      <incoming>Flow_OperationReviewed</incoming>
+      <outgoing>Flow_DecisionRecorded</outgoing>
+    </serviceTask>
+    <endEvent id="End_Monitoring" name="Проверка завершена">
+      <incoming>Flow_DecisionRecorded</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_MonitoringStart" sourceRef="Start_Monitoring" targetRef="Task_SelectMonitoringParameters"/>
+    <sequenceFlow id="Flow_ParametersSelected" sourceRef="Task_SelectMonitoringParameters" targetRef="Task_DisplayMonitoring"/>
+    <sequenceFlow id="Flow_MonitoringDisplayed" sourceRef="Task_DisplayMonitoring" targetRef="Task_RecalculateBalances"/>
+    <sequenceFlow id="Flow_BalancesCalculated" sourceRef="Task_RecalculateBalances" targetRef="Gateway_DeviationFound"/>
+    <sequenceFlow id="Flow_DeviationFound" name="да" sourceRef="Gateway_DeviationFound" targetRef="Task_ReviewAlert"/>
+    <sequenceFlow id="Flow_NoDeviation" name="нет" sourceRef="Gateway_DeviationFound" targetRef="Task_ReviewOperation"/>
+    <sequenceFlow id="Flow_AlertReviewed" sourceRef="Task_ReviewAlert" targetRef="Task_ReviewOperation"/>
+    <sequenceFlow id="Flow_OperationReviewed" sourceRef="Task_ReviewOperation" targetRef="Task_RecordDecision"/>
+    <sequenceFlow id="Flow_DecisionRecorded" sourceRef="Task_RecordDecision" targetRef="End_Monitoring"/>
+  </process>
+
+  <process id="Process_Reporting" name="Формирование и утверждение финансового отчета" isExecutable="false">
+    <laneSet id="LaneSet_Reporting">
+      <lane id="Lane_ReportingManager" name="Руководитель организации">
+        <flowNodeRef>Start_Reporting</flowNodeRef>
+        <flowNodeRef>Task_SelectReportParameters</flowNodeRef>
+        <flowNodeRef>Task_ApproveReport</flowNodeRef>
+        <flowNodeRef>Task_ExportReport</flowNodeRef>
+        <flowNodeRef>End_ReportPublished</flowNodeRef>
+      </lane>
+      <lane id="Lane_ReportingSystem" name="Финансовая система">
+        <flowNodeRef>Task_AggregateOperations</flowNodeRef>
+        <flowNodeRef>Task_CreateReport</flowNodeRef>
+        <flowNodeRef>Gateway_ReportReady</flowNodeRef>
+      </lane>
+    </laneSet>
+
+    <startEvent id="Start_Reporting" name="Начало формирования отчета">
+      <outgoing>Flow_ReportingStart</outgoing>
+    </startEvent>
+    <userTask id="Task_SelectReportParameters" name="Выбрать период и вид отчета">
+      <incoming>Flow_ReportingStart</incoming>
+      <outgoing>Flow_ReportParametersSelected</outgoing>
+    </userTask>
+    <serviceTask id="Task_AggregateOperations" name="Агрегировать проведенные операции">
+      <incoming>Flow_ReportParametersSelected</incoming>
+      <outgoing>Flow_OperationsAggregated</outgoing>
+    </serviceTask>
+    <serviceTask id="Task_CreateReport" name="Сформировать отчет по счетам и категориям">
+      <incoming>Flow_OperationsAggregated</incoming>
+      <outgoing>Flow_ReportCreated</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="Gateway_ReportReady" name="Отчет сформирован корректно?">
+      <incoming>Flow_ReportCreated</incoming>
+      <outgoing>Flow_ReportReady</outgoing>
+      <outgoing>Flow_ReportNotReady</outgoing>
+    </exclusiveGateway>
+    <userTask id="Task_ApproveReport" name="Утвердить отчет">
+      <incoming>Flow_ReportReady</incoming>
+      <outgoing>Flow_ReportApproved</outgoing>
+    </userTask>
+    <userTask id="Task_ExportReport" name="Экспортировать отчет в PDF или XLSX">
+      <incoming>Flow_ReportApproved</incoming>
+      <incoming>Flow_ReportNotReady</incoming>
+      <outgoing>Flow_ReportExported</outgoing>
+    </userTask>
+    <endEvent id="End_ReportPublished" name="Отчет опубликован">
+      <incoming>Flow_ReportExported</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_ReportingStart" sourceRef="Start_Reporting" targetRef="Task_SelectReportParameters"/>
+    <sequenceFlow id="Flow_ReportParametersSelected" sourceRef="Task_SelectReportParameters" targetRef="Task_AggregateOperations"/>
+    <sequenceFlow id="Flow_OperationsAggregated" sourceRef="Task_AggregateOperations" targetRef="Task_CreateReport"/>
+    <sequenceFlow id="Flow_ReportCreated" sourceRef="Task_CreateReport" targetRef="Gateway_ReportReady"/>
+    <sequenceFlow id="Flow_ReportReady" name="да" sourceRef="Gateway_ReportReady" targetRef="Task_ApproveReport"/>
+    <sequenceFlow id="Flow_ReportNotReady" name="нет: экспорт черновика" sourceRef="Gateway_ReportReady" targetRef="Task_ExportReport"/>
+    <sequenceFlow id="Flow_ReportApproved" sourceRef="Task_ApproveReport" targetRef="Task_ExportReport"/>
+    <sequenceFlow id="Flow_ReportExported" sourceRef="Task_ExportReport" targetRef="End_ReportPublished"/>
+  </process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Finance">
+    <bpmndi:BPMNPlane id="BPMNPlane_Finance" bpmnElement="Collaboration_Finance">
+      <bpmndi:BPMNShape id="ParticipantShape_Finance" bpmnElement="Participant_Finance" isHorizontal="true">
+        <dc:Bounds x="40" y="40" width="1540" height="720"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_Operator" bpmnElement="Lane_Operator" isHorizontal="true">
+        <dc:Bounds x="70" y="40" width="1510" height="220"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_System" bpmnElement="Lane_System" isHorizontal="true">
+        <dc:Bounds x="70" y="260" width="1510" height="280"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_Accountant" bpmnElement="Lane_Accountant" isHorizontal="true">
+        <dc:Bounds x="70" y="540" width="1510" height="220"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ParticipantShape_Monitoring" bpmnElement="Participant_Monitoring" isHorizontal="true">
+        <dc:Bounds x="40" y="800" width="1540" height="400"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_MonitoringAccountant" bpmnElement="Lane_MonitoringAccountant" isHorizontal="true">
+        <dc:Bounds x="70" y="800" width="1510" height="130"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_MonitoringSystem" bpmnElement="Lane_MonitoringSystem" isHorizontal="true">
+        <dc:Bounds x="70" y="930" width="1510" height="140"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_MonitoringManager" bpmnElement="Lane_MonitoringManager" isHorizontal="true">
+        <dc:Bounds x="70" y="1070" width="1510" height="130"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ParticipantShape_Reporting" bpmnElement="Participant_Reporting" isHorizontal="true">
+        <dc:Bounds x="40" y="1240" width="1540" height="350"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_ReportingManager" bpmnElement="Lane_ReportingManager" isHorizontal="true">
+        <dc:Bounds x="70" y="1240" width="1510" height="180"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_ReportingSystem" bpmnElement="Lane_ReportingSystem" isHorizontal="true">
+        <dc:Bounds x="70" y="1420" width="1510" height="170"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="StartShape" bpmnElement="Start_RegisterExpense">
+        <dc:Bounds x="120" y="125" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EnterShape" bpmnElement="Task_EnterExpense">
+        <dc:Bounds x="220" y="100" width="150" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ValidateShape" bpmnElement="Task_ValidateData">
+        <dc:Bounds x="450" y="335" width="170" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataValidShape" bpmnElement="Gateway_DataValid" isMarkerVisible="true">
+        <dc:Bounds x="690" y="355" width="50" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DraftShape" bpmnElement="Task_SaveDraft">
+        <dc:Bounds x="640" y="100" width="170" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CalculateShape" bpmnElement="Task_CalculateBalance">
+        <dc:Bounds x="810" y="335" width="190" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LimitShape" bpmnElement="Gateway_LimitExceeded" isMarkerVisible="true">
+        <dc:Bounds x="1060" y="355" width="50" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="WarningShape" bpmnElement="Task_ConfirmWarning">
+        <dc:Bounds x="1030" y="100" width="190" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SaveShape" bpmnElement="Task_SaveExpense">
+        <dc:Bounds x="1190" y="335" width="190" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="PostedShape" bpmnElement="End_Posted">
+        <dc:Bounds x="1480" y="360" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReviewShape" bpmnElement="Task_ReviewDraft">
+        <dc:Bounds x="990" y="605" width="210" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReviewEndShape" bpmnElement="End_DraftReview">
+        <dc:Bounds x="1300" y="630" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DocumentShape" bpmnElement="DataRef_ExpenseDocument">
+        <dc:Bounds x="230" y="205" width="36" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="OperationShape" bpmnElement="DataRef_ExpenseOperation">
+        <dc:Bounds x="1400" y="455" width="36" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartMonitoringShape" bpmnElement="Start_Monitoring">
+        <dc:Bounds x="120" y="845" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SelectMonitoringShape" bpmnElement="Task_SelectMonitoringParameters">
+        <dc:Bounds x="210" y="820" width="170" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DisplayMonitoringShape" bpmnElement="Task_DisplayMonitoring">
+        <dc:Bounds x="430" y="957" width="180" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RecalculateShape" bpmnElement="Task_RecalculateBalances">
+        <dc:Bounds x="660" y="957" width="190" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DeviationShape" bpmnElement="Gateway_DeviationFound" isMarkerVisible="true">
+        <dc:Bounds x="910" y="975" width="50" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReviewAlertShape" bpmnElement="Task_ReviewAlert">
+        <dc:Bounds x="1010" y="1092" width="180" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReviewOperationShape" bpmnElement="Task_ReviewOperation">
+        <dc:Bounds x="1210" y="820" width="190" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RecordDecisionShape" bpmnElement="Task_RecordDecision">
+        <dc:Bounds x="1430" y="957" width="150" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndMonitoringShape" bpmnElement="End_Monitoring">
+        <dc:Bounds x="1480" y="1117" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartReportingShape" bpmnElement="Start_Reporting">
+        <dc:Bounds x="120" y="1312" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SelectReportShape" bpmnElement="Task_SelectReportParameters">
+        <dc:Bounds x="210" y="1287" width="180" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="AggregateShape" bpmnElement="Task_AggregateOperations">
+        <dc:Bounds x="450" y="1450" width="180" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CreateReportShape" bpmnElement="Task_CreateReport">
+        <dc:Bounds x="680" y="1450" width="190" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReportReadyShape" bpmnElement="Gateway_ReportReady" isMarkerVisible="true">
+        <dc:Bounds x="930" y="1468" width="50" height="50"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ApproveReportShape" bpmnElement="Task_ApproveReport">
+        <dc:Bounds x="1050" y="1287" width="170" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExportReportShape" bpmnElement="Task_ExportReport">
+        <dc:Bounds x="1300" y="1287" width="190" height="86"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndReportShape" bpmnElement="End_ReportPublished">
+        <dc:Bounds x="1510" y="1312" width="36" height="36"/>
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNEdge id="Flow_StartToEnter_di" bpmnElement="Flow_StartToEnter">
+        <di:waypoint x="156" y="143"/>
+        <di:waypoint x="220" y="143"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_EnterToValidate_di" bpmnElement="Flow_EnterToValidate">
+        <di:waypoint x="370" y="143"/>
+        <di:waypoint x="410" y="143"/>
+        <di:waypoint x="410" y="378"/>
+        <di:waypoint x="450" y="378"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ValidateToGateway_di" bpmnElement="Flow_ValidateToGateway">
+        <di:waypoint x="620" y="378"/>
+        <di:waypoint x="690" y="380"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Invalid_di" bpmnElement="Flow_Invalid">
+        <di:waypoint x="715" y="355"/>
+        <di:waypoint x="715" y="230"/>
+        <di:waypoint x="725" y="186"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_Valid_di" bpmnElement="Flow_Valid">
+        <di:waypoint x="740" y="380"/>
+        <di:waypoint x="810" y="378"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_CalculateToLimit_di" bpmnElement="Flow_CalculateToLimit">
+        <di:waypoint x="1000" y="378"/>
+        <di:waypoint x="1060" y="380"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_LimitExceeded_di" bpmnElement="Flow_LimitExceeded">
+        <di:waypoint x="1085" y="355"/>
+        <di:waypoint x="1085" y="186"/>
+        <di:waypoint x="1125" y="186"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_LimitNotExceeded_di" bpmnElement="Flow_LimitNotExceeded">
+        <di:waypoint x="1110" y="380"/>
+        <di:waypoint x="1190" y="378"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_WarningToSave_di" bpmnElement="Flow_WarningToSave">
+        <di:waypoint x="1220" y="143"/>
+        <di:waypoint x="1260" y="143"/>
+        <di:waypoint x="1260" y="335"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_SaveToPosted_di" bpmnElement="Flow_SaveToPosted">
+        <di:waypoint x="1380" y="378"/>
+        <di:waypoint x="1480" y="378"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DraftToReview_di" bpmnElement="Flow_DraftToReview">
+        <di:waypoint x="810" y="143"/>
+        <di:waypoint x="900" y="143"/>
+        <di:waypoint x="900" y="648"/>
+        <di:waypoint x="990" y="648"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReviewToEnd_di" bpmnElement="Flow_ReviewToEnd">
+        <di:waypoint x="1200" y="648"/>
+        <di:waypoint x="1300" y="648"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_DocumentInput_di" bpmnElement="Association_DocumentInput">
+        <di:waypoint x="248" y="205"/>
+        <di:waypoint x="295" y="186"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_OperationOutput_di" bpmnElement="Association_OperationOutput">
+        <di:waypoint x="1380" y="421"/>
+        <di:waypoint x="1418" y="455"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_MonitoringStart_di" bpmnElement="Flow_MonitoringStart">
+        <di:waypoint x="156" y="863"/>
+        <di:waypoint x="210" y="863"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ParametersSelected_di" bpmnElement="Flow_ParametersSelected">
+        <di:waypoint x="380" y="863"/>
+        <di:waypoint x="405" y="863"/>
+        <di:waypoint x="405" y="1000"/>
+        <di:waypoint x="430" y="1000"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_MonitoringDisplayed_di" bpmnElement="Flow_MonitoringDisplayed">
+        <di:waypoint x="610" y="1000"/>
+        <di:waypoint x="660" y="1000"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_BalancesCalculated_di" bpmnElement="Flow_BalancesCalculated">
+        <di:waypoint x="850" y="1000"/>
+        <di:waypoint x="910" y="1000"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DeviationFound_di" bpmnElement="Flow_DeviationFound">
+        <di:waypoint x="935" y="1025"/>
+        <di:waypoint x="935" y="1135"/>
+        <di:waypoint x="1010" y="1135"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_NoDeviation_di" bpmnElement="Flow_NoDeviation">
+        <di:waypoint x="960" y="1000"/>
+        <di:waypoint x="1100" y="1000"/>
+        <di:waypoint x="1100" y="863"/>
+        <di:waypoint x="1210" y="863"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AlertReviewed_di" bpmnElement="Flow_AlertReviewed">
+        <di:waypoint x="1190" y="1135"/>
+        <di:waypoint x="1225" y="1135"/>
+        <di:waypoint x="1225" y="906"/>
+        <di:waypoint x="1305" y="906"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_OperationReviewed_di" bpmnElement="Flow_OperationReviewed">
+        <di:waypoint x="1400" y="863"/>
+        <di:waypoint x="1415" y="863"/>
+        <di:waypoint x="1415" y="1000"/>
+        <di:waypoint x="1430" y="1000"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DecisionRecorded_di" bpmnElement="Flow_DecisionRecorded">
+        <di:waypoint x="1505" y="1043"/>
+        <di:waypoint x="1505" y="1117"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReportingStart_di" bpmnElement="Flow_ReportingStart">
+        <di:waypoint x="156" y="1330"/>
+        <di:waypoint x="210" y="1330"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReportParametersSelected_di" bpmnElement="Flow_ReportParametersSelected">
+        <di:waypoint x="390" y="1330"/>
+        <di:waypoint x="420" y="1330"/>
+        <di:waypoint x="420" y="1493"/>
+        <di:waypoint x="450" y="1493"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_OperationsAggregated_di" bpmnElement="Flow_OperationsAggregated">
+        <di:waypoint x="630" y="1493"/>
+        <di:waypoint x="680" y="1493"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReportCreated_di" bpmnElement="Flow_ReportCreated">
+        <di:waypoint x="870" y="1493"/>
+        <di:waypoint x="930" y="1493"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReportReady_di" bpmnElement="Flow_ReportReady">
+        <di:waypoint x="955" y="1468"/>
+        <di:waypoint x="955" y="1330"/>
+        <di:waypoint x="1050" y="1330"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReportNotReady_di" bpmnElement="Flow_ReportNotReady">
+        <di:waypoint x="980" y="1493"/>
+        <di:waypoint x="1250" y="1493"/>
+        <di:waypoint x="1250" y="1330"/>
+        <di:waypoint x="1300" y="1330"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReportApproved_di" bpmnElement="Flow_ReportApproved">
+        <di:waypoint x="1220" y="1330"/>
+        <di:waypoint x="1300" y="1330"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReportExported_di" bpmnElement="Flow_ReportExported">
+        <di:waypoint x="1490" y="1330"/>
+        <di:waypoint x="1510" y="1330"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

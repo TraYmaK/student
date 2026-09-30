@@ -1,0 +1,192 @@
+\babel@toc {russian}{}\relax 
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Цель и содержание работы}{3}{section.1}%
+\contentsline {section}{\numberline {2}Теоретические сведения}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Модель OSI/ISO и стек TCP/IP}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Физический уровень и топологии}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Канальный уровень, Ethernet и MAC-адресация}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Cisco IOS и ARP}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Ход выполнения и результаты}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Знакомство с интерфейсом Cisco Packet Tracer}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Навигация по Cisco IOS}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Первоначальная настройка безопасности коммутатора}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Работа с ARP и анализ пакетов}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Комплексная настройка сети}{11}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Изучение межсетевых устройств}{11}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Пошаговое выполнение задания по методичке}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Задание 3.1. Знакомство с интерфейсом Packet Tracer}{12}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Часть 1. Обзор программы Packet Tracer}{12}{subsubsection.4.1.1}%
+\contentsline {paragraph}{Шаг 1. Получение доступа к материалам.}{12}{section*.2}%
+\contentsline {paragraph}{Шаг 2. Режимы работы Packet Tracer.}{12}{section*.3}%
+\contentsline {paragraph}{а. Рабочая область Realtime.}{12}{section*.4}%
+\contentsline {paragraph}{б. Переход в Simulation.}{12}{section*.5}%
+\contentsline {paragraph}{в. Auto Capture/Play.}{12}{section*.6}%
+\contentsline {paragraph}{г. Приостановка моделирования.}{12}{section*.7}%
+\contentsline {paragraph}{д. Пошаговый переход.}{13}{section*.8}%
+\contentsline {paragraph}{е. Анализ PDU.}{13}{section*.9}%
+\contentsline {paragraph}{Шаг 3. Логический и физический виды.}{13}{section*.10}%
+\contentsline {paragraph}{а. Logical.}{13}{section*.11}%
+\contentsline {paragraph}{б. Physical.}{13}{section*.12}%
+\contentsline {paragraph}{в. Назначение физической области.}{13}{section*.13}%
+\contentsline {paragraph}{г. Возврат в Logical.}{13}{section*.14}%
+\contentsline {subsubsection}{\numberline {4.1.2}Часть 2. Локальные сети, WAN и Интернет}{13}{subsubsection.4.1.2}%
+\contentsline {paragraph}{Шаг 1. Компоненты сети.}{13}{section*.15}%
+\contentsline {paragraph}{а. Категории промежуточных устройств.}{14}{section*.16}%
+\contentsline {paragraph}{б. Перечень промежуточных устройств.}{14}{section*.17}%
+\contentsline {paragraph}{в. Оконечные устройства топологии.}{14}{section*.18}%
+\contentsline {paragraph}{г. Промежуточные устройства топологии.}{14}{section*.19}%
+\contentsline {paragraph}{д. Маршрутизаторы.}{14}{section*.20}%
+\contentsline {paragraph}{е. Оконечные устройства, не являющиеся ПК.}{14}{section*.21}%
+\contentsline {paragraph}{ж. Типы соединений.}{14}{section*.22}%
+\contentsline {paragraph}{з. Беспроводная связь.}{15}{section*.23}%
+\contentsline {paragraph}{Шаг 2а. Роль Server-PT.}{15}{section*.24}%
+\contentsline {paragraph}{Шаг 2б. Модели клиент--сервер.}{15}{section*.25}%
+\contentsline {paragraph}{Шаг 2в. Выбор среды передачи.}{15}{section*.26}%
+\contentsline {paragraph}{Шаг 3а. Отличия LAN и WAN.}{15}{section*.27}%
+\contentsline {paragraph}{Шаг 3б. Глобальные сети в Packet Tracer.}{15}{section*.28}%
+\contentsline {paragraph}{Шаг 3в. Локальные сети в Packet Tracer.}{15}{section*.29}%
+\contentsline {paragraph}{Шаг 3г. Упрощение Интернета.}{15}{section*.30}%
+\contentsline {paragraph}{Шаг 3д. Подключение домашних пользователей.}{16}{section*.31}%
+\contentsline {paragraph}{Шаг 3е. Подключение предприятий.}{16}{section*.32}%
+\contentsline {paragraph}{Сложные задачи части 2.}{16}{section*.33}%
+\contentsline {subsection}{\numberline {4.2}Задание 3.2. Режимы работы и команды CLI}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Часть 1. Базовое подключение и справка}{16}{subsubsection.4.2.1}%
+\contentsline {paragraph}{Шаг 1. Подключение PC к коммутатору.}{16}{section*.34}%
+\contentsline {paragraph}{а. Выбор категории Connections.}{17}{section*.35}%
+\contentsline {paragraph}{б. Выбор консольного кабеля.}{17}{section*.36}%
+\contentsline {paragraph}{в. Выбор PC1 и RS-232.}{17}{section*.37}%
+\contentsline {paragraph}{г. Выбор коммутатора S1.}{17}{section*.38}%
+\contentsline {paragraph}{д. Завершение подключения.}{17}{section*.39}%
+\contentsline {paragraph}{Шаг 2. Запуск терминала.}{17}{section*.40}%
+\contentsline {paragraph}{а. Открытие Desktop.}{17}{section*.41}%
+\contentsline {paragraph}{б. Запуск Terminal.}{17}{section*.42}%
+\contentsline {paragraph}{в. Подтверждение параметров.}{17}{section*.43}%
+\contentsline {paragraph}{г. Сообщение начала работы.}{18}{section*.44}%
+\contentsline {paragraph}{Шаг 3. Контекстная справка.}{18}{section*.45}%
+\contentsline {paragraph}{а. Справка в пользовательском режиме.}{18}{section*.46}%
+\contentsline {paragraph}{б. Справка после команды.}{18}{section*.47}%
+\contentsline {paragraph}{в. Контекстная справка.}{18}{section*.48}%
+\contentsline {subsubsection}{\numberline {4.2.2}Часть 2. Изучение режимов ввода}{18}{subsubsection.4.2.2}%
+\contentsline {paragraph}{Шаг 1. Привилегированный режим.}{18}{section*.49}%
+\contentsline {paragraph}{а. Справка по enable.}{18}{section*.50}%
+\contentsline {paragraph}{б. Автодополнение Tab.}{19}{section*.51}%
+\contentsline {paragraph}{в. Проверка приглашения.}{19}{section*.52}%
+\contentsline {paragraph}{г. Поиск команд по первой букве.}{19}{section*.53}%
+\contentsline {paragraph}{Шаг 2. Глобальная конфигурация.}{19}{section*.54}%
+\contentsline {paragraph}{а. Команда configure.}{19}{section*.55}%
+\contentsline {paragraph}{б. Подтверждение terminal.}{19}{section*.56}%
+\contentsline {paragraph}{в. Возврат из режима конфигурации.}{19}{section*.57}%
+\contentsline {subsubsection}{\numberline {4.2.3}Часть 3. Настройка часов}{19}{subsubsection.4.2.3}%
+\contentsline {paragraph}{Шаг 1. Справка и синтаксис.}{19}{section*.58}%
+\contentsline {paragraph}{а. Просмотр часов.}{20}{section*.59}%
+\contentsline {paragraph}{б. Неполная команда clock.}{20}{section*.60}%
+\contentsline {paragraph}{в. Контекстная справка clock.}{20}{section*.61}%
+\contentsline {paragraph}{г. Команда clock set.}{20}{section*.62}%
+\contentsline {paragraph}{д. Установка времени 15:00.}{20}{section*.63}%
+\contentsline {paragraph}{е. Установка даты 31 января 2035 года.}{20}{section*.64}%
+\contentsline {paragraph}{ж. Исправление неверных данных.}{20}{section*.65}%
+\contentsline {paragraph}{Шаг 2. Ошибки синтаксиса.}{20}{section*.66}%
+\contentsline {paragraph}{а. Неполная команда.}{20}{section*.67}%
+\contentsline {paragraph}{б. Некорректное время.}{21}{section*.68}%
+\contentsline {paragraph}{в. Недостающий параметр даты.}{21}{section*.69}%
+\contentsline {paragraph}{г. Корректная команда.}{21}{section*.70}%
+\contentsline {paragraph}{Шаг 2. Дополнительные сообщения.}{21}{section*.71}%
+\contentsline {subsection}{\numberline {4.3}Задание 3.3. Первоначальная настройка безопасности}{21}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Часть 1. Конфигурация по умолчанию}{21}{subsubsection.4.3.1}%
+\contentsline {paragraph}{Шаг 1.}{21}{section*.72}%
+\contentsline {paragraph}{Шаг 2.}{21}{section*.73}%
+\contentsline {paragraph}{а. FastEthernet-интерфейсы.}{21}{section*.74}%
+\contentsline {paragraph}{б. GigabitEthernet-интерфейсы.}{21}{section*.75}%
+\contentsline {paragraph}{в. Параметры VTY-линий.}{22}{section*.76}%
+\contentsline {paragraph}{г. Просмотр NVRAM.}{22}{section*.77}%
+\contentsline {paragraph}{д. Отсутствие startup-config.}{22}{section*.78}%
+\contentsline {subsubsection}{\numberline {4.3.2}Часть 2. Основные параметры коммутатора}{22}{subsubsection.4.3.2}%
+\contentsline {paragraph}{а. Имя устройства.}{22}{section*.79}%
+\contentsline {paragraph}{б. Защита консоли.}{22}{section*.80}%
+\contentsline {paragraph}{в. Проверка консоли.}{22}{section*.81}%
+\contentsline {paragraph}{г. Пароль enable.}{22}{section*.82}%
+\contentsline {paragraph}{д. Проверка enable.}{22}{section*.83}%
+\contentsline {paragraph}{е. Защищённый пароль.}{22}{section*.84}%
+\contentsline {paragraph}{ж. Проверка running-config.}{22}{section*.85}%
+\contentsline {paragraph}{з. Шифрование паролей.}{23}{section*.86}%
+\contentsline {subsubsection}{\numberline {4.3.3}Часть 3. Баннер MOTD}{23}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Часть 4. Сохранение конфигурации}{23}{subsubsection.4.3.4}%
+\contentsline {paragraph}{а. Проверка конфигурации.}{23}{section*.87}%
+\contentsline {paragraph}{б. Сохранение.}{23}{section*.88}%
+\contentsline {paragraph}{в. Проверка startup-config.}{23}{section*.89}%
+\contentsline {subsubsection}{\numberline {4.3.5}Часть 5. Настройка S2}{23}{subsubsection.4.3.5}%
+\contentsline {paragraph}{а. Имя устройства.}{23}{section*.90}%
+\contentsline {paragraph}{б. Защита консоли.}{23}{section*.91}%
+\contentsline {paragraph}{в. Пароли режимов.}{23}{section*.92}%
+\contentsline {paragraph}{г. Баннер MOTD.}{24}{section*.93}%
+\contentsline {paragraph}{д. Шифрование.}{24}{section*.94}%
+\contentsline {paragraph}{е. Проверка конфигурации.}{24}{section*.95}%
+\contentsline {paragraph}{ж. Сохранение.}{24}{section*.96}%
+\contentsline {subsection}{\numberline {4.4}Задание 3.4. ARP и Wireshark}{24}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Часть 1. Просмотр ARP-кэша}{24}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Часть 2. Ручная работа с кэшем}{24}{subsubsection.4.4.2}%
+\contentsline {paragraph}{а. Подготовка адресов.}{24}{section*.97}%
+\contentsline {paragraph}{б. Проверка записей.}{24}{section*.98}%
+\contentsline {paragraph}{в. Повторный ping.}{25}{section*.99}%
+\contentsline {paragraph}{г. Запуск с правами администратора.}{25}{section*.100}%
+\contentsline {paragraph}{д. Очистка всех записей.}{25}{section*.101}%
+\contentsline {paragraph}{е. Контроль очистки.}{25}{section*.102}%
+\contentsline {paragraph}{ж. Повторное заполнение.}{25}{section*.103}%
+\contentsline {subsubsection}{\numberline {4.4.3}Часть 3. Захват сообщений ARP}{25}{subsubsection.4.4.3}%
+\contentsline {paragraph}{а. Выбор интерфейса.}{25}{section*.104}%
+\contentsline {paragraph}{б. Очистка кэша.}{25}{section*.105}%
+\contentsline {paragraph}{в. Ping шлюза.}{25}{section*.106}%
+\contentsline {paragraph}{г. Остановка захвата.}{25}{section*.107}%
+\contentsline {paragraph}{д. Первый пакет.}{25}{section*.108}%
+\contentsline {paragraph}{е. Второй пакет.}{25}{section*.109}%
+\contentsline {paragraph}{ж. Фильтр ARP и ICMP.}{26}{section*.110}%
+\contentsline {paragraph}{з. Повторный ping.}{26}{section*.111}%
+\contentsline {paragraph}{и. Сравнение времени.}{26}{section*.112}%
+\contentsline {subsection}{\numberline {4.5}Задание 3.5. Skills Integration Challenge}{26}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Задание 3.6. Изучение межсетевых устройств}{27}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Часть 1. Физические характеристики}{27}{subsubsection.4.6.1}%
+\contentsline {paragraph}{Шаг 1а. Порты управления.}{27}{section*.113}%
+\contentsline {paragraph}{Шаг 1б. Масштаб и окно устройства.}{27}{section*.114}%
+\contentsline {paragraph}{Шаг 1в. Порт управления.}{27}{section*.115}%
+\contentsline {paragraph}{Шаг 2а. Интерфейсы LAN и WAN.}{27}{section*.116}%
+\contentsline {paragraph}{Шаг 2б. Команда show ip interface brief.}{27}{section*.117}%
+\contentsline {paragraph}{Шаг 2в. Пропускная способность.}{27}{section*.118}%
+\contentsline {paragraph}{Шаг 3а. Слоты East.}{27}{section*.119}%
+\contentsline {paragraph}{Шаг 3б. Слоты коммутаторов.}{27}{section*.120}%
+\contentsline {subsubsection}{\numberline {4.6.2}Часть 2. Модули и подключение}{28}{subsubsection.4.6.2}%
+\contentsline {paragraph}{Шаг 1а. Модуль для трёх ПК.}{28}{section*.121}%
+\contentsline {paragraph}{Шаг 1б. Модуль для Switch2.}{28}{section*.122}%
+\contentsline {paragraph}{Шаг 2а. Подготовка установки.}{28}{section*.123}%
+\contentsline {paragraph}{Шаг 2б. Отключение питания.}{28}{section*.124}%
+\contentsline {paragraph}{Шаг 2в. Установка и включение.}{28}{section*.125}%
+\contentsline {paragraph}{Шаг 2г. Проверка слота.}{28}{section*.126}%
+\contentsline {paragraph}{Шаг 2д. Маршрутизатор West.}{28}{section*.127}%
+\contentsline {paragraph}{Шаг 3. Подключение устройств.}{28}{section*.128}%
+\contentsline {subsubsection}{\numberline {4.6.3}Часть 3. Подключение устройств}{29}{subsubsection.4.6.3}%
+\contentsline {section}{\numberline {5}Ответы на контрольные вопросы}{29}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Ответы по ARP}{30}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Заключение}{30}{section.6}%
+\contentsline {section}{\numberline {7}Иллюстрации выполнения заданий}{32}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Знакомство с Packet Tracer}{32}{subsection.7.1}%
+\contentsline {paragraph}{Рисунок 1.}{32}{section*.129}%
+\contentsline {paragraph}{Рисунок 2.}{32}{section*.131}%
+\contentsline {paragraph}{Рисунок 3.}{33}{section*.133}%
+\contentsline {subsection}{\numberline {7.2}Навигация по Cisco IOS}{33}{subsection.7.2}%
+\contentsline {paragraph}{Рисунок 4.}{33}{section*.135}%
+\contentsline {paragraph}{Рисунок 5.}{34}{section*.137}%
+\contentsline {paragraph}{Рисунок 6.}{35}{section*.139}%
+\contentsline {paragraph}{Рисунок 7.}{35}{section*.141}%
+\contentsline {subsection}{\numberline {7.3}Первоначальная настройка коммутатора}{36}{subsection.7.3}%
+\contentsline {paragraph}{Рисунок 8.}{36}{section*.143}%
+\contentsline {paragraph}{Рисунок 9.}{36}{section*.145}%
+\contentsline {paragraph}{Рисунок 10.}{37}{section*.147}%
+\contentsline {paragraph}{Рисунок 11.}{38}{section*.149}%
+\contentsline {paragraph}{Рисунок 12.}{38}{section*.151}%
+\contentsline {subsection}{\numberline {7.4}Комплексная настройка сети}{39}{subsection.7.4}%
+\contentsline {paragraph}{Рисунок 13.}{39}{section*.153}%
+\contentsline {paragraph}{Рисунок 14.}{40}{section*.155}%
+\contentsline {subsection}{\numberline {7.5}Изучение межсетевых устройств}{41}{subsection.7.5}%
+\contentsline {paragraph}{Рисунок 15.}{41}{section*.157}%
+\contentsline {paragraph}{Рисунок 16.}{41}{section*.159}%
+\contentsline {paragraph}{Рисунок 17.}{42}{section*.161}%
+\contentsline {paragraph}{Рисунок 18.}{43}{section*.163}%

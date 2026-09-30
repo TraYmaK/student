@@ -1,0 +1,1 @@
+SELECT DISTINCT * FROM Предмет WHERE Специальность = 'АСОИ'

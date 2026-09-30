@@ -1,0 +1,325 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ER — CRM клиентской базы" id="er-crm-1">
+    <mxGraphModel dx="2878" dy="2128" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ent_admin" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Администратор" vertex="1">
+          <mxGeometry height="60" width="160" x="700" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_report" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Отчёт" vertex="1">
+          <mxGeometry height="60" width="150" x="185" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_head" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Руководитель" vertex="1">
+          <mxGeometry height="60" width="170" x="695" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_dept" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Отдел" vertex="1">
+          <mxGeometry height="60" width="150" x="225" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_mgr" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Менеджер" vertex="1">
+          <mxGeometry height="60" width="160" x="1180" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_task" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Задача" vertex="1">
+          <mxGeometry height="60" width="150" x="705" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_deal" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Сделка" vertex="1">
+          <mxGeometry height="60" width="160" x="1180" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_deal_inner" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="48" width="148" x="1186" y="846" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_inter" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Взаимодействие" vertex="1">
+          <mxGeometry height="60" width="190" x="205" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_client" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Клиент" vertex="1">
+          <mxGeometry height="60" width="150" x="705" y="1330" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_file" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Файл" vertex="1">
+          <mxGeometry height="60" width="150" x="1185" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_analiz" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Анализирует" vertex="1">
+          <mxGeometry height="70" width="150" x="445" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_upravl" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Управляет" vertex="1">
+          <mxGeometry height="70" width="150" x="705" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_dostup" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Имеет доступ" vertex="1">
+          <mxGeometry height="70" width="170" x="995" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_rukovodit" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Руководит" vertex="1">
+          <mxGeometry height="70" width="150" x="465" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_redakt" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Редактирует" vertex="1">
+          <mxGeometry height="70" width="150" x="705" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_rabotaetv" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Работает в" vertex="1">
+          <mxGeometry height="70" width="150" x="875" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_rabotaets" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Работает с" vertex="1">
+          <mxGeometry height="70" width="150" x="1185" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_porozhd" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Порождает" vertex="1">
+          <mxGeometry height="70" width="150" x="945" y="835" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_soderzhit" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Содержит" vertex="1">
+          <mxGeometry height="70" width="150" x="1185" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_sovershaet" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Совершает" vertex="1">
+          <mxGeometry height="70" width="150" x="425" y="955" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_svyazan" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Связан с" vertex="1">
+          <mxGeometry height="70" width="150" x="465" y="1215" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_iniciir" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Инициирует" vertex="1">
+          <mxGeometry height="70" width="160" x="940" y="1215" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_0" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ФИО&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="130" x="640" y="-20" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_0" edge="1" parent="1" source="attr_0" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Тип отчёта" vertex="1">
+          <mxGeometry height="50" width="130" x="-35" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_1" edge="1" parent="1" source="attr_1" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Дата создания" vertex="1">
+          <mxGeometry height="50" width="130" x="120" y="-20" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_2" edge="1" parent="1" source="attr_2" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Период" vertex="1">
+          <mxGeometry height="50" width="130" x="45" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_3" edge="1" parent="1" source="attr_3" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ФИО&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="130" x="475" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_4" edge="1" parent="1" source="attr_4" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_head">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Название" vertex="1">
+          <mxGeometry height="50" width="130" x="5" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_5" edge="1" parent="1" source="attr_5" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_dept">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Бюджет" vertex="1">
+          <mxGeometry height="50" width="130" x="85" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_6" edge="1" parent="1" source="attr_6" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_dept">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Описание" vertex="1">
+          <mxGeometry height="50" width="130" x="235" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_7" edge="1" parent="1" source="attr_7" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_dept">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ФИО&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="130" x="1120" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_8" edge="1" parent="1" source="attr_8" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_mgr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Приоритет" vertex="1">
+          <mxGeometry height="50" width="130" x="640" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_9" edge="1" parent="1" source="attr_9" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_task">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Дедлайн" vertex="1">
+          <mxGeometry height="50" width="130" x="790" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_10" edge="1" parent="1" source="attr_10" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_task">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_11" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Статус" vertex="1">
+          <mxGeometry height="50" width="130" x="565" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_11" edge="1" parent="1" source="attr_11" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_task">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Описание" vertex="1">
+          <mxGeometry height="50" width="130" x="715" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_12" edge="1" parent="1" source="attr_12" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_task">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_13" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Ответственный" vertex="1">
+          <mxGeometry height="50" width="130" x="865" y="990" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_13" edge="1" parent="1" source="attr_13" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_task">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_14" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Дата и время" vertex="1">
+          <mxGeometry height="50" width="130" x="85" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_14" edge="1" parent="1" source="attr_14" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_inter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_15" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Тип" vertex="1">
+          <mxGeometry height="50" width="130" x="235" y="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_15" edge="1" parent="1" source="attr_15" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_inter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_16" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Комментарий" vertex="1">
+          <mxGeometry height="50" width="130" x="-15" y="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_16" edge="1" parent="1" source="attr_16" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_inter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_17" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Название компании" vertex="1">
+          <mxGeometry height="50" width="130" x="945" y="1335" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_17" edge="1" parent="1" source="attr_17" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_client">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_18" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;Контактное лицо&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="130" x="565" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_18" edge="1" parent="1" source="attr_18" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_client">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_19" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Телефон" vertex="1">
+          <mxGeometry height="50" width="130" x="715" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_19" edge="1" parent="1" source="attr_19" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_client">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_20" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Email" vertex="1">
+          <mxGeometry height="50" width="130" x="865" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="attrline_20" edge="1" parent="1" source="attr_20" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_client">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_0" edge="1" parent="1" source="rel_analiz" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_admin" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_1" edge="1" parent="1" source="rel_analiz" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_report" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_2" edge="1" parent="1" source="rel_upravl" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_admin" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_3" edge="1" parent="1" source="rel_upravl" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_head" value="N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_4" edge="1" parent="1" source="rel_dostup" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_admin" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_5" edge="1" parent="1" source="rel_dostup" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_task" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_6" edge="1" parent="1" source="rel_rukovodit" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_head" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_7" edge="1" parent="1" source="rel_rukovodit" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_dept" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_8" edge="1" parent="1" source="rel_redakt" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_head" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_9" edge="1" parent="1" source="rel_redakt" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_task" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_10" edge="1" parent="1" source="rel_rabotaetv" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_mgr" value="1..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_11" edge="1" parent="1" source="rel_rabotaetv" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_dept" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_12" edge="1" parent="1" source="rel_rabotaets" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_mgr" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_13" edge="1" parent="1" source="rel_rabotaets" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_deal" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_14" edge="1" parent="1" source="rel_porozhd" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_deal" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_15" edge="1" parent="1" source="rel_porozhd" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_task" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_16" edge="1" parent="1" source="rel_soderzhit" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_deal" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_17" edge="1" parent="1" source="rel_soderzhit" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_file" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_18" edge="1" parent="1" source="rel_sovershaet" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_mgr" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_19" edge="1" parent="1" source="rel_sovershaet" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_inter" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_20" edge="1" parent="1" source="rel_svyazan" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_inter" value="N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_21" edge="1" parent="1" source="rel_svyazan" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_client" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_22" edge="1" parent="1" source="rel_iniciir" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_client" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_23" edge="1" parent="1" source="rel_iniciir" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_deal" value="0..N">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

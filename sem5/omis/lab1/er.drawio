@@ -1,0 +1,252 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ER — система учёта и мониторинга финансов" id="er-finance-1">
+    <mxGraphModel dx="2878" dy="2128" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="ent_user" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Пользователь" vertex="1">
+          <mxGeometry height="60" width="170" x="690" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_account" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Счёт" vertex="1">
+          <mxGeometry height="60" width="150" x="180" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_category" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Категория" vertex="1">
+          <mxGeometry height="60" width="160" x="690" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_operation" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Финансовая операция" vertex="1">
+          <mxGeometry height="60" width="210" x="1160" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_document" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Подтверждающий документ" vertex="1">
+          <mxGeometry height="60" width="230" x="120" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_limit" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Лимит операции" vertex="1">
+          <mxGeometry height="60" width="180" x="650" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_review" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Проверка операции" vertex="1">
+          <mxGeometry height="60" width="190" x="1165" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_report" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=12;" value="Отчёт" vertex="1">
+          <mxGeometry height="60" width="150" x="690" y="1190" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rel_creates" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Создаёт" vertex="1">
+          <mxGeometry height="70" width="150" x="925" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_account" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Проводится по" vertex="1">
+          <mxGeometry height="70" width="170" x="430" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_category" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Относится к" vertex="1">
+          <mxGeometry height="70" width="150" x="930" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_document" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Подтверждается" vertex="1">
+          <mxGeometry height="70" width="180" x="470" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_limit" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Контролируется" vertex="1">
+          <mxGeometry height="70" width="170" x="940" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_reviews" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Проходит проверку" vertex="1">
+          <mxGeometry height="70" width="190" x="1170" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_performs" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Выполняет" vertex="1">
+          <mxGeometry height="70" width="150" x="1080" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_forms" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Формирует" vertex="1">
+          <mxGeometry height="70" width="150" x="710" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_contains" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" value="Содержит" vertex="1">
+          <mxGeometry height="70" width="150" x="970" y="1030" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_user_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID пользователя&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="600" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_user_name" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="ФИО" vertex="1">
+          <mxGeometry height="50" width="130" x="770" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_user_role" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Роль" vertex="1">
+          <mxGeometry height="50" width="130" x="870" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_account_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID счёта&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="130" x="20" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_account_name" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Название" vertex="1">
+          <mxGeometry height="50" width="130" x="20" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_account_balance" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Начальный остаток" vertex="1">
+          <mxGeometry height="50" width="160" x="300" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_category_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID категории&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="510" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_category_name" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Название" vertex="1">
+          <mxGeometry height="50" width="130" x="600" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_category_type" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Тип операции" vertex="1">
+          <mxGeometry height="50" width="150" x="760" y="455" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_operation_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID операции&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="1200" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_operation_date" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Дата и время" vertex="1">
+          <mxGeometry height="50" width="140" x="1370" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_operation_type" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Тип" vertex="1">
+          <mxGeometry height="50" width="120" x="1370" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_operation_amount" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Сумма" vertex="1">
+          <mxGeometry height="50" width="120" x="1200" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_operation_status" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Статус" vertex="1">
+          <mxGeometry height="50" width="120" x="1350" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_operation_description" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Описание" vertex="1">
+          <mxGeometry height="50" width="130" x="1010" y="500" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_document_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID документа&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="160" x="20" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_document_number" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Номер" vertex="1">
+          <mxGeometry height="50" width="120" x="20" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_document_type" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Тип документа" vertex="1">
+          <mxGeometry height="50" width="150" x="240" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_document_date" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Дата" vertex="1">
+          <mxGeometry height="50" width="120" x="270" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_limit_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID лимита&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="130" x="550" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_limit_amount" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Сумма лимита" vertex="1">
+          <mxGeometry height="50" width="140" x="520" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_limit_period" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Период" vertex="1">
+          <mxGeometry height="50" width="120" x="700" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_limit_threshold" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Порог предупреждения" vertex="1">
+          <mxGeometry height="50" width="180" x="825" y="735" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_review_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID проверки&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="150" x="1190" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_review_date" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Дата проверки" vertex="1">
+          <mxGeometry height="50" width="140" x="1370" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_review_result" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Результат" vertex="1">
+          <mxGeometry height="50" width="130" x="1190" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_review_comment" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Комментарий" vertex="1">
+          <mxGeometry height="50" width="140" x="1370" y="900" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_report_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="&lt;u&gt;ID отчёта&lt;/u&gt;" vertex="1">
+          <mxGeometry height="50" width="140" x="550" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_report_type" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Вид отчёта" vertex="1">
+          <mxGeometry height="50" width="140" x="790" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_report_period" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Период" vertex="1">
+          <mxGeometry height="50" width="120" x="550" y="1270" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_report_date" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Дата формирования" vertex="1">
+          <mxGeometry height="50" width="160" x="850" y="1270" as="geometry" />
+        </mxCell>
+        <mxCell id="attr_report_format" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=10;" value="Формат" vertex="1">
+          <mxGeometry height="50" width="120" x="960" y="1195" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_create_user" edge="1" parent="1" source="rel_creates" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_user" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_create_operation" edge="1" parent="1" source="rel_creates" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_operation" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_account_account" edge="1" parent="1" source="rel_account" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_account" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_account_operation" edge="1" parent="1" source="rel_account" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_operation" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_category_category" edge="1" parent="1" source="rel_category" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_category" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_category_operation" edge="1" parent="1" source="rel_category" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_operation" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_document_document" edge="1" parent="1" source="rel_document" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_document" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_document_operation" edge="1" parent="1" source="rel_document" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_operation" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_limit_limit" edge="1" parent="1" source="rel_limit" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_limit" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_limit_operation" edge="1" parent="1" source="rel_limit" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_operation" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_reviews_operation" edge="1" parent="1" source="rel_reviews" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_operation" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_reviews_review" edge="1" parent="1" source="rel_reviews" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_review" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_performs_user" edge="1" parent="1" source="rel_performs" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_user" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_performs_review" edge="1" parent="1" source="rel_performs" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_review" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_forms_user" edge="1" parent="1" source="rel_forms" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_user" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_forms_report" edge="1" parent="1" source="rel_forms" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_report" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_contains_report" edge="1" parent="1" source="rel_contains" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;" target="ent_report" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_contains_operation" edge="1" parent="1" source="rel_contains" style="endArrow=none;html=1;strokeColor=#000000;fontSize=10;shape=link;" target="ent_operation" value="0..N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attrline_user_id" edge="1" parent="1" source="attr_user_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_user"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_user_name" edge="1" parent="1" source="attr_user_name" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_user"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_user_role" edge="1" parent="1" source="attr_user_role" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_user"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_account_id" edge="1" parent="1" source="attr_account_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_account"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_account_name" edge="1" parent="1" source="attr_account_name" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_account"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_account_balance" edge="1" parent="1" source="attr_account_balance" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_account"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_category_id" edge="1" parent="1" source="attr_category_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_category"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_category_name" edge="1" parent="1" source="attr_category_name" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_category"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_category_type" edge="1" parent="1" source="attr_category_type" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_category"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_operation_id" edge="1" parent="1" source="attr_operation_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_operation"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_operation_date" edge="1" parent="1" source="attr_operation_date" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_operation"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_operation_type" edge="1" parent="1" source="attr_operation_type" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_operation"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_operation_amount" edge="1" parent="1" source="attr_operation_amount" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_operation"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_operation_status" edge="1" parent="1" source="attr_operation_status" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_operation"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_operation_description" edge="1" parent="1" source="attr_operation_description" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_operation"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_document_id" edge="1" parent="1" source="attr_document_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_document"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_document_number" edge="1" parent="1" source="attr_document_number" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_document"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_document_type" edge="1" parent="1" source="attr_document_type" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_document"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_document_date" edge="1" parent="1" source="attr_document_date" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_document"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_limit_id" edge="1" parent="1" source="attr_limit_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_limit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_limit_amount" edge="1" parent="1" source="attr_limit_amount" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_limit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_limit_period" edge="1" parent="1" source="attr_limit_period" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_limit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_limit_threshold" edge="1" parent="1" source="attr_limit_threshold" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_limit"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_review_id" edge="1" parent="1" source="attr_review_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_review"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_review_date" edge="1" parent="1" source="attr_review_date" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_review"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_review_result" edge="1" parent="1" source="attr_review_result" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_review"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_review_comment" edge="1" parent="1" source="attr_review_comment" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_review"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_report_id" edge="1" parent="1" source="attr_report_id" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_report_type" edge="1" parent="1" source="attr_report_type" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_report_period" edge="1" parent="1" source="attr_report_period" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_report_date" edge="1" parent="1" source="attr_report_date" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="attrline_report_format" edge="1" parent="1" source="attr_report_format" style="endArrow=none;html=1;strokeColor=#000000;" target="ent_report"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

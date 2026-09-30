@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_HealthCertificate" targetNamespace="http://example.com/omis/health-certificate" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.30.1">
+  <collaboration id="Collaboration_HealthCertificate">
+    <participant id="Participant_HealthCertificate" name="Получение справки о состоянии здоровья" processRef="Process_HealthCertificate" />
+  </collaboration>
+  <process id="Process_HealthCertificate" name="Получение справки о состоянии здоровья" isExecutable="false">
+    <laneSet id="LaneSet_HealthCertificate">
+      <lane id="Lane_Laboratory" name="Лаборатория">
+        <flowNodeRef>Task_PerformTests</flowNodeRef>
+        <flowNodeRef>Task_SendResults</flowNodeRef>
+      </lane>
+      <lane id="Lane_Doctor" name="Врач">
+        <flowNodeRef>Task_ConductExamination</flowNodeRef>
+        <flowNodeRef>Gateway_TestsRequired</flowNodeRef>
+        <flowNodeRef>Task_IssueCertificate</flowNodeRef>
+        <flowNodeRef>Task_IssueRefusal</flowNodeRef>
+        <flowNodeRef>Task_IssueCertificateWithRestrictions</flowNodeRef>
+        <flowNodeRef>Gateway_RestrictionsFound</flowNodeRef>
+        <flowNodeRef>Gateway_CertificateIssuable</flowNodeRef>
+      </lane>
+      <lane id="Lane_Registry" name="Регистратура">
+        <flowNodeRef>Task_VerifyIdentity</flowNodeRef>
+        <flowNodeRef>Task_CheckDocuments</flowNodeRef>
+        <flowNodeRef>Gateway_DocumentsComplete</flowNodeRef>
+        <flowNodeRef>Task_ScheduleExamination</flowNodeRef>
+        <flowNodeRef>Task_NotifyRefusal</flowNodeRef>
+        <flowNodeRef>Task_RegisterCertificate</flowNodeRef>
+      </lane>
+      <lane id="Lane_Applicant" name="Заявитель">
+        <flowNodeRef>Start_NeedCertificate</flowNodeRef>
+        <flowNodeRef>Task_SubmitApplication</flowNodeRef>
+        <flowNodeRef>Task_PayService</flowNodeRef>
+        <flowNodeRef>Task_SignConsent</flowNodeRef>
+        <flowNodeRef>Task_AttendExamination</flowNodeRef>
+        <flowNodeRef>Gateway_RepeatRequested</flowNodeRef>
+        <flowNodeRef>Task_ReceiveCertificate</flowNodeRef>
+        <flowNodeRef>End_CertificateReceived</flowNodeRef>
+        <flowNodeRef>End_ProcessClosed</flowNodeRef>
+        <flowNodeRef>Task_CorrectDocuments</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="Start_NeedCertificate" name="Возникла необходимость получить справку">
+      <outgoing>Flow_StartToSubmit</outgoing>
+    </startEvent>
+    <userTask id="Task_SubmitApplication" name="Подать заявление и документы">
+      <incoming>Flow_StartToSubmit</incoming>
+      <incoming>Flow_CorrectedToCheck</incoming>
+    </userTask>
+    <serviceTask id="Task_VerifyIdentity" name="Проверить личность заявителя">
+      <incoming>Flow_SubmitToIdentityCheck</incoming>
+      <outgoing>Flow_IdentityToDocumentCheck</outgoing>
+    </serviceTask>
+    <serviceTask id="Task_CheckDocuments" name="Проверить документы и данные заявителя">
+      <incoming>Flow_IdentityToDocumentCheck</incoming>
+      <outgoing>Flow_CheckToGateway</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="Gateway_DocumentsComplete" name="Документы полные и корректные?">
+      <incoming>Flow_CheckToGateway</incoming>
+      <outgoing>Flow_DocumentsIncomplete</outgoing>
+      <outgoing>Flow_DocumentsComplete</outgoing>
+    </exclusiveGateway>
+    <userTask id="Task_ScheduleExamination" name="Назначить дату медицинского осмотра">
+      <incoming>Flow_DocumentsComplete</incoming>
+      <outgoing>Flow_ScheduleToPayment</outgoing>
+    </userTask>
+    <userTask id="Task_PayService" name="Оплатить медицинское обследование">
+      <incoming>Flow_ScheduleToPayment</incoming>
+      <outgoing>Flow_PaymentToConsent</outgoing>
+    </userTask>
+    <userTask id="Task_SignConsent" name="Подписать согласие на обследование">
+      <incoming>Flow_PaymentToConsent</incoming>
+      <outgoing>Flow_ConsentToAttend</outgoing>
+    </userTask>
+    <userTask id="Task_AttendExamination" name="Явиться в медицинское учреждение">
+      <incoming>Flow_ConsentToAttend</incoming>
+      <outgoing>Flow_AttendToExamination</outgoing>
+    </userTask>
+    <userTask id="Task_ConductExamination" name="Провести медицинский осмотр">
+      <incoming>Flow_AttendToExamination</incoming>
+      <incoming>Flow_ResultsToDoctor</incoming>
+      <outgoing>Flow_ExaminationToTests</outgoing>
+    </userTask>
+    <exclusiveGateway id="Gateway_TestsRequired" name="Нужны дополнительные анализы?">
+      <incoming>Flow_ExaminationToTests</incoming>
+      <outgoing>Flow_TestsRequired</outgoing>
+      <outgoing>Flow_TestsNotRequired</outgoing>
+    </exclusiveGateway>
+    <userTask id="Task_PerformTests" name="Провести необходимые анализы">
+      <incoming>Flow_TestsRequired</incoming>
+      <outgoing>Flow_TestsToResults</outgoing>
+    </userTask>
+    <serviceTask id="Task_SendResults" name="Передать результаты врачу">
+      <incoming>Flow_TestsToResults</incoming>
+      <outgoing>Flow_ResultsToDoctor</outgoing>
+    </serviceTask>
+    <serviceTask id="Task_IssueCertificate" name="Оформить справку о состоянии здоровья">
+      <incoming>Flow_NoRestrictions</incoming>
+      <outgoing>Flow_IssuedToRegister</outgoing>
+    </serviceTask>
+    <serviceTask id="Task_NotifyRefusal" name="Сообщить заявителю об отказе">
+      <incoming>Flow_RefusalToNotify</incoming>
+      <outgoing>Flow_NotifyToRepeatChoice</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="Gateway_RepeatRequested" name="Заявитель хочет повторить обследование?">
+      <incoming>Flow_NotifyToRepeatChoice</incoming>
+      <outgoing>Flow_RepeatRequested</outgoing>
+      <outgoing>Flow_RepeatNotRequested</outgoing>
+    </exclusiveGateway>
+    <serviceTask id="Task_RegisterCertificate" name="Зарегистрировать и подготовить справку">
+      <incoming>Flow_1cppnvm</incoming>
+      <outgoing>Flow_RegisterToReceive</outgoing>
+    </serviceTask>
+    <userTask id="Task_ReceiveCertificate" name="Получить справку">
+      <incoming>Flow_RegisterToReceive</incoming>
+      <outgoing>Flow_ReceiveToEnd</outgoing>
+    </userTask>
+    <endEvent id="End_CertificateReceived" name="Справка получена">
+      <incoming>Flow_ReceiveToEnd</incoming>
+    </endEvent>
+    <endEvent id="End_ProcessClosed" name="Процесс завершен без выдачи справки">
+      <incoming>Flow_RepeatNotRequested</incoming>
+    </endEvent>
+    <userTask id="Task_CorrectDocuments" name="Исправить или дополнить документы">
+      <incoming>Flow_DocumentsIncomplete</incoming>
+      <outgoing>Flow_CorrectedToCheck</outgoing>
+    </userTask>
+    <serviceTask id="Task_IssueRefusal" name="Оформить отказ в выдаче справки">
+      <incoming>Flow_CertificateNotIssuable</incoming>
+      <outgoing>Flow_RefusalToNotify</outgoing>
+    </serviceTask>
+    <serviceTask id="Task_IssueCertificateWithRestrictions" name="Оформить справку с ограничениями">
+      <incoming>Flow_CertificateIssuable</incoming>
+      <incoming>Flow_IssuedToRegister</incoming>
+      <outgoing>Flow_1cppnvm</outgoing>
+    </serviceTask>
+    <exclusiveGateway id="Gateway_RestrictionsFound" name="Выявлены ограничения по здоровью?">
+      <incoming>Flow_TestsNotRequired</incoming>
+      <incoming>Flow_ResultsToDoctor</incoming>
+      <outgoing>Flow_RestrictionsFound</outgoing>
+      <outgoing>Flow_NoRestrictions</outgoing>
+    </exclusiveGateway>
+    <exclusiveGateway id="Gateway_CertificateIssuable" name="Справку можно выдать с ограничениями?">
+      <incoming>Flow_RestrictionsFound</incoming>
+      <outgoing>Flow_CertificateIssuable</outgoing>
+      <outgoing>Flow_CertificateNotIssuable</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="Flow_StartToSubmit" sourceRef="Start_NeedCertificate" targetRef="Task_SubmitApplication" />
+    <sequenceFlow id="Flow_CorrectedToCheck" sourceRef="Task_CorrectDocuments" targetRef="Task_SubmitApplication" />
+    <sequenceFlow id="Flow_SubmitToIdentityCheck" sourceRef="Task_SubmitApplication" targetRef="Task_VerifyIdentity" />
+    <sequenceFlow id="Flow_IdentityToDocumentCheck" sourceRef="Task_VerifyIdentity" targetRef="Task_CheckDocuments" />
+    <sequenceFlow id="Flow_CheckToGateway" sourceRef="Task_CheckDocuments" targetRef="Gateway_DocumentsComplete" />
+    <sequenceFlow id="Flow_DocumentsIncomplete" name="нет" sourceRef="Gateway_DocumentsComplete" targetRef="Task_CorrectDocuments" />
+    <sequenceFlow id="Flow_DocumentsComplete" name="да" sourceRef="Gateway_DocumentsComplete" targetRef="Task_ScheduleExamination" />
+    <sequenceFlow id="Flow_RepeatRequested" name="да" sourceRef="Gateway_RepeatRequested" targetRef="Task_ScheduleExamination" />
+    <sequenceFlow id="Flow_ScheduleToPayment" sourceRef="Task_ScheduleExamination" targetRef="Task_PayService" />
+    <sequenceFlow id="Flow_PaymentToConsent" sourceRef="Task_PayService" targetRef="Task_SignConsent" />
+    <sequenceFlow id="Flow_ConsentToAttend" sourceRef="Task_SignConsent" targetRef="Task_AttendExamination" />
+    <sequenceFlow id="Flow_AttendToExamination" sourceRef="Task_AttendExamination" targetRef="Task_ConductExamination" />
+    <sequenceFlow id="Flow_ResultsToDoctor" sourceRef="Task_SendResults" targetRef="Task_ConductExamination" />
+    <sequenceFlow id="Flow_ExaminationToTests" sourceRef="Task_ConductExamination" targetRef="Gateway_TestsRequired" />
+    <sequenceFlow id="Flow_TestsRequired" name="да" sourceRef="Gateway_TestsRequired" targetRef="Task_PerformTests" />
+    <sequenceFlow id="Flow_TestsNotRequired" name="нет" sourceRef="Gateway_TestsRequired" targetRef="Gateway_RestrictionsFound" />
+    <sequenceFlow id="Flow_TestsToResults" sourceRef="Task_PerformTests" targetRef="Task_SendResults" />
+    <sequenceFlow id="Flow_NoRestrictions" name="нет" sourceRef="Gateway_RestrictionsFound" targetRef="Task_IssueCertificate" />
+    <sequenceFlow id="Flow_IssuedToRegister" sourceRef="Task_IssueCertificate" targetRef="Task_IssueCertificateWithRestrictions" />
+    <sequenceFlow id="Flow_RefusalToNotify" sourceRef="Task_IssueRefusal" targetRef="Task_NotifyRefusal" />
+    <sequenceFlow id="Flow_NotifyToRepeatChoice" sourceRef="Task_NotifyRefusal" targetRef="Gateway_RepeatRequested" />
+    <sequenceFlow id="Flow_RepeatNotRequested" name="нет" sourceRef="Gateway_RepeatRequested" targetRef="End_ProcessClosed" />
+    <sequenceFlow id="Flow_1cppnvm" sourceRef="Task_IssueCertificateWithRestrictions" targetRef="Task_RegisterCertificate" />
+    <sequenceFlow id="Flow_RegisterToReceive" sourceRef="Task_RegisterCertificate" targetRef="Task_ReceiveCertificate" />
+    <sequenceFlow id="Flow_ReceiveToEnd" sourceRef="Task_ReceiveCertificate" targetRef="End_CertificateReceived" />
+    <sequenceFlow id="Flow_CertificateNotIssuable" name="нет" sourceRef="Gateway_CertificateIssuable" targetRef="Task_IssueRefusal" />
+    <sequenceFlow id="Flow_CertificateIssuable" name="да" sourceRef="Gateway_CertificateIssuable" targetRef="Task_IssueCertificateWithRestrictions" />
+    <sequenceFlow id="Flow_RestrictionsFound" name="да" sourceRef="Gateway_RestrictionsFound" targetRef="Gateway_CertificateIssuable" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_HealthCertificate">
+    <bpmndi:BPMNPlane id="BPMNPlane_HealthCertificate" bpmnElement="Collaboration_HealthCertificate">
+      <bpmndi:BPMNShape id="ParticipantShape_HealthCertificate" bpmnElement="Participant_HealthCertificate" isHorizontal="true">
+        <dc:Bounds x="150" y="40" width="2100" height="980" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_Laboratory" bpmnElement="Lane_Laboratory" isHorizontal="true">
+        <dc:Bounds x="180" y="765" width="2070" height="255" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_Doctor" bpmnElement="Lane_Doctor" isHorizontal="true">
+        <dc:Bounds x="180" y="505" width="2070" height="260" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_Registry" bpmnElement="Lane_Registry" isHorizontal="true">
+        <dc:Bounds x="180" y="285" width="2070" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="LaneShape_Applicant" bpmnElement="Lane_Applicant" isHorizontal="true">
+        <dc:Bounds x="180" y="40" width="2070" height="245" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartShape" bpmnElement="Start_NeedCertificate">
+        <dc:Bounds x="230" y="135" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="203" y="171" width="90" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="SubmitShape" bpmnElement="Task_SubmitApplication">
+        <dc:Bounds x="320" y="110" width="180" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="VerifyIdentityShape" bpmnElement="Task_VerifyIdentity">
+        <dc:Bounds x="540" y="350" width="180" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CheckShape" bpmnElement="Task_CheckDocuments">
+        <dc:Bounds x="760" y="350" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DocumentsGatewayShape" bpmnElement="Gateway_DocumentsComplete" isMarkerVisible="true">
+        <dc:Bounds x="1010" y="368" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1002" y="418" width="66" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ScheduleShape" bpmnElement="Task_ScheduleExamination">
+        <dc:Bounds x="1150" y="350" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="PaymentShape" bpmnElement="Task_PayService">
+        <dc:Bounds x="1390" y="110" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ConsentShape" bpmnElement="Task_SignConsent">
+        <dc:Bounds x="1620" y="110" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="AttendShape" bpmnElement="Task_AttendExamination">
+        <dc:Bounds x="1850" y="110" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ExaminationShape" bpmnElement="Task_ConductExamination">
+        <dc:Bounds x="1230" y="580" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TestsGatewayShape" bpmnElement="Gateway_TestsRequired" isMarkerVisible="true">
+        <dc:Bounds x="1490" y="598" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1472" y="548" width="86" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TestsShape" bpmnElement="Task_PerformTests">
+        <dc:Bounds x="1580" y="825" width="180" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ResultsShape" bpmnElement="Task_SendResults">
+        <dc:Bounds x="1820" y="825" width="180" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CertificateShape" bpmnElement="Task_IssueCertificate">
+        <dc:Bounds x="1560" y="530" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="NotifyRefusalShape" bpmnElement="Task_NotifyRefusal">
+        <dc:Bounds x="1620" y="350" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RepeatGatewayShape" bpmnElement="Gateway_RepeatRequested" isMarkerVisible="true">
+        <dc:Bounds x="1850" y="218" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1833" y="268" width="85" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RegisterCertificateShape" bpmnElement="Task_RegisterCertificate">
+        <dc:Bounds x="2090" y="350" width="160" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ReceiveShape" bpmnElement="Task_ReceiveCertificate">
+        <dc:Bounds x="2090" y="110" width="160" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndShape" bpmnElement="End_CertificateReceived">
+        <dc:Bounds x="2190" y="220" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2184" y="256" width="48" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ClosedEndShape" bpmnElement="End_ProcessClosed">
+        <dc:Bounds x="2020" y="225" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1997" y="261" width="82" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CorrectDocumentsShape" bpmnElement="Task_CorrectDocuments">
+        <dc:Bounds x="940" y="110" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RefusalShape" bpmnElement="Task_IssueRefusal">
+        <dc:Bounds x="2015" y="670" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RestrictedCertificateShape" bpmnElement="Task_IssueCertificateWithRestrictions">
+        <dc:Bounds x="2015" y="530" width="190" height="86" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="RestrictionsGatewayShape" bpmnElement="Gateway_RestrictionsFound" isMarkerVisible="true">
+        <dc:Bounds x="1785" y="598" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1770" y="648" width="80" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="CertificateIssuableGatewayShape" bpmnElement="Gateway_CertificateIssuable" isMarkerVisible="true">
+        <dc:Bounds x="1920" y="598" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1980" y="603" width="85" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_StartToSubmit_di" bpmnElement="Flow_StartToSubmit">
+        <di:waypoint x="266" y="153" />
+        <di:waypoint x="320" y="153" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_SubmitToIdentityCheck_di" bpmnElement="Flow_SubmitToIdentityCheck">
+        <di:waypoint x="500" y="153" />
+        <di:waypoint x="525" y="153" />
+        <di:waypoint x="525" y="393" />
+        <di:waypoint x="540" y="393" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_IdentityToDocumentCheck_di" bpmnElement="Flow_IdentityToDocumentCheck">
+        <di:waypoint x="720" y="393" />
+        <di:waypoint x="760" y="393" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_CheckToGateway_di" bpmnElement="Flow_CheckToGateway">
+        <di:waypoint x="950" y="393" />
+        <di:waypoint x="1010" y="393" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DocumentsIncomplete_di" bpmnElement="Flow_DocumentsIncomplete">
+        <di:waypoint x="1035" y="368" />
+        <di:waypoint x="1035" y="196" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1011" y="268" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_DocumentsComplete_di" bpmnElement="Flow_DocumentsComplete">
+        <di:waypoint x="1060" y="393" />
+        <di:waypoint x="1150" y="393" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1099" y="368" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_CorrectedToCheck_di" bpmnElement="Flow_CorrectedToCheck">
+        <di:waypoint x="940" y="153" />
+        <di:waypoint x="710" y="153" />
+        <di:waypoint x="710" y="250" />
+        <di:waypoint x="410" y="250" />
+        <di:waypoint x="410" y="196" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ScheduleToPayment_di" bpmnElement="Flow_ScheduleToPayment">
+        <di:waypoint x="1340" y="393" />
+        <di:waypoint x="1360" y="393" />
+        <di:waypoint x="1360" y="153" />
+        <di:waypoint x="1390" y="153" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_PaymentToConsent_di" bpmnElement="Flow_PaymentToConsent">
+        <di:waypoint x="1580" y="153" />
+        <di:waypoint x="1620" y="153" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ConsentToAttend_di" bpmnElement="Flow_ConsentToAttend">
+        <di:waypoint x="1810" y="153" />
+        <di:waypoint x="1850" y="153" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_AttendToExamination_di" bpmnElement="Flow_AttendToExamination">
+        <di:waypoint x="2040" y="153" />
+        <di:waypoint x="2090" y="153" />
+        <di:waypoint x="2090" y="480" />
+        <di:waypoint x="1170" y="480" />
+        <di:waypoint x="1170" y="623" />
+        <di:waypoint x="1230" y="623" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ExaminationToTests_di" bpmnElement="Flow_ExaminationToTests">
+        <di:waypoint x="1420" y="623" />
+        <di:waypoint x="1490" y="623" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_TestsRequired_di" bpmnElement="Flow_TestsRequired">
+        <di:waypoint x="1515" y="648" />
+        <di:waypoint x="1515" y="868" />
+        <di:waypoint x="1580" y="868" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1524" y="748" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_TestsNotRequired_di" bpmnElement="Flow_TestsNotRequired">
+        <di:waypoint x="1540" y="623" />
+        <di:waypoint x="1785" y="623" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1656" y="598" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_TestsToResults_di" bpmnElement="Flow_TestsToResults">
+        <di:waypoint x="1760" y="868" />
+        <di:waypoint x="1820" y="868" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ResultsToDoctor_di" bpmnElement="Flow_ResultsToDoctor">
+        <di:waypoint x="2000" y="868" />
+        <di:waypoint x="2070" y="868" />
+        <di:waypoint x="2070" y="780" />
+        <di:waypoint x="1170" y="780" />
+        <di:waypoint x="1170" y="666" />
+        <di:waypoint x="1320" y="666" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_RestrictionsFound_di" bpmnElement="Flow_RestrictionsFound">
+        <di:waypoint x="1835" y="623" />
+        <di:waypoint x="1920" y="623" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1836" y="612" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_NoRestrictions_di" bpmnElement="Flow_NoRestrictions">
+        <di:waypoint x="1810" y="598" />
+        <di:waypoint x="1810" y="573" />
+        <di:waypoint x="1750" y="573" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1817" y="578" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_CertificateIssuable_di" bpmnElement="Flow_CertificateIssuable">
+        <di:waypoint x="1945" y="598" />
+        <di:waypoint x="1945" y="573" />
+        <di:waypoint x="2015" y="573" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1983" y="576" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_CertificateNotIssuable_di" bpmnElement="Flow_CertificateNotIssuable">
+        <di:waypoint x="1945" y="648" />
+        <di:waypoint x="1945" y="713" />
+        <di:waypoint x="2015" y="713" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1952" y="671" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_IssuedToRegister_di" bpmnElement="Flow_IssuedToRegister">
+        <di:waypoint x="1750" y="573" />
+        <di:waypoint x="2015" y="573" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_RefusalToNotify_di" bpmnElement="Flow_RefusalToNotify">
+        <di:waypoint x="2015" y="713" />
+        <di:waypoint x="1863" y="713" />
+        <di:waypoint x="1863" y="393" />
+        <di:waypoint x="1810" y="393" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_NotifyToRepeatChoice_di" bpmnElement="Flow_NotifyToRepeatChoice">
+        <di:waypoint x="1810" y="393" />
+        <di:waypoint x="1875" y="393" />
+        <di:waypoint x="1875" y="268" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_RepeatRequested_di" bpmnElement="Flow_RepeatRequested">
+        <di:waypoint x="1850" y="243" />
+        <di:waypoint x="1760" y="243" />
+        <di:waypoint x="1760" y="320" />
+        <di:waypoint x="1245" y="320" />
+        <di:waypoint x="1245" y="350" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1769" y="272" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_RepeatNotRequested_di" bpmnElement="Flow_RepeatNotRequested">
+        <di:waypoint x="1900" y="243" />
+        <di:waypoint x="2020" y="243" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1952" y="218" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_RegisterToReceive_di" bpmnElement="Flow_RegisterToReceive">
+        <di:waypoint x="2170" y="350" />
+        <di:waypoint x="2170" y="196" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_ReceiveToEnd_di" bpmnElement="Flow_ReceiveToEnd">
+        <di:waypoint x="2170" y="196" />
+        <di:waypoint x="2170" y="238" />
+        <di:waypoint x="2190" y="238" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1cppnvm_di" bpmnElement="Flow_1cppnvm">
+        <di:waypoint x="2110" y="530" />
+        <di:waypoint x="2110" y="483" />
+        <di:waypoint x="2150" y="483" />
+        <di:waypoint x="2150" y="436" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
